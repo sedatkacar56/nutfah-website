@@ -40,7 +40,7 @@ a:hover { color: var(--teal-light); }
   display: flex; align-items: center; justify-content: space-between;
 }
 
-.logo-img { height: 200px; width: auto; }
+.logo-img { height: 130px; width: auto; }
 
 .nav-company-name {
   color: var(--white);
