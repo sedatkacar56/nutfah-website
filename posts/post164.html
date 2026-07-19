@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Local vs Global Variables in R — US/State Analogy | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-10-03</span></div><h1>Local vs Global Variables in R — US/State Analogy</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 LOCAL vs GLOBAL Variables in R — a simple intuition</p>
+<p>A lot of confusion in R (and Seurat pipelines) comes from one quiet concept: local variables vs global variables. Here's a way to understand it without coding jargon.</p>
+<p>Think: the United States vs a single state<br>
+The whole United States → Global environment<br>
+One state (e.g., Indiana) → Local environment (inside a function)<br>
+What happens inside Indiana does not automatically affect California or Texas.<br>
+But what happens at the federal level affects everyone.<br>
+That's the key idea.</p>
+<p>🔢 A very simple example (no biology, just numbers)</p>
+<p>At the global (US) level:</p>
+<pre><code>x &lt;- 5</code></pre>
+<p>This x belongs to the whole country. Everyone can see it.</p>
+<p>Now imagine a function (a state):</p>
+<pre><code>f &lt;- function() {
+  x &lt;- 2
+}</code></pre>
+<p>When you run:</p>
+<pre><code>f()</code></pre>
+<p>and then check:</p>
+<pre><code>x</code></pre>
+<p>The value of x is still: 5</p>
+<p>Why? Because the function only created its own local x. It did not change the global one. Same name, different level.</p>
+<p>Just like: Indiana can pass a state rule but it does not rewrite federal law</p>
+<p>🧠 One-sentence takeaway<br>
+In R (and Seurat), "local variables are state-level decisions inside a function, while global variables are federal-level objects shared across the entire analysis."</p>
+<p>Understanding this makes your code safer, clearer, and much easier to reason about.</p>
+<p>DO not forget that functions return values, which become global only if they are explicitly assigned!</p>
+<p>#RStats #Bioinformatics #SingleCell #Seurat #DataScience #LearnR #ProgrammingConcepts #ReproducibleResearch #ComputationalBiology #AlKarim</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-bioinformatics-singlecell-activity-7426319216393273346-uS7_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

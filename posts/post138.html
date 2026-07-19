@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Split Large Files with 7-Zip, Transfer Chunks, Merge with cat | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">HPC</span><span class="post-date">2025-09-07</span></div><h1>Split Large Files with 7-Zip, Transfer Chunks, Merge with cat</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>Can I person have a problem with a huge file sitting on their desktop! Yes I had! This pain is different! With unstable internet connection, charge and any time shutting computer!</p>
+<p>💡 Big file transfer problem like me ? Here's a simple, reliable solution. Here you go!</p>
+<p>You have a huge file (hundreds of GBs or even ~1 TB) on your desktop. You need to transfer it to:<br>
+an HPC<br>
+a remote server<br>
+or another machine</p>
+<p>But:<br>
+❌ Internet connection is unstable<br>
+❌ Transfers fail midway<br>
+❌ Restarting from zero wastes time<br>
+❌ External drives are not always practical</p>
+<p>So… what options do you have?</p>
+<p>✅ One method I've been using recently (and it works)<br>
+Split the file → transfer parts → merge at the destination<br>
+Simple idea, big win.</p>
+<p>1️⃣Split the file<br>
+Assume your file is PULM.tar on your Desktop.<br>
+Steps:<br>
+Right-click PULM.tar<br>
+Select 7-Zip → Add to archive…<br>
+In the window:<br>
+Archive format: leave default (or tar)<br>
+Split to volumes, bytes: type 80G(decide based on how many parts you want ot volume of your file)<br>
+Click OK</p>
+<p>2️⃣ Result<br>
+You'll get files like:<br>
+PULM.tar.001 (80 GB)<br>
+PULM.tar.002 (80 GB)<br>
+PULM.tar.003…<br>
+PULM.tar.010</p>
+<p>3️⃣ After transfer merge like this:</p>
+<pre><code>cat PULM.tar.* > PULM.tar</code></pre>
+<p>🚀 Why this helps<br>
+✅ Transfer files one by one<br>
+✅ If a transfer fails, you resume only that chunk<br>
+✅ Much more reliable on unstable networks<br>
+✅ Works great for HPC uploads<br>
+✅ No special tools needed on the source machine</p>
+<p>At the destination, you simply merge/extract and recover the original file.</p>
+<p>🧠 Takeaway<br>
+Sometimes the best solution isn't faster internet — it's changing the strategy.<br>
+Split smart, transfer safely, merge cleanly.</p>
+<p>#HPC #BigData #DataTransfer #LargeFiles #FileManagement #Bioinformatics #ComputationalBiology #ResearchComputing #Linux #7Zip #DataWorkflow #TechTips #Productivity</p>
+<p>94:5-6 "So indeed, with hardship comes ease. Indeed, with hardship comes ease."</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_hpc-bigdata-datatransfer-activity-7411116120448884736-NRog?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

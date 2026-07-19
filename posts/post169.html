@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Switching from Seurat to Scanpy? AnnData Object Structure Explained | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-10-08</span></div><h1>Switching from Seurat to Scanpy? AnnData Object Structure Explained</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🚀 SWITCHING FROM SEURAT TO SCANPY? HERE'S WHAT YOU SHOULD KNOW ABOUT AnnData 🧬</p>
+<p>If you're transitioning from Seurat (R) to Scanpy (Python), the AnnData object structure can be a bit disorienting at first. Let's break it down:</p>
+<p>A) SEURAT BASICS (IN R)<br>
+colnames(seurat_obj) → Cell barcodes<br>
+rownames(seurat_obj) → Gene names<br>
+seurat_obj@meta.data → Cell-level metadata<br>
+Expression matrix: genes x cells</p>
+<p>B) AnnData STRUCTURE (IN PYTHON)<br>
+adata.obs.index → Cell barcodes ✅<br>
+adata.var.index → Gene names/IDs ✅<br>
+adata.obs → Cell metadata<br>
+adata.var → Gene metadata<br>
+adata.X → Expression matrix (cells x genes)<br>
+Note: The orientation flips — so watch out when comparing!</p>
+<p>C) GENE NAMES NOT HUMAN-READABLE? FIX IT!<br>
+Sometimes adata.var.index shows IDs instead of readable gene names.<br>
+To switch it:</p>
+<pre><code>adata.var.index = adata.var["gene_name"]</code></pre>
+<p>But first, check for uniqueness:</p>
+<pre><code>adata.var["gene_name"].is_unique</code></pre>
+<p>If not unique, combine columns:</p>
+<pre><code>adata.var.index = adata.var["gene_name"] + "_" + adata.var["gene_id"]</code></pre>
+<p>D) FINAL THOUGHT 💡<br>
+These small tweaks help align your Scanpy data structure with what you're used to in Seurat — making downstream analysis and interpretation much smoother.</p>
+<p>#SingleCellRNAseq #Python #Bioinformatics #Scanpy #Seurat #SingleCell #AnnData #DataScience #Genomics #AlBurhan</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrnaseq-python-bioinformatics-activity-7427672844039553024-M2rt?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

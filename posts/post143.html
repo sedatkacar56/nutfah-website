@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seurat Sparse Matrix i, p, x — CSC Format Explained | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-09-12</span></div><h1>Seurat Sparse Matrix i, p, x — CSC Format Explained</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>Ever seen i, p, and x in Seurat graphs or sparse matrices and wondered—what are these? Let's walk through the difference between sparse and dense matrices and why Seurat uses sparse format like dgCMatrix. 🧵</p>
+<p>1/ 🔹 Q: Is @i, @p, @x, and @Dim a sparse matrix?<br>
+✅ Yes. That structure is a Compressed Sparse Column (CSC) format, used by dgCMatrix from the Matrix package in R. It's a smart way to store only non-zero values, saving memory.</p>
+<p>2/ 🔹 Q: What's the difference between dense and sparse?<br>
+Dense Matrix: Stores every value, including 0s. Example:</p>
+<pre><code>[5 0 0]
+[0 0 8]
+[3 0 0]</code></pre>
+<p>All 9 entries are stored—even the zeros.</p>
+<p>Sparse Matrix: Stores only non-zero values, like this:</p>
+<pre><code>x = [5, 3, 8] # the values
+i = [0, 2, 1] # the row indices (0-based)
+p = [0, 2, 2, 3] # column start points</code></pre>
+<p>3/ 🔹 Q: What do x, i, and p mean exactly?<br>
+Let's break it down:<br>
+x: the non-zero values<br>
+i: the row positions of those values<br>
+p: where each column starts in x/i</p>
+<p>🧠 Intuition: Think of p as column pointers<br>
+p[j+1] - p[j] tells you how many non-zeros are in column j</p>
+<p>4/ 🔹 Q: Is p cumulative?<br>
+Yes! For a matrix with 3 columns, p has 4 entries:<br>
+Start of column 1 → p[0]<br>
+Start of column 2 → p[1]<br>
+Start of column 3 → p[2]<br>
+End of last column → p[3]<br>
+That's how you know where each column's data begins and ends.</p>
+<p>5/ 🧪 Concrete Example:<br>
+Dense matrix:</p>
+<pre><code>     [,1] [,2] [,3]
+[1,]  5    0    0
+[2,]  0    0    8
+[3,]  3    0    0</code></pre>
+<p>Sparse (CSC format):</p>
+<pre><code>x = c(5, 3, 8) # non-zero values
+i = c(0, 2, 1) # row indices
+p = c(0, 2, 2, 3) # column pointers</code></pre>
+<p>This stores only 3 values instead of 9!</p>
+<p>6/ 💡 Why Seurat uses this:<br>
+In single-cell data:<br>
+Most genes are 0 in most cells<br>
+Most cells aren't neighbors with most others<br>
+Sparse formats reduce memory drastically while keeping computation efficient.</p>
+<p>#Seurat #Bioinformatics #scRNAseq #SparseMatrix #RStats #DataScience #MatrixTips #SingleCell #ElMucib</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_seurat-bioinformatics-scrnaseq-activity-7415026805268512768-7Ld6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

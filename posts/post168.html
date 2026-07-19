@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>c() in R — It Doesn't Just List Items, It Creates a Vector | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-10-07</span></div><h1>c() in R — It Doesn't Just List Items, It Creates a Vector</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧠 When I first started R, I thought c() was just a way of listing things…</p>
+<p>Honestly, I used to think: "c() is just how you write multiple items next to each other." That's partly true, but it misses the key point. c() does not just show items. It creates a vector — a single object that R treats as one thing.</p>
+<p>🔍 What does c() actually do?<br>
+c() stands for combine. It takes separate values and bundles them into one vector. This matters a lot in single-cell analysis.</p>
+<p>🧬 Seurat examples everyone has used</p>
+<p>✅ Gene lists</p>
+<pre><code>genes &lt;- c("PECAM1", "VWF", "KDR")</code></pre>
+<p>This is not three separate gene names anymore. It's one gene vector — exactly what Seurat expects in functions like:<br>
+FeaturePlot()<br>
+DotPlot()<br>
+AddModuleScore()</p>
+<p>✅ Selecting clusters or identities</p>
+<pre><code>clusters &lt;- c(0, 2, 5)</code></pre>
+<p>Now you can say: "Work only on these clusters." Because Seurat doesn't want three separate numbers — it wants one vector.</p>
+<p>✅ Multiple Seurat objects</p>
+<pre><code>objs &lt;- c("sample1", "sample2", "sample3")</code></pre>
+<p>This lets you loop, compare, or integrate as a group, not one by one.</p>
+<p>🧺 Simple metaphor (daily life)<br>
+Think of c() like a basket.<br>
+Each gene, cluster, or object is an item<br>
+c() puts them into one basket<br>
+Seurat functions grab the basket — not individual items</p>
+<p>🏷️ Named vectors (very common in plots)</p>
+<pre><code>colors &lt;- c(Endothelial = "blue", Fibroblast = "green")</code></pre>
+<p>Still a vector — just with labels, which Seurat and ggplot love.</p>
+<p>⚠️ One subtle but important note<br>
+c() creates vectors<br>
+If you need different object types together → use list()<br>
+But for genes, clusters, identities, colors, conditions<br>
+c() is exactly the right tool.</p>
+<p>🧠 One-sentence takeaway<br>
+In R (and Seurat), c() doesn't just list items — it combines genes, clusters, or objects into a single vector that functions can actually use.</p>
+<p>#SingleCell #scRNAseq #SingleCellAnalysis #Seurat #Bioinformatics #ComputationalBiology #scRNA #SingleCellOmics #Genomics #AlJami</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecell-scrnaseq-singlecellanalysis-activity-7427319012650299392-oz3x?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

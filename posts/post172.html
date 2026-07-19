@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FetchData() vs GetAssayData() in Seurat — Know the Difference | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-10-11</span></div><h1>FetchData() vs GetAssayData() in Seurat — Know the Difference</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>SingleCell RNA Seurat Users here please! You do not remember how many times you used FetchData and GetAssayData right? Have you ever thought the difference? If not this post is for you!!!</p>
+<p>FetchData() vs. GetAssayData()</p>
+<p>A/ Ever wondered when to use FetchData() vs. GetAssayData() in Seurat? Both are useful — but knowing their differences saves time, especially when tagging cell types or checking gene expression.</p>
+<p>B/ 🔹 FetchData()<br>
+-Ideal for retrieving specific genes or metadata columns<br>
+-Returns a data frame: cells as rows, genes as columns<br>
+-Convenient for thresholding or labeling cells</p>
+<pre><code># Fetch CD8A expression values
+cd8_data &lt;- FetchData(seurat_obj, vars = "CD8A")
+seurat_obj$cd8_status &lt;- ifelse(cd8_data$CD8A &gt; 1, "CD8_positive", NA)</code></pre>
+<p>🔸 GetAssayData()<br>
+-Accesses the entire matrix from an assay and slot<br>
+-Returns a sparse matrix: genes as rows, cells as columns<br>
+-More memory-efficient for large-scale operations</p>
+<pre><code>rna_mat &lt;- GetAssayData(seurat_obj, assay = "RNA", slot = "data")
+cd8_vals &lt;- rna_mat["CD8A", ]</code></pre>
+<p>C/ 🧠 Summary:<br>
+-Use FetchData() when working with a few genes or metadata.<br>
+-Use GetAssayData() when dealing with the full expression matrix.<br>
+-Work smarter by understanding what each function gives you.</p>
+<p>#Seurat #SingleCellRNAseq #scRNAseq #Bioinformatics #RStats #GeneExpression #DataWrangling #ComputationalBiology #CD8A #Transcriptomics #CellTypeAnnotation #SeuratTips #SingleCellAnalysis #Omics #HighThroughputData #AlFurqan</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_seurat-singlecellrnaseq-scrnaseq-activity-7428759755969667072-NuEz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

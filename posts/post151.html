@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mouse vs Rat Species Identification from Gene Names | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-09-20</span></div><h1>Mouse vs Rat Species Identification from Gene Names</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>Hey — you have single-cell data… and suddenly you realize: Did this come from mouse or rat?</p>
+<p>It happens to me sometimes 🙂</p>
+<p>No Ensembl IDs. No RGD labels. Just gene symbols.</p>
+<p>So what do you do? Instead of guessing, I look for small but telling differences in gene names that quietly reveal the species. I asked AI first and tried to confirm if they are correct according to my mouse and rat single cell RNA genes.</p>
+<p>Let me share a method that i searched and confirm each if works:</p>
+<p>1-🩸 "Hemoglobin genes (very useful) Mouse often shows Hba-a1 / Hba-a2, while rat usually collapses these into Hba."<br>
+-Yes, my mouse data set only have Hba-a2 but rat doesnot have any of the above.<br>
+- Could be TRUE!!!</p>
+<p>2-🧠 Olfactory-related genes "Certain olfactory or olfactomedin gene patterns are far more common in mouse scRNA-seq references and show up frequently in marker lists."<br>
+In Mouse, I caught 40 genes, while in rat 23. And most on mouse had additinal suffix "-ps1" meaning pseudogene. TRUE!</p>
+<p>3-🧠 Prolactin gene family (the classic giveaway) "Mouse has a massively expanded prolactin family (Prl2*, Prl3*, Prl7*, Prl8*, etc.). If you see many of these together, that's almost always mouse."<br>
+Note: Honestly, Prl genes in my dataset were similar number. FALSE.</p>
+<p>4-🧬 Immunoglobulin kappa (Igk) genes "The diversity and naming of Igkv genes often aligns much more cleanly with mouse datasets."<br>
+I found 166 gene names in my mouse genes but only 3 in rat genes with prefix of "^Igkv". This is correct! Works!</p>
+<p>None of these alone are magic. But together, they form a very reliable signature.</p>
+<p>Sometimes, species identification isn't about fancy annotations — it's about knowing your genes well enough to read the clues they leave behind.</p>
+<p>#SingleCell #scRNAseq #SingleCellRNAseq #Bioinformatics #ComputationalBiology #GeneExpression #Genomics #MouseModel #RatModel #SpeciesIdentification #MarkerGenes #Transcriptomics #Seurat #DataQC #Omics #LifeSciences #AlKhabir</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecell-scrnaseq-singlecellrnaseq-activity-7422270497222053888-ZPHs?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

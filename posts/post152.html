@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seurat DotPlot Legend Order Swaps — Fix with guides() | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-09-21</span></div><h1>Seurat DotPlot Legend Order Swaps — Fix with guides()</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🤯 Did you know this about Seurat DotPlots?</p>
+<p>Have you ever noticed that in Seurat DotPlot, sometimes "Average Expression" is shown on top, and other times "Percent Expressed" is on top — even though you didn't change any code?</p>
+<p>Yeah… that's not your mistake 😅</p>
+<p>👉 It turns out:<br>
+Seurat doesn't lock the legend order in DotPlot<br>
+ggplot decides the order internally and that decision can change gene by gene, depending on the data</p>
+<p>So the plot is correct, but the legend order can swap unexpectedly.</p>
+<p>🔍 Not a bug. To fix it, first decide which you want to see at top?</p>
+<p>For Average expression at top do this: lets assign your DotPlot to "p",</p>
+<pre><code>p + guides(
+  color = guide_colorbar(order = 1),
+  size = guide_legend(order = 2)
+)</code></pre>
+<p>If you want Percent Expressed at top,</p>
+<pre><code>p + guides(
+  size = guide_legend(order = 1),
+  color = guide_colorbar(order = 2)
+)</code></pre>
+<p>🧠 Just ggplot doing its thing behind the scenes. Once you know this, it suddenly makes sense — and you stop doubting yourself every time the legend flips 😄</p>
+<p>#Seurat #scRNAseq #DataVisualization #Bioinformatics #ggplot2 #DidYouKnow #Alhamdulillah</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_seurat-scrnaseq-datavisualization-activity-7422672229316091905-mbeX?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

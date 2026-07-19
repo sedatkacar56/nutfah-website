@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Double Arrow &lt;&lt;- Super Assignment in R — Surprised Discovery | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-10-05</span></div><h1>Double Arrow &lt;&lt;- Super Assignment in R — Surprised Discovery</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 Be honest with me — have you ever heard DOUBLE ARROW ASSIGNMENT? I mean this sign 👇</p>
+<p>&lt;&lt;-</p>
+<p>⚠️ Don't confuse it with the normal assignment arrow: &lt;-<br>
+Not one arrow… TWO arrow heads &lt;&lt; and one line -<br>
+Come on… that already sounds serious. Double assignment. 😅</p>
+<p>I ran into this today. And yes — I was shocked.</p>
+<p>Like most single-cell people, I'm used to this pattern:</p>
+<pre><code>seurat_obj &lt;- SomeSeuratFunction(seurat_obj)</code></pre>
+<p>Every single-celler knows this, right? That's how we modify Seurat objects. Clean. Explicit. Reproducible.</p>
+<p>Then I see this:</p>
+<pre><code>x &lt;&lt;- 5</code></pre>
+<p>And I'm like… 👀 Wait… what?</p>
+<p>"It's called SUPER ASSIGNMENT."</p>
+<p>SUPER??? My brain immediately went:<br>
+Does this make a SUPER Seurat object?<br>
+Does my Seurat now have a cape? 🦸♂️<br>
+Does it bypass QC and PCA in one shot??</p>
+<p>Oh yeah… of course, R. Why not. 😄</p>
+<p>🧠 So what does &lt;&lt;- actually do?</p>
+<p>Very simply:<br>
+&lt;- assigns locally (where you are)<br>
+&lt;&lt;- reaches outside a function and changes an existing variable</p>
+<p>Example:</p>
+<pre><code>x &lt;- 5
+f &lt;- function() {
+  x &lt;&lt;- 2
+}
+f()
+x # 2</code></pre>
+<p>That function didn't return anything. It just reached out and changed x. That's why it's called superassignment. It jumps scope.</p>
+<p>Powerful? Yes. Dangerous if misused? Also yes.</p>
+<p>If you've ever accidentally used &lt;&lt;-, or just learned it exists today like me — welcome to the club 😄</p>
+<p>#RStats #Seurat #SingleCell #Bioinformatics #ProgrammingConcepts #LearnR #ComputationalBiology #AlHalik</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-seurat-singlecell-activity-7426943287514652672-Hu-n?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

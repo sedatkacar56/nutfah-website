@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UMAP Clustering vs PCA Clustering — Why Visuals Can Mislead | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-09-13</span></div><h1>UMAP Clustering vs PCA Clustering — Why Visuals Can Mislead</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🔬 UMAP Clustering vs. Seurat Clustering: Why Visuals Can Mislead in Single-Cell RNA-Seq</p>
+<p>In my recent analysis, I dove deep into how clustering results change when using UMAP coordinates versus the standard PCA-based pipeline in Seurat. I asked several questions, and here's what I learned — summarized with practical insights 👇</p>
+<p>❓ Q1: Can we cluster cells using UMAP coordinates instead of gene expression?<br>
+Technically, yes. You can extract the UMAP embeddings and run k-means or another clustering method on those 2D coordinates.</p>
+<pre><code>umap_coords &lt;- Embeddings(seurat_obj, "umap")
+kmeans_result &lt;- kmeans(umap_coords, centers = 10)
+seurat_obj$UMAP_kmeans &lt;- as.factor(kmeans_result$cluster)
+DimPlot(seurat_obj, group.by = "UMAP_kmeans")</code></pre>
+<p>🔴 But should we? Not really. UMAP is a visualization tool—it reduces the rich structure of gene expression into 2D. It distorts distances to preserve local neighborhoods, which is great for humans but misleading for algorithms.</p>
+<p>❓ Q2: Why do some cells appear scattered or isolated on a UMAP plot?<br>
+This happens because: UMAP is built on PCA (not full gene expression), so info gets compressed. Some cells (e.g., rare types or noisy profiles) may not be well captured in the selected PCs. UMAP optimizes visual clarity, not biological accuracy. ✅ Using more PCs (e.g., 1:30 instead of 1:10) can help reveal more structure.</p>
+<p>❓ Q3: Does clustering based on UMAP give tighter clusters?<br>
+✔️ Visually—yes. UMAP-based clustering tends to form compact groups that "look good."<br>
+❌ Biologically—no. UMAP might place distinct cell types close together due to its projection, causing false merging.</p>
+<p>📌 Best Practice: Use PCA-based clustering for accuracy. Use UMAP only for plotting.</p>
+<p>💡 Conclusion<br>
+Don't let visualization drive your biology. UMAP is fantastic for storytelling—but clustering should be grounded in the actual data structure (PCA/gene expression).</p>
+<p>I'm grateful I took time to ask the right questions and upskill through this exploration. Want to try this on your own data? I'd be happy to share code or chat more!</p>
+<p>#SingleCell #Seurat #Bioinformatics #UMAP #Clustering #DataScience #UMAPvsPCA #LearningInPublic #Upskill #AlLateef</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecell-seurat-bioinformatics-activity-7415770245962948608-jmYC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

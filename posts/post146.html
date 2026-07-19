@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FindNeighbors() — RNA_nn and RNA_snn Explained | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-09-15</span></div><h1>FindNeighbors() — RNA_nn and RNA_snn Explained</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>Ever wondered what's inside Seurat's FindNeighbors() output? Those mysterious RNA_nn and RNA_snn slots? Let's unpack them—because understanding them can give you full control over clustering. 🧵</p>
+<p>1/ After you run FindNeighbors(), Seurat stores graphs in your object:<br>
+RNA_nn: Nearest Neighbor Graph<br>
+RNA_snn: Shared Nearest Neighbor Graph<br>
+Both are sparse graphs, and they live inside seurat_obj@graphs. Let's dive in. 👇</p>
+<p>2/ 🔹 RNA_nn – Nearest Neighbor (NN) Graph<br>
+Stores the k nearest neighbors for each cell based on PCA (or other reduced) space.<br>
+Structure:<br>
+@i: Row indices — neighbor cell indices<br>
+@p: Column pointers — start/end of each cell's neighbor list<br>
+@x: Edge weights — usually all 1s<br>
+Use diff(@p) to get the number of neighbors per cell (matches k.param).</p>
+<p>3/ 🔹 RNA_snn – Shared Nearest Neighbor (SNN) Graph<br>
+Built on top of the NN graph.<br>
+Instead of direct distance, it stores how many neighbors two cells share.<br>
+@x: Jaccard index — how similar two neighbor lists are (e.g. 0.5 = 50% shared)<br>
+@i, @p: same format as NN, but with more entries<br>
+More edges = more clustering context<br>
+Used in FindClusters().</p>
+<p>4/ 🧠 Key difference?<br>
+NN = raw proximity<br>
+SNN = shared structure<br>
+That's why SNN is better for community detection and modularity-based clustering.</p>
+<p>5/ 📍 So… where are these graphs actually used?<br>
+NN (RNA_nn) is used to build neighborhood relationships<br>
+SNN (RNA_snn) is used to find clusters<br>
+NN comes first. SNN comes next.</p>
+<p>6/ 🔄 The pipeline in one glance:<br>
+PCA space ↓<br>
+kNN graph (RNA_nn) ↓<br>
+shared neighbors → Jaccard ↓<br>
+SNN graph (RNA_snn) ↓<br>
+FindClusters()<br>
+NN builds the graph. SNN defines the communities.</p>
+<p>7/ 🏙 Real-life analogy<br>
+NN = who lives closest to you<br>
+SNN = who lives in your neighborhood<br>
+Clustering cares about neighborhoods, not just distance.</p>
+<p>8/ ✨ Why this matters<br>
+If clustering looks "off", you can now:<br>
+inspect connectivity<br>
+spot isolated or over-connected cells<br>
+tune k.param, resolution, or graph choice<br>
+even build your own graph-based logic</p>
+<p>9/ 🔑 Final takeaway<br>
+NN finds proximity. SNN finds structure.</p>
+<p>#Seurat #scRNAseq #Bioinformatics #RStats #FindNeighbors #GraphTheory #DataWrangling #ComputationalBiology #ElBurhan</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_seurat-scrnaseq-bioinformatics-activity-7416534744177344512-dZ8n?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

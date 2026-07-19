@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PCA Alternatives for Single-Cell RNA-Seq — NMF, ICA, LDA, VAE, FA | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-10-10</span></div><h1>PCA Alternatives for Single-Cell RNA-Seq — NMF, ICA, LDA, VAE, FA</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>Honestly I did not know that…</p>
+<p>Q: Are there any alternatives to PCA for finding patterns in single-cell RNA-seq data?</p>
+<p>A: Yes — and they can often reveal more biologically meaningful insights than principal components alone. While PCA is widely used, it has limits: it assumes linearity, enforces orthogonality, and doesn't model dropout or noise. That's why many researchers now use alternative decomposition methods to uncover hidden structure in single-cell data:</p>
+<p>⸻</p>
+<p>1. Non-negative Matrix Factorization (NMF)<br>
+• What it does: Decomposes gene expression into additive, parts-based patterns (like topics)<br>
+• Why it's used: Outputs are positive, making co-expression programs easy to interpret<br>
+• Tools: NMF in R, RunNMF() in Seurat<br>
+• Used for: Cell identity, gene modules, transcriptional programs</p>
+<p>⸻</p>
+<p>2. Independent Component Analysis (ICA)<br>
+• What it does: Finds components that are statistically independent (not just uncorrelated)<br>
+• Why it's used: Can separate overlapping signals like stress and cell cycle<br>
+• Tools: fastICA (R), scICA (Python)<br>
+• Used for: Gene module discovery, deconfounding sources of variation</p>
+<p>⸻</p>
+<p>3. Topic Modeling / LDA<br>
+• What it does: Models each cell as a mixture of gene expression "topics" (like NLP)<br>
+• Why it's used: Captures soft clustering and overlapping programs<br>
+• Tools: cisTopic, celda, scLDA<br>
+• Used for: Cell states, transcriptional programs, fuzzy identities</p>
+<p>⸻</p>
+<p>4. Variational Autoencoders (VAEs)<br>
+• What it does: Learns a nonlinear, probabilistic latent space<br>
+• Why it's used: Handles dropout, noise, and complex manifolds<br>
+• Tools: scVI, totalVI, destVI<br>
+• Used for: Data denoising, batch correction, multimodal analysis</p>
+<p>⸻</p>
+<p>5. Factor Analysis (FA)<br>
+• What it does: Like PCA but models noise explicitly<br>
+• Why it's used: More realistic handling of uncertainty in gene expression<br>
+• Tools: MOFA+<br>
+• Used for: Latent factor discovery and multi-omic integration</p>
+<p>⸻</p>
+<p>Bottom line: PCA is fast and useful, but not the only game in town. For deeper insights, especially when signals overlap or noise dominates, these alternative methods can give you more interpretable and powerful decompositions.</p>
+<p>Which one have you tried — or want to try next?</p>
+<p>#scRNAseq #Bioinformatics #DimensionalityReduction #NMF #scVI #MOFA #LDA #DeepLearning #SingleCell #LatentFactors #PCAAlternatives #AlWahhaab</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_scrnaseq-bioinformatics-dimensionalityreduction-activity-7428396613330448385-Whx9?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

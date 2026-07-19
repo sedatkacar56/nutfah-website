@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FindAllMarkers() Repeated Genes Across Clusters — Shared Biology, Not Errors | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-09-25</span></div><h1>FindAllMarkers() Repeated Genes Across Clusters — Shared Biology, Not Errors</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>Sometimes you think your markers are telling a complex biological story… and sometimes it's just a data-structure lesson 😄</p>
+<p>After running FindAllMarkers() in Seurat, I noticed the same genes appearing across multiple clusters. At first, this feels wrong — aren't markers supposed to be unique? But that's not how FindAllMarkers() works. It tests each cluster vs all others, so shared programs (fibroblast, activation, EndoMT, spatial gradients) naturally show up again and again.</p>
+<p>Then came a second "aha" moment — a more technical one. If you assign marker genes directly to rownames (as I did at first), R will silently enforce uniqueness by appending numbers:</p>
+<pre><code>Col3a1
+Col3a11
+Col3a12</code></pre>
+<p>Those are not new genes. They're just repeated instances of the same gene, automatically renamed to keep rownames unique. So what looks like biology can sometimes be bookkeeping.</p>
+<p>Two reminders I'm taking with me:</p>
+<p>📌 Repeated markers across clusters often mean shared biology, not errors<br>
+📌 Artificial gene suffixes (…1, …2) are a data-frame artifact, not biology</p>
+<p>Clusters are labels. Programs are continuous. And rownames can quietly lie if we're not careful 🙂</p>
+<p>Back to basics — again.</p>
+<p>#SingleCell #SpatialTranscriptomics #Seurat #SCTransform #Bioinformatics #DataWrangling #LearningInPublic #AlMucib</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecell-spatialtranscriptomics-seurat-activity-7424049218203492352-LVrx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

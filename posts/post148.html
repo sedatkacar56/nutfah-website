@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UMAP Subsets Can Create False Structure — Always Map Back to Original | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-09-17</span></div><h1>UMAP Subsets Can Create False Structure — Always Map Back to Original</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🔬 A reminder from single-cell analysis: UMAP is a tool, not the truth</p>
+<p>I started with all cells and performed a standard unsupervised clustering (Panel A). From there, I subset the cells of interest, re-normalized, re-ran dimensionality reduction, and re-clustered them (Panel C).</p>
+<p>Now here's the key observation 👇</p>
+<p>After reclustering, Cluster 7 forms a very clean, isolated "island" of cells (Panel C). At first glance, this looks like a well-defined biological population after subseting the cells.</p>
+<p>However…</p>
+<p>When I map the exact same cells back to the original UMAP containing all cells (Panel A), those Cluster 7 cells are not cohesive at all — they are scattered across multiple regions, with no obvious structure.</p>
+<p>In Panel B, you can see which original unsupervised Seurat clusters these cells came from. They originate from multiple clusters, not a single coherent group.</p>
+<p>📌 Take-home message:<br>
+Clustering after subsetting can create apparent structure that did not exist in the global context. This doesn't mean reclustering is wrong — it can be extremely powerful — but it must be interpreted carefully and always cross-checked against:<br>
+the original embedding<br>
+cluster connectivity<br>
+marker consistency<br>
+and biological plausibility</p>
+<p>🔍 Know your cells. Know your data. Don't blindly follow UMAP islands — pay attention to how clusters relate to each other across analyses.</p>
+<p>scRNA-seq is as much reasoning as it is computation.</p>
+<p>#SingleCellRNAseq #scRNAseq #Bioinformatics #Seurat #UMAP #DataInterpretation #Clustering #ComputationalBiology #Transcriptomics #KnowYourData #DataScience #SystemsBiology #Alhamdulillah</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrnaseq-scrnaseq-bioinformatics-activity-7420199811540500480-cdqS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>
