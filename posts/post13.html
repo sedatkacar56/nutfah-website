@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Single vs Double Brackets in R | Nutfah</title><link rel="stylesheet" href="../style.css"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/></head>
-<body><nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Single vs Double Brackets in R | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a>
+    <ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul>
+  </div>
+</nav>
 <section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2023-11-07</span></div><h1>Single vs Double Brackets in R: A Critical Difference</h1></div></section>
-<section class="post-page-section"><div class="container"><div class="post-page-body"><h2>Scenario 1: Reading H5 Files</h2><p><code>Read10X_h5(h5_files[1])</code> returns a list (ERROR)<br/><code>Read10X_h5(h5_files[[1]])</code> returns the actual file path string (CORRECT)</p><h2>Scenario 2: Saving Seurat Objects</h2><p><code>seurat_list["sample1"] <- obj</code> stores inside a sublist (INCORRECT)<br/><code>seurat_list[["sample1"]] <- obj</code> stores as proper named element (CORRECT)</p><h2>Scenario 3: Accessing Metadata</h2><p><code>seurat_list[[1]]@meta.data</code> works correctly<br/><code>seurat_list[1]@meta.data</code> produces an error</p><h2>🔑 Key Takeaway</h2><p><strong>Use <code>[[ ]]</code> when you want the actual object, and <code>[ ]</code> when you want a list of objects.</strong> This distinction prevents debugging hours in scRNA-seq pipelines.</p><a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-seurat-bioinformatics-activity-7313567007398862848-2biU" target="_blank" class="post-linkedin-link">View on LinkedIn →</a><div class="post-back"><a href="../posts.html">← Back to Posts</a></div></div></div></section><footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer></body></html>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>📦 Working with lists in R? Knowing the difference between <code>[]</code> and <code>[[]]</code> is crucial — especially in single-cell RNA-seq analysis with Seurat. Here's how it can make or break your pipeline 👇</p>
+<p>🔹 Scenario 1 – Reading H5 files:</p>
+<pre><code>Read10X_h5(h5_files[1])   # 🚫 Returns a list → ERROR
+Read10X_h5(h5_files[[1]]) # ✅ Returns the actual file path string</code></pre>
+<p>🔹 Scenario 2 – Saving Seurat objects:</p>
+<pre><code>seurat_list["sample1"] &lt;- obj   # 🚫 Stores inside a sublist
+seurat_list[["sample1"]] &lt;- obj  # ✅ Stores as a proper named element</code></pre>
+<p>🔹 Scenario 3 – Accessing metadata:</p>
+<pre><code>seurat_list[[1]]@meta.data  # ✅ Works
+seurat_list[1]@meta.data   # 🚫 Error! You're accessing a list, not the object</code></pre>
+<p>💡 Tip: Use <code>[[]]</code> when you want the actual object, and <code>[]</code> when you want a list of objects. This tiny distinction saves hours of debugging in scRNA-seq workflows.</p>
+<p>#rstats #Seurat #bioinformatics #scRNAseq #DataScience #SingleCell #Rtips #singlebracket #doublebracket #metadata #h5file #readingh5file</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-seurat-bioinformatics-activity-7313567007398862848-2biU" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

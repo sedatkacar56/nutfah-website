@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Error Handling: Use tryCatch() | Nutfah</title><link rel="stylesheet" href="../style.css"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/></head>
-<body><nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Error Handling: Use tryCatch() | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a>
+    <ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul>
+  </div>
+</nav>
 <section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2023-11-08</span></div><h1>Error Handling: Use tryCatch() to Keep Scripts Running</h1></div></section>
-<section class="post-page-section"><div class="container"><div class="post-page-body"><h2>The Problem</h2><p>🚫 You loop through genes to plot with Seurat::FeaturePlot()... Everything works — until one gene is missing. Boom 💥 Error. Your whole script stops.</p><p>But why stop the show for one gene?</p><h2>The Solution</h2><p>Use <code>tryCatch()</code> to catch errors and keep moving:</p><p><code>tryCatch({<br/>  FeaturePlot(seurat_obj, features = "Trouble_maker") |> print()<br/>}, error = function(e) {<br/>  message("⚠️ Skipped: ", e$message)<br/>})</code></p><h2>💡 Key Takeaway</h2><p><strong>Don't stop on the first error. Catch it. Report it. Move on.</strong> This is essential for processing large datasets where individual failures shouldn't halt the entire pipeline.</p><a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-seurat-bioinformatics-activity-7313383593248968704-gHu-" target="_blank" class="post-linkedin-link">View on LinkedIn →</a><div class="post-back"><a href="../posts.html">← Back to Posts</a></div></div></div></section><footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer></body></html>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🚫 You loop through genes to plot with Seurat::FeaturePlot()... Everything works — until one gene is missing. Boom 💥 Error. Your whole script stops. But why stop the show for one gene? Here's how I catch the error and keep moving 👇</p>
+<pre><code>tryCatch({
+  &lt;&lt; what you wanna do &gt;&gt;
+  FeaturePlot(seurat_obj, features = "Trouble_maker") |&gt; print()
+}, error = function(e) {
+  message("⚠️ Skipped: ", e$message)
+} )</code></pre>
+<p>💡 Don't stop on the first error. Catch it. Report it. Move on.</p>
+<p>#rstats #Seurat #bioinformatics #ErrorHandling #SingleCell #DataScience</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-seurat-bioinformatics-activity-7313383593248968704-gHu-" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

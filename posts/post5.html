@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FindSubCluster | Nutfah</title>
+  <title>FindSubCluster: Targeted Subclustering in Seurat | Nutfah</title>
   <link rel="stylesheet" href="../style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
 </head>
@@ -15,7 +15,22 @@
   </div>
 </nav>
 <section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2023-12-20</span></div><h1>FindSubCluster: Targeted Subclustering in Seurat</h1></div></section>
-<section class="post-page-section"><div class="container"><div class="post-page-body"><p>The post introduces `FindSubCluster()`, a Seurat function for targeted subclustering. While `FindClusters()` identifies broad cell populations, `FindSubCluster()` enables deeper analysis of specific clusters without globally increasing resolution. Applies subclustering only to clusters of interest (e.g., Cluster 0), creates meaningful subdivisions (0_0, 0_1, 0_2) while preserving other data. Advantages include granular analysis without over-fragmentation and improved cell-type annotation. Code Example Provided: seurat_object <- FindSubCluster(seurat_object, cluster = "<cluster_of_interest>", graph.name = "graph_type", resolution = <resolution_value>) DimPlot(seurat_object, group.by = "sub.cluster") Engagement: 102 reactions, 12 comments. Part of "Hidden Gems in Seurat Series" (#2)</p><a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_findclusters-findsubcluster-singlecellrnaseq-activity-7298533413584609280-a574" target="_blank" class="post-linkedin-link">View on LinkedIn →</a><div class="post-back"><a href="../posts.html">← Back to Posts</a></div></div></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🔬 Seurat's #FindClusters() is great, but have you explored #FindSubCluster()? Anyone familiar with #singlecellRNAseq analysis in #Seurat knows that FindClusters() is essential for identifying broad cell populations. But what if we suspect that a specific cluster might need further #subclustering, and we don't want to increase the clustering resolution for the entire dataset? 🤔</p>
+<p>💡 That's where FindSubCluster() comes in! In Graph 1, Cluster 0 looks like it might contain additional subpopulations. Instead of increasing the resolution globally, I applied FindSubCluster() only to Cluster 0. The result? Graph 2, where Cluster 0 is now subdivided into meaningful subclusters (e.g., 0_0, 0_1, 0_2, etc.)—all while keeping the rest of the dataset intact. 🎯</p>
+<p>🚀 Why use FindSubCluster()?</p>
+<p>✔ More granularity without over-clustering other cell types.<br/>
+✔ Targets specific clusters for deeper exploration (e.g., immune cell subtypes).<br/>
+✔ Maintains biological context, avoiding unnecessary fragmentation.<br/>
+✔ Most importantly, annotators know this struggle—this helps annotate small subclusters within a larger cluster. If a specific subset expresses key markers (e.g., a T-cell subpopulation), FindSubCluster() makes it easier to identify without manually searching for barcodes. 🧬</p>
+<p>Code to subcluster a specific cluster:</p>
+<pre><code>seurat_object &lt;- FindSubCluster(seurat_object, cluster = "&lt;cluster_of_interest&gt;", graph.name = "graph_type", resolution = &lt;resolution_value&gt;)
+DimPlot(seurat_object, group.by = "sub.cluster")</code></pre>
+<p>This approach is especially useful when broad clustering might not capture all biologically relevant subtypes.</p>
+<p>#HiddenGemsInSeurat #FindClusters #FindSubCluster #SingleCellRNAseq #Seurat #Subclustering #Bioinformatics</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_findclusters-findsubcluster-singlecellrnaseq-activity-7298533413584609280-a574" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
 <footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
 </body>
 </html>

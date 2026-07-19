@@ -1,6 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>identical() vs ==: Choose Carefully | Nutfah</title><link rel="stylesheet" href="../style.css"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/></head>
-<body><nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Use identical() Instead of == in R? | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a>
+    <ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul>
+  </div>
+</nav>
 <section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2023-10-28</span></div><h1>Why Use identical() Instead of == in R?</h1></div></section>
-<section class="post-page-section"><div class="container"><div class="post-page-body"><h2>The Problem with ==</h2><p>All familiar with using == in conditional checks, right? But the catch: <strong>== is vectorized</strong> — it returns a vector of TRUE/FALSE values. This can lead to warnings or silent bugs when used inside <code>if()</code>!</p><h2>Example: Vector Input</h2><p><code>a <- c("meta", "extra")<br/>if (a == "meta") { print("Match found") }<br/>⚠️ Output: [1] TRUE FALSE<br/>if() only uses first value → risky!</code></p><p><strong>Better:</strong> <code>if (identical(a, "meta")) { print("Match found") }</code></p><h2>Key Difference</h2><p>🔸 <strong>==</strong> checks just the values<br/>✅ <strong>identical()</strong> checks value, type, and structure — stricter, but more predictable</p><h2>💡 Rule</h2><p><strong>Use == for comparisons. Use identical() for conditions.</strong></p><a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rlanguage-rcommunity-codetips-activity-7318666760923029505-Or06" target="_blank" class="post-linkedin-link">View on LinkedIn →</a><div class="post-back"><a href="../posts.html">← Back to Posts</a></div></div></div></section><footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer></body></html>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>I just learned this difference. I hope it helps somebody out there:) 🧠 All familiar with using == in conditional checks, right? But what about identical()? Did you know there are cases where it's safer to use identical() instead of ==?</p>
+<pre><code>if (a == b) { # do something }</code></pre>
+<p>The catch? == is vectorized — it returns a vector of TRUE/FALSE values. This can lead to warnings or even silent bugs when used inside if()! 📌</p>
+<p>Example 1: Vector input</p>
+<pre><code>a &lt;- c("meta", "extra")
+if (a == "meta") { print("Match found") }
+⚠️ Output: [1] TRUE FALSE
+if() only uses the first value → risky!
+✅ Safer:
+if (identical(a, "meta")) { print("Match found") }</code></pre>
+<p>This returns a single TRUE only if a is exactly "meta" and nothing else.</p>
+<p>📌 Example 2: Different types</p>
+<pre><code>a &lt;- factor("meta")
+b &lt;- "meta"
+a == b        # TRUE
+identical(a, b) # FALSE</code></pre>
+<p>💡 == checks just the values. ✅ identical() checks value, type, and structure — stricter, but more predictable.</p>
+<p>📌 Example 3: Inside functions</p>
+<pre><code>selected_cols &lt;- c("meta", "other")
+if (selected_cols == "meta") { # Risky }
+✅ Better:
+if (identical(selected_cols, "meta")) { # Clean and safe }</code></pre>
+<p>🔒 identical() always returns a single TRUE or FALSE — no ambiguity, no surprises. Use == for comparisons. Use identical() for conditions.</p>
+<p>(This learning process comes from my experience but chatgpt organized the post. Lets say, mostly)</p>
+<p>#RLanguage #RCommunity #CodeTips #ProgrammingTips #RDev #DataAnalysis #DataScientist #SoftwareDevelopment #CleanCodePractice #RExperts #CodeQuality #Debugging #RFunctions #RUsers #ElSettar #AlBasit</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rlanguage-rcommunity-codetips-activity-7318666760923029505-Or06" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

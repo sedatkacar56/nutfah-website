@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Combining Annotations with coalesce() | Nutfah</title><link rel="stylesheet" href="../style.css"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/></head>
-<body><nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Combining Annotation Columns: Using coalesce() | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a>
+    <ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul>
+  </div>
+</nav>
 <section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2023-10-27</span></div><h1>Combining Annotation Columns: Using coalesce()</h1></div></section>
-<section class="post-page-section"><div class="container"><div class="post-page-body"><h2>The Challenge</h2><p>After merging two Seurat objects with individual annotation columns, those columns contain NA values for cells from the other sample, making unified visualization difficult.</p><h2>The Question</h2><p><strong>"Will combine those 2 columns, will have no NA, it will not overlap each other and you will safely visualize your annotation with UMAP or TSNE."</strong></p><h2>The Answer: coalesce()</h2><p>Use <code>dplyr::coalesce()</code> to merge annotation columns while eliminating NA values — an elegant approach for combining non-overlapping categorical data in R.</p><p>This function returns the first non-NA value from a set of vectors, making it perfect for combining partial annotations from multiple sources.</p><a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_question-singlecellseq-seurat-activity-7318683378394746880-Vr-0" target="_blank" class="post-linkedin-link">View on LinkedIn →</a><div class="post-back"><a href="../posts.html">← Back to Posts</a></div></div></div></section><footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer></body></html>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>#QUESTION: Single cell or R experts here please:) You merged or integrate at least pre-annotated 2 seurat objects (each has its own annotated column in metadata). However, those columns in metadata do not work anymore with different cell barcodes and samples added. You want one single annotated UMAP. An idea popped up and You thought "Why dont I merge or combine the premerged/preintegrated annotation columns per Seurat?". You know each can only annotate one single Seurats barcodes, all other cells are "NA". Here is what would be the function to use: will combine those 2 columns, will have no NA, it will not overlap each other and u will safely visualize your annotation with UMAP or TSNE. There can be other answers but I will give only one solid answer that worked for me. Do not forget, no second codes or secondary manipulation. Just with one function, keep combine those columns in one!!! I am waiting your answers. #SingleCellSeq #Seurat #metadata #annotation #UMAP #tsne #2Ddimentionalreduction #PCA #ElAlim</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_question-singlecellseq-seurat-activity-7318683378394746880-Vr-0" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

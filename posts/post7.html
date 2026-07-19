@@ -3,14 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Choosing the Right Number of PCs | Nutfah</title>
+  <title>Choosing the Right Number of PCs in Seurat | Nutfah</title>
   <link rel="stylesheet" href="../style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
-<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2023-12-05</span></div><h1>How to Choose the Right Number of PCs in Seurat</h1></div></section>
-<section class="post-page-section"><div class="container"><div class="post-page-body"><p>PCA reduces high-dimensional transcriptomic data by capturing variation patterns across genes. Each PC represents an axis of variation.</p><h2>The ElbowPlot Method</h2><p>Use ElbowPlot visualization to select optimal PCs: X-axis = number of PCs; Y-axis = variance explained.</p><h2>What Happens at Different PC Levels?</h2><ul><li><strong>2 PCs:</strong> Minimal structure, snake-like patterns</li><li><strong>5 PCs:</strong> More definition but unstable</li><li><strong>10 PCs:</strong> Captures major variance</li><li><strong>15 PCs:</strong> Refined clusters</li><li><strong>20+ PCs:</strong> Minimal changes indicating stability</li></ul><h2>The Golden Rule</h2><p><strong>Too few PCs →</strong> Lose biological signal<br><strong>Too many PCs →</strong> Add noise without major improvements<br><strong>Sweet spot:</strong> Where variance capture stabilizes</p><a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_pca-seurat-hiddengemsinseurat-activity-7302177871119167507-tU52" target="_blank" class="post-linkedin-link">View on LinkedIn →</a><div class="post-back"><a href="../posts.html">← Back to Posts</a></div></div></div></section>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a>
+    <ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul>
+  </div>
+</nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2023-12-05</span></div><h1>PCA in Seurat: How Many Principal Components Do You Need?</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🔍 #PCA in #Seurat: HOW MANY PRINCIPAL COMPONENTS (PCs) DO YOU NEED? #HiddenGemsInSeurat #4 : When working with single-cell RNA-seq data, one crucial step is determining the optimal number of Principal Components (PCs) to use for downstream analysis. But how do we decide? 🤔</p>
+<p>🔹 What is PCA?<br/>
+PCA (Principal Component Analysis) reduces high-dimensional transcriptomic data by capturing patterns of variation across genes. Each PC represents an axis of variation, with PC1 capturing the most variance, PC2 the second most, and so on.</p>
+<p>🔹 Choosing the Right Number of PCs<br/>
+We typically use the ElbowPlot, where:<br/>
+✔ X-axis → Number of PCs<br/>
+✔ Y-axis → Variance explained<br/>
+As the plot flattens out, additional PCs add minimal information. 📊</p>
+<p>Image Explanation<br/>
+The UMAPs below show clustering with different numbers of PCs:<br/>
+✔ 2 PCs → Almost no structure, snake-like patterns 🐍<br/>
+✔ 5 PCs → More definition, but still unstable<br/>
+✔ 10 PCs → Captures major variance, noticeable shift from PC5<br/>
+✔ 15 PCs → Clusters more refined but still adjusting<br/>
+✔ 20+ PCs → Minimal changes, indicating stability 🚀</p>
+<p>Key Takeaway:<br/>
+Too few PCs → Lose biological signal<br/>
+Too many PCs → Add noise without major improvements<br/>
+The best PC number is where variance capture stabilizes</p>
+<p>🛠 What's your approach to choosing PCs in Seurat? Drop your thoughts below! 👇</p>
+<p>📌 Previous Hidden Gems in Seurat Series:<br/>
+🔹 #HiddenGemsInSeurat #1: Exploring SingleCorPlot() 📊<br/>
+🔹 #HiddenGemsInSeurat #2: Discovering FindSubCluster() 🔍<br/>
+🔹 #HiddenGemsInSeurat #3: Interactive LinkedDimPlot/LinkedFeaturePlot 🔗</p>
+<p>Stay tuned for more in the #HiddenGemsInSeurat series! 🚀 #Seurat #SingleCellRNAseq #PCA #Bioinformatics #DataScience #DimensionalReduction #UMAP #scRNAseq #AlBaseer #TheAllSeeing</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_pca-seurat-hiddengemsinseurat-activity-7302177871119167507-tU52" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
 <footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
 </body>
 </html>

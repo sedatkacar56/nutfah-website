@@ -1,6 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Output Functions in R: cat(), print(), message() | Nutfah</title><link rel="stylesheet" href="../style.css"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/></head>
-<body><nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>cat(), print(), and message() in R | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a>
+    <ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul>
+  </div>
+</nav>
 <section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2023-11-06</span></div><h1>cat(), print(), and message() in R: Choose the Right Output Function</h1></div></section>
-<section class="post-page-section"><div class="container"><div class="post-page-body"><h2>Three Output Functions Explained</h2><p><strong>cat()</strong> — Raw text output without formatting. Has no soul.</p><p><strong>print()</strong> — Structured output with quotes and metadata. Understands objects.</p><p><strong>message()</strong> — Quiet logging that can be suppressed with <code>suppressMessages()</code>. The quiet one.</p><h2>Quick Comparison</h2><table style="width:100%; border-collapse:collapse;"><tr><td style="border:1px solid #ddd; padding:8px;"><strong>Function</strong></td><td style="border:1px solid #ddd; padding:8px;"><strong>Best Use</strong></td><td style="border:1px solid #ddd; padding:8px;"><strong>Suppressible</strong></td></tr><tr><td style="border:1px solid #ddd; padding:8px;">cat()</td><td style="border:1px solid #ddd; padding:8px;">Status updates</td><td style="border:1px solid #ddd; padding:8px;">No</td></tr><tr><td style="border:1px solid #ddd; padding:8px;">print()</td><td style="border:1px solid #ddd; padding:8px;">Values/objects</td><td style="border:1px solid #ddd; padding:8px;">No</td></tr><tr><td style="border:1px solid #ddd; padding:8px;">message()</td><td style="border:1px solid #ddd; padding:8px;">Non-intrusive info</td><td style="border:1px solid #ddd; padding:8px;">Yes</td></tr></table><p style="margin-top:1rem;"><strong>💡 Ideal for long pipelines:</strong> Use message() for background logging that users can suppress if needed.</p><a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-seurat-singlecell-activity-7314035168296480770-oakS" target="_blank" class="post-linkedin-link">View on LinkedIn →</a><div class="post-back"><a href="../posts.html">← Back to Posts</a></div></div></div></section><footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer></body></html>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 Writing Seurat or scRNA-seq workflows in R? You often want to <em>say something</em> — show progress, status, or quick results. R gives you 3 tools for that:</p>
+<p>🔹 <code>cat()</code>   Just speaks — no frills. It outputs raw text directly. Great for clean messages:<br/>
+<code>cat("✅ Cluster processed:", cluster_name, "\n")</code></p>
+<p>🔹 <code>print()</code>   More formal — it shows the object's structure: adds quotes, <code>[1]</code>, or even metadata.<br/>
+Use it when printing values, not just text:<br/>
+<code>print(sprintf("Top gene in %s: %s", cluster, gene))</code></p>
+<p>🔹 <code>message()</code>   Whispers to the message stream. Doesn't block the flow — and can be silenced with <code>suppressMessages()</code>.<br/>
+Useful in long pipelines (e.g., label transfer):<br/>
+<code>message("📎 Anchors identified for sample:", sample_id)</code></p>
+<p>🧠 But if they all <em>talk</em>, how are they different? Think of it this way:</p>
+<p>🧊 <code>cat()</code> has no soul — it just dumps characters. Give it a list or a Seurat object? It won't even flinch. No quotes, no structure. Just raw output.</p>
+<p>🧠 <code>print()</code> understands. It pauses, reads the object, wraps it in quotes, and even plays nicely with <code>sprintf()</code> formatting. It's your go-to when you want to show results <em>with structure</em>.</p>
+<p>🤫 <code>message()</code> is the quiet one. It informs, but only if the user wants to hear it. Looping over 50 samples? Suppress it. But the message still happened — and that's powerful.</p>
+<p>📦 So, why use <code>message()</code> if you can suppress it? Because <code>message()</code> gives your script a <strong>volume knob</strong> — it respects the user's space.</p>
+<p>📣 R has many voices — <code>warning()</code>, <code>stop()</code>, <code>str()</code>, <code>writeLines()</code>, and more. But these 3 are the ones we <em>actually speak through</em> in Seurat workflows.</p>
+<p>📊 TL;DR:<br/>
+<code>cat()</code> — Raw plain text — Best for: Status, updates — Suppressible: ❌<br/>
+<code>print()</code> — Structured (quotes) — Best for: Values, objects — Suppressible: ❌<br/>
+<code>message()</code> — Background log — Best for: Informing without clutter — Suppressible: ✅</p>
+<p>💬 So next time you write a function, choose the voice that fits your message. Which one do you use most in your pipelines? #rstats #Seurat #SingleCell #scRNAseq #bioinformatics #Rtips #scripting #functionwriting #print #cat #message</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-seurat-singlecell-activity-7314035168296480770-oakS" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>
