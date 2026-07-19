@@ -3,15 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CellRanger in Bioinformatics | Nutfah</title>
+  <title>Dry Run Mode — Validate Before You Submit | Nutfah</title>
   <link rel="stylesheet" href="../style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
 </head>
 <body>
 <nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
-<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2026-02-27</span></div><h1>CellRanger in Bioinformatics</h1></div></section>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2026-02-27</span></div><h1>Dry Run Mode — Validate Before You Submit</h1></div></section>
 <section class="post-page-section"><div class="container"><div class="post-page-body">
-<p>This post's content was unavailable at the time of archiving.</p>
+<p>🚀 You'll thank me when you learn about "dry run" mode.</p>
+<p>I used to submit a SLURM job, wait in the queue ⏳, finally get resources allocated... only to discover that my pipeline failed in the first few seconds.</p>
+<p>Why?</p>
+<ul>
+<li>Wrong file path ❌</li>
+<li>Missing reference directory ❌</li>
+<li>Typo in a filename ❌</li>
+<li>Missing input file ❌</li>
+<li>Incorrect configuration ❌</li>
+</ul>
+<p>Then I had to:</p>
+<ol>
+<li>Fix the mistake.</li>
+<li>Submit another job.</li>
+<li>Wait for resources again.</li>
+<li>Hope I didn't miss another typo.</li>
+</ol>
+<p>It was a frustrating cycle.</p>
+<p>Then I discovered dry run mode.</p>
+<p>A dry run validates your command and configuration without actually running the analysis. It checks whether the required files, directories, and parameters are available before consuming hours of compute time.</p>
+<p>Think of it as pressing "Preview" before printing a 500-page document.</p>
+<p>For example, many bioinformatics tools and workflow managers support a dry run option, including:</p>
+<p>✅ Cell Ranger (<code>--dry</code>)<br>
+✅ Nextflow (<code>-preview</code> or validation features, depending on the workflow)<br>
+✅ Snakemake (<code>-n</code> / <code>--dry-run</code>)<br>
+✅ Many HPC pipelines and workflow frameworks</p>
+<p>Instead of learning about an error after waiting in the queue, you find out in seconds.</p>
+<p>This small habit has saved me countless hours of waiting, resubmitting jobs, and debugging.</p>
+<p>💡 Before launching your next long-running analysis, ask yourself:</p>
+<p>"Can I do a dry run first?"</p>
+<p>Your future self—and your HPC cluster—will thank you.</p>
+<p>#Bioinformatics #SingleCell #CellRanger #HPC #Linux #SLURM #Nextflow #Snakemake #ComputationalBiology #Genomics #ResearchComputing #AlBari #TheOriginator</p>
 <a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_bioinformatics-singlecell-cellranger-activity-7483124472586194944-gcPj?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
 <div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
 </div></div></section>
