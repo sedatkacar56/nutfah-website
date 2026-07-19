@@ -7,6 +7,110 @@
   <meta name="description" content="Single-cell omics insights, tutorials, and updates from Dr. Sedat Kacar.">
   <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <style>
+    .posts-search {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      outline: none;
+      margin-bottom: 1.25rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .posts-search:focus { border-color: #2d6a4f; }
+
+    .cat-tiles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .cat-btn {
+      padding: 0.45rem 1rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 20px;
+      background: white;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #4a5568;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .cat-btn:hover { border-color: #2d6a4f; color: #2d6a4f; }
+    .cat-btn.active { background: #2d6a4f; border-color: #2d6a4f; color: white; }
+    .cat-count-badge {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #718096;
+      border-radius: 20px;
+      padding: 0 7px;
+      font-size: 0.72rem;
+      margin-left: 3px;
+      vertical-align: middle;
+    }
+    .cat-btn.active .cat-count-badge { background: rgba(255,255,255,0.25); color: white; }
+
+    .posts-meta-line { color: #a0aec0; font-size: 0.85rem; margin-bottom: 1.25rem; }
+
+    .posts-list { display: flex; flex-direction: column; }
+
+    .post-list-item {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.65rem 0.5rem;
+      border-bottom: 1px solid #f0f4f8;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 4px;
+      transition: background 0.12s;
+    }
+    .post-list-item:hover { background: #f7faf9; }
+
+    .pli-date {
+      color: #b0bec5;
+      font-size: 0.78rem;
+      white-space: nowrap;
+      min-width: 88px;
+      flex-shrink: 0;
+    }
+    .pli-title {
+      flex: 1;
+      color: #2d3748;
+      font-size: 0.92rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    .post-list-item:hover .pli-title { color: #2d6a4f; }
+
+    .pli-badge {
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+    .pli-badge.tutorial  { background: #ebf8ff; color: #2b6cb0; }
+    .pli-badge.tool      { background: #f0fff4; color: #276749; }
+    .pli-badge.career    { background: #fffaf0; color: #c05621; }
+    .pli-badge.hpc       { background: #faf5ff; color: #553c9a; }
+    .pli-badge.research  { background: #fff5f7; color: #97266d; }
+    .pli-badge.other     { background: #f7fafc; color: #718096; }
+
+    .no-results { text-align: center; padding: 3rem; color: #a0aec0; font-size: 1rem; display: none; }
+
+    @media (max-width: 600px) {
+      .pli-badge { display: none; }
+      .pli-date { min-width: 70px; font-size: 0.72rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -30,2139 +134,30 @@
 <section class="page-hero">
   <div class="container">
     <h1>Posts</h1>
-    <p>Thoughts on single-cell omics, bioinformatics workflows, and scientific consulting — originally shared on LinkedIn.</p>
+    <p>240 posts on single-cell omics, bioinformatics, HPC, and scientific consulting — originally shared on LinkedIn.</p>
   </div>
 </section>
 
 <section class="posts-section">
   <div class="container">
-    <div class="posts-grid">
 
-      <a href="posts/post19.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Single-Cell</span>
-          <span class="post-date">2023-10-26</span>
-        </div>
-        <h2 class="post-title">Spatial Transcriptomics & Multi-Omics Integration</h2>
-        <p class="post-summary">Exploring advanced spatial transcriptomics platforms and multi-modal integration for comprehensive tissue-level analysis.</p>
-      </a>
-
-      <a href="posts/post18.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2023-10-27</span>
-        </div>
-        <h2 class="post-title">Combining Annotation Columns: Using coalesce()</h2>
-        <p class="post-summary">Merge pre-annotated metadata columns from separate Seurat objects without NA values using coalesce().</p>
-      </a>
-
-      <a href="posts/post17.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Networking</span>
-          <span class="post-date">2023-11-03</span>
-        </div>
-        <h2 class="post-title">Following Leaders in Bioinformatics</h2>
-        <p class="post-summary">Acknowledging influential voices in the bioinformatics community who have shaped my understanding of data science.</p>
-      </a>
-
-      <a href="posts/post16.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2023-10-28</span>
-        </div>
-        <h2 class="post-title">Why Use identical() Instead of == in R?</h2>
-        <p class="post-summary">Avoid silent bugs by using identical() for strict comparisons instead of the vectorized == operator.</p>
-      </a>
-
-      <a href="posts/post15.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Comparison</span>
-          <span class="post-date">2023-10-31</span>
-        </div>
-        <h2 class="post-title">Linux Shell vs RStudio: Two Different Worlds</h2>
-        <p class="post-summary">Comparing the philosophies of command-line computing versus visual data science development.</p>
-      </a>
-
-      <a href="posts/post14.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2023-11-06</span>
-        </div>
-        <h2 class="post-title">cat(), print(), and message() in R</h2>
-        <p class="post-summary">Understand the differences between output functions in R for better logging in pipelines.</p>
-      </a>
-
-      <a href="posts/post13.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2023-11-07</span>
-        </div>
-        <h2 class="post-title">Single vs Double Brackets in R</h2>
-        <p class="post-summary">Learn when to use [[ ]] vs [ ] in R to avoid debugging hours in single-cell pipelines.</p>
-      </a>
-
-      <a href="posts/post12.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2023-11-08</span>
-        </div>
-        <h2 class="post-title">Error Handling: Use tryCatch()</h2>
-        <p class="post-summary">Don't let one missing gene stop your entire analysis—use tryCatch() to catch errors and continue.</p>
-      </a>
-
-      <a href="posts/post11.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Reflection</span>
-          <span class="post-date">2023-11-10</span>
-        </div>
-        <h2 class="post-title">Endothelial Cells: More Than Just Tubes</h2>
-        <p class="post-summary">Deep exploration reveals that endothelial cells are complex, dynamic actors in nearly every disease.</p>
-      </a>
-
-      <a href="posts/post10.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2023-11-14</span>
-        </div>
-        <h2 class="post-title">FeaturePlot Color Scales: Interpreting Zero Expression</h2>
-        <p class="post-summary">Be cautious with Seurat's FeaturePlot default color scaling—it may color cells even when expression is zero.</p>
-      </a>
-
-      <a href="posts/post9.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2023-11-20</span>
-        </div>
-        <h2 class="post-title">Understanding Algorithms: Go Beyond Tools</h2>
-        <p class="post-summary">Wet lab scientists should understand the algorithms behind computational methods like PCA and UMAP.</p>
-      </a>
-
-      <a href="posts/post8.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2023-11-28</span>
-        </div>
-        <h2 class="post-title">Excel Auto-Corrects Gene Names into Dates</h2>
-        <p class="post-summary">Beware: MARCH2 and MARCH3 get auto-corrected to 2-Mar and 3-Mar in Excel. Here's how to prevent it.</p>
-      </a>
-
-      <a href="posts/post7.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2023-12-05</span>
-        </div>
-        <h2 class="post-title">Choosing the Right Number of PCs in Seurat</h2>
-        <p class="post-summary">Use ElbowPlot to select the optimal number of principal components for robust single-cell analysis.</p>
-      </a>
-
-      <a href="posts/post6.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2023-12-12</span>
-        </div>
-        <h2 class="post-title">LinkedDimPlot: Interactive Spatial Visualization</h2>
-        <p class="post-summary">Explore spatial transcriptomics data interactively by comparing spatial locations with clustering plots.</p>
-      </a>
-
-      <a href="posts/post5.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2023-12-20</span>
-        </div>
-        <h2 class="post-title">FindSubCluster: Targeted Subclustering in Seurat</h2>
-        <p class="post-summary">Deep-dive into specific cell clusters for granular cell-type resolution without over-fragmentation.</p>
-      </a>
-
-      <a href="posts/post4.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2023-12-28</span>
-        </div>
-        <h2 class="post-title">SingleCorPlot: Visualizing Gene Correlations</h2>
-        <p class="post-summary">Explore gene-gene correlations in single-cell data using Seurat's SingleCorPlot function.</p>
-      </a>
-
-      <a href="posts/post3.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Single-Cell</span>
-          <span class="post-date">2024-01-05</span>
-        </div>
-        <h2 class="post-title">Rat Lung Atlas: 140K Cells at Unprecedented Resolution</h2>
-        <p class="post-summary">Introducing the most detailed single-cell RNA atlas of the rat lung with comprehensive mapping.</p>
-      </a>
-
-      <a href="posts/post2.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Science</span>
-          <span class="post-date">2024-05-20</span>
-        </div>
-        <h2 class="post-title">Science Ethics & Integrity: Quality Over Quantity</h2>
-        <p class="post-summary">Science should focus on discovery and relieving suffering, not accumulating papers or securing funding.</p>
-      </a>
-
-      <a href="posts/post1.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2024-07-18</span>
-        </div>
-        <h2 class="post-title">Don't Rush to Secure an Industry Job</h2>
-        <p class="post-summary">Take your time choosing the right industry role based on your vision, not just your skills.</p>
-      </a>
-
-      <a href="posts/post60.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Science</span>
-          <span class="post-date">2025-07-11</span>
-        </div>
-        <h2 class="post-title">"Coding Is Dead" — A Response to UW's CS Enrollment Drop</h2>
-        <p class="post-summary">Coding isn't dying — generic coding is changing. Biology + AI-assisted coding is more powerful than ever.</p>
-      </a>
-
-      <a href="posts/post59.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-07-09</span>
-        </div>
-        <h2 class="post-title">Work Smart with AI Tools — A Growth Mindset for Bioinformaticians</h2>
-        <p class="post-summary">Use AI as a multiplier, not a replacement. Always understand the code before deploying it.</p>
-      </a>
-
-      <a href="posts/post58.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-07-07</span>
-        </div>
-        <h2 class="post-title">Don't Just Learn Bioinformatics — Build Things</h2>
-        <p class="post-summary">Learning without building is like studying swimming from a book. Analyze real data, build real things.</p>
-      </a>
-
-      <a href="posts/post57.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-07-05</span>
-        </div>
-        <h2 class="post-title">Your Biology Background Helps You Steer Bioinformatics Better</h2>
-        <p class="post-summary">Biology knowledge is a multiplier — you ask better questions, catch biological nonsense faster.</p>
-      </a>
-
-      <a href="posts/post56.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-07-03</span>
-        </div>
-        <h2 class="post-title">You Become What You Do</h2>
-        <p class="post-summary">Academic life reflection: every analysis, paper, and function shapes who you become as a scientist.</p>
-      </a>
-
-      <a href="posts/post55.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-07-01</span>
-        </div>
-        <h2 class="post-title">Share Your R Library Across Computers with .libPaths() + OneDrive + robocopy</h2>
-        <p class="post-summary">Install once, use everywhere — set up a shared R library synced with OneDrive and robocopy.</p>
-      </a>
-
-      <a href="posts/post54.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-06-28</span>
-        </div>
-        <h2 class="post-title">RPCA Integration: Faster, Memory-Efficient Batch Correction in Seurat</h2>
-        <p class="post-summary">RPCA is 5-10x faster than CCA for large multi-sample datasets — use it for most integration tasks.</p>
-      </a>
-
-      <a href="posts/post53.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Reflection</span>
-          <span class="post-date">2025-06-25</span>
-        </div>
-        <h2 class="post-title">The Fishing Analogy for Seurat Workflow</h2>
-        <p class="post-summary">Explain scRNA-seq to anyone: sequencing = casting nets, QC = inspecting the catch, clustering = sorting fish species.</p>
-      </a>
-
-      <a href="posts/post52.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-06-20</span>
-        </div>
-        <h2 class="post-title">detach() vs unloadNamespace() — Free Memory from R Packages</h2>
-        <p class="post-summary">How to actually free RAM when done with large packages like Seurat — and when to just restart R.</p>
-      </a>
-
-      <a href="posts/post51.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-06-18</span>
-        </div>
-        <h2 class="post-title">Use table(useNA=) to Catch Hidden NAs in Seurat Metadata</h2>
-        <p class="post-summary">Silent NAs in cell metadata corrupt downstream analysis — always check with table(useNA="ifany").</p>
-      </a>
-
-      <a href="posts/post50.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-06-15</span>
-        </div>
-        <h2 class="post-title">rm() vs rm(list=) in R — Memory Management</h2>
-        <p class="post-summary">Programmatic removal of objects requires rm(list=), not rm(). Always follow with gc() for large objects.</p>
-      </a>
-
-      <a href="posts/post49.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-06-12</span>
-        </div>
-        <h2 class="post-title">Converting Seurat to Scanpy / AnnData Format</h2>
-        <p class="post-summary">Two reliable methods to convert R Seurat objects to Python AnnData format for Scanpy analysis.</p>
-      </a>
-
-      <a href="posts/post48.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-06-10</span>
-        </div>
-        <h2 class="post-title">Interactive SLURM Jobs with salloc — Debug on the Cluster</h2>
-        <p class="post-summary">Use salloc for interactive cluster sessions — debug large analyses in real-time instead of blind sbatch submissions.</p>
-      </a>
-
-      <a href="posts/post47.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-06-05</span>
-        </div>
-        <h2 class="post-title">Clean orig.ident Labels with substr() in Seurat</h2>
-        <p class="post-summary">Extract clean sample identifiers from messy orig.ident strings using substr(), gsub(), or sub().</p>
-      </a>
-
-      <a href="posts/post46.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-06-03</span>
-        </div>
-        <h2 class="post-title">From Wet Lab to Bioinformatics — My Transition Story</h2>
-        <p class="post-summary">Your biology knowledge is a superpower. The transition takes 18 months — but it's absolutely worth it.</p>
-      </a>
-
-      <a href="posts/post45.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-06-01</span>
-        </div>
-        <h2 class="post-title">Use (?i)mt- to Catch Mitochondrial Genes Across Species</h2>
-        <p class="post-summary">Case-insensitive regex (?i)^mt- works for both human (MT-) and mouse (mt-) mitochondrial genes.</p>
-      </a>
-
-      <a href="posts/post44.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-05-30</span>
-        </div>
-        <h2 class="post-title">Name Your Matrices Properly with sprintf() in R</h2>
-        <p class="post-summary">Zero-pad your matrix names with sprintf() — "Sample_01" sorts correctly, "Sample_1" doesn't.</p>
-      </a>
-
-      <a href="posts/post43.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-05-28</span>
-        </div>
-        <h2 class="post-title">R Markdown Chunk Options — The Ones I Use Most</h2>
-        <p class="post-summary">cache=TRUE, message=FALSE, warning=FALSE — the global settings that save the most time in scRNA-seq reports.</p>
-      </a>
-
-      <a href="posts/post42.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Single-Cell</span>
-          <span class="post-date">2025-05-24</span>
-        </div>
-        <h2 class="post-title">Single-Cell Lung Bias: Why Epithelial Cells Are Underrepresented</h2>
-        <p class="post-summary">Epithelial cells lyse during dissociation — a fundamental bias in lung scRNA-seq atlases you must know.</p>
-      </a>
-
-      <a href="posts/post41.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Reflection</span>
-          <span class="post-date">2025-05-22</span>
-        </div>
-        <h2 class="post-title">ATS 2025 Wrap-Up — What an Experience!</h2>
-        <p class="post-summary">Reflections from the American Thoracic Society 2025 conference in San Francisco.</p>
-      </a>
-
-      <a href="posts/post40.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-05-16</span>
-        </div>
-        <h2 class="post-title">paste() vs paste0() in R — Know the Difference</h2>
-        <p class="post-summary">paste() adds spaces by default; paste0() has no separator — a subtle difference that causes real bugs.</p>
-      </a>
-
-      <a href="posts/post39.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Publication</span>
-          <span class="post-date">2025-05-15</span>
-        </div>
-        <h2 class="post-title">Our 5 Abstracts at ATS 2025</h2>
-        <p class="post-summary">Single-cell RNA-seq work on lung disease presented at the American Thoracic Society 2025 conference.</p>
-      </a>
-
-      <a href="posts/post32.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Networking</span>
-          <span class="post-date">2025-05-10</span>
-        </div>
-        <h2 class="post-title">ATS 2025 — Connect with Me in San Francisco!</h2>
-        <p class="post-summary">Heading to ATS 2025 in San Francisco (May 16-21) — let's connect and talk single-cell lung research.</p>
-      </a>
-
-      <a href="posts/post38.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2024-12-02</span>
-        </div>
-        <h2 class="post-title">SNN Graph and Jaccard Similarity in Seurat Clustering</h2>
-        <p class="post-summary">The math behind Seurat's clustering: Jaccard similarity weights connections between cells in the SNN graph.</p>
-      </a>
-
-      <a href="posts/post37.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2024-11-28</span>
-        </div>
-        <h2 class="post-title">Verbose Levels in R: 0, 1, 2, 3 — What Do They Mean?</h2>
-        <p class="post-summary">Control output verbosity in Seurat and R functions — set verbose=FALSE in loops for cleaner scripts.</p>
-      </a>
-
-      <a href="posts/post36.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2024-11-25</span>
-        </div>
-        <h2 class="post-title">Understanding FindNeighbors() in Seurat</h2>
-        <p class="post-summary">A neighborhood metaphor: each cell is a house, FindNeighbors() finds who lives next door by gene expression.</p>
-      </a>
-
-      <a href="posts/post35.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2024-11-22</span>
-        </div>
-        <h2 class="post-title">Should You Use GAPDH for Normalization in scRNA-seq? No!</h2>
-        <p class="post-summary">GAPDH fails in scRNA-seq due to dropout — use library size normalization or SCTransform instead.</p>
-      </a>
-
-      <a href="posts/post34.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2024-11-20</span>
-        </div>
-        <h2 class="post-title">Reactome vs GO vs KEGG — Which Pathway Database?</h2>
-        <p class="post-summary">GO for discovery, KEGG for metabolic context, Reactome for mechanistic detail — run all three and compare.</p>
-      </a>
-
-      <a href="posts/post33.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2024-11-17</span>
-        </div>
-        <h2 class="post-title">PCA Alternatives in scRNA-seq: NMF, ICA, LDA, VAE, FA</h2>
-        <p class="post-summary">Beyond PCA: when to use NMF, ICA, LDA, VAE, or Factor Analysis for single-cell dimensionality reduction.</p>
-      </a>
-
-      <a href="posts/post31.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2024-11-14</span>
-        </div>
-        <h2 class="post-title">What Are Eigenvalues in PCA?</h2>
-        <p class="post-summary">Eigenvalue = variance explained by each PC — use the elbow plot to find the optimal cutoff for clustering.</p>
-      </a>
-
-      <a href="posts/post30.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2024-11-12</span>
-        </div>
-        <h2 class="post-title">Matrix Factorization in scRNA-seq — Parts 1 &amp; 2</h2>
-        <p class="post-summary">From PCA to NMF to VAE — how matrix factorization compresses and interprets high-dimensional single-cell data.</p>
-      </a>
-
-      <a href="posts/post29.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2024-11-10</span>
-        </div>
-        <h2 class="post-title">Customize Your R Startup with .Rprofile</h2>
-        <p class="post-summary">Auto-load packages, set options, and create shortcuts that run every time R starts.</p>
-      </a>
-
-      <a href="posts/post28.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2024-11-09</span>
-        </div>
-        <h2 class="post-title">Can't Remember an R Function Name? Use apropos()</h2>
-        <p class="post-summary">Search all loaded packages for functions matching a pattern — perfect when you know what it does but not its name.</p>
-      </a>
-
-      <a href="posts/post27.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2024-11-08</span>
-        </div>
-        <h2 class="post-title">AUCell vs UCell for Gene Set Scoring in scRNA-seq</h2>
-        <p class="post-summary">AUCell for SCENIC workflows and large regulons; UCell for quick Seurat integration and exploratory analysis.</p>
-      </a>
-
-      <a href="posts/post26.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2024-11-05</span>
-        </div>
-        <h2 class="post-title">Sparse vs Dense Matrices in Single-Cell RNA-seq</h2>
-        <p class="post-summary">90-95% of scRNA-seq data is zeros — use dgCMatrix sparse format to save 10x memory over dense matrices.</p>
-      </a>
-
-      <a href="posts/post25.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2024-11-04</span>
-        </div>
-        <h2 class="post-title">BPCells + Seurat v5: Process 10 Million Cells Without Crashing R</h2>
-        <p class="post-summary">BPCells keeps data on disk, not RAM — process 10M+ cells on a standard laptop with Seurat v5.</p>
-      </a>
-
-      <a href="posts/post24.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Single-Cell</span>
-          <span class="post-date">2024-11-03</span>
-        </div>
-        <h2 class="post-title">Is R Too Slow for Single-Cell Analysis? Seurat vs Scanpy</h2>
-        <p class="post-summary">It's not R vs Python — it's how each tool uses its strengths. Seurat is improving; Scanpy is faster by design.</p>
-      </a>
-
-      <a href="posts/post23.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2024-11-02</span>
-        </div>
-        <h2 class="post-title">List All Seurat Objects in R with Filter()</h2>
-        <p class="post-summary">One-liner to get all Seurat objects in your environment: Filter(\(x) inherits(get(x), "Seurat"), ls())</p>
-      </a>
-
-      <a href="posts/post22.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Single-Cell</span>
-          <span class="post-date">2024-11-02</span>
-        </div>
-        <h2 class="post-title">Amazing News for R Single-Cell Users!</h2>
-        <p class="post-summary">A teaser for exciting news coming tomorrow at 9:06 AM EST for the R single-cell community.</p>
-      </a>
-
-      <a href="posts/post21.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2024-11-01</span>
-        </div>
-        <h2 class="post-title">inherits() vs is() in R — Why It Matters in Seurat</h2>
-        <p class="post-summary">Use inherits(x, "Seurat") not class(x) == "Seurat" — Seurat objects have multiple classes.</p>
-      </a>
-
-      <a href="posts/post20.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2024-10-31</span>
-        </div>
-        <h2 class="post-title">Avoid Plotting Errors in Seurat with tryCatch()</h2>
-        <p class="post-summary">Wrap FeaturePlot() in tryCatch() so one bad gene name doesn't crash your entire visualization loop.</p>
-      </a>
-
-      <a href="posts/post61.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-05-10</span>
-        </div>
-        <h2 class="post-title">Domain Knowledge Is Your Superpower in Bioinformatics</h2>
-        <p class="post-summary">AI can help you write code, but domain knowledge is what lets you judge whether the results are biologically meaningful.</p>
-      </a>
-
-      <a href="posts/post62.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-05-11</span>
-        </div>
-        <h2 class="post-title">FetchData() vs. GetAssayData() in Seurat</h2>
-        <p class="post-summary">FetchData() returns a data frame for a few genes; GetAssayData() returns the full sparse matrix — know when to use each.</p>
-      </a>
-
-      <a href="posts/post63.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Reflection</span>
-          <span class="post-date">2025-05-15</span>
-        </div>
-        <h2 class="post-title">What Experience in Single-Cell Bioinformatics Really Means</h2>
-        <p class="post-summary">From wet lab origins to trusted reusable code — what it looks like when familiarity replaces hesitation in scRNA-seq analysis.</p>
-      </a>
-
-      <a href="posts/post64.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-05-17</span>
-        </div>
-        <h2 class="post-title">Don't Confuse Doublets or Mixture of Barcodes as Transitional Cells</h2>
-        <p class="post-summary">Five practical approaches to distinguish doublets from true transitional cell states in single-cell RNA-seq data.</p>
-      </a>
-
-      <a href="posts/post65.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-05-18</span>
-        </div>
-        <h2 class="post-title">Don't Chase Every New Bioinformatics Package — Master What You Know</h2>
-        <p class="post-summary">Using Seurat for 90% of single-cell work isn't being behind — it's having a tool you can debug, reshape, and adapt without hesitation.</p>
-      </a>
-
-      <a href="posts/post66.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-05-20</span>
-        </div>
-        <h2 class="post-title">tar.gz Is a Data Survival Strategy in Computational Biology</h2>
-        <p class="post-summary">Compressing 5TB of single-cell data with tar.gz before sending to SDA solved constant HPSS_EBUSY transfer errors.</p>
-      </a>
-
-      <a href="posts/post67.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-05-22</span>
-        </div>
-        <h2 class="post-title">AWS S3 and EC2 for Bioinformatics</h2>
-        <p class="post-summary">S3 for unlimited genomics storage and EC2 for on-demand compute — an intro to AWS for bioinformaticians handling terabyte-scale data.</p>
-      </a>
-
-      <a href="posts/post68.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-05-23</span>
-        </div>
-        <h2 class="post-title">Running Out of Storage? It Might Be FILES, Not SPACE</h2>
-        <p class="post-summary">Hitting the inode (file count) limit with 13% disk usage — why HPC filesystems have file quotas and how to work around them.</p>
-      </a>
-
-      <a href="posts/post69.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-06-01</span>
-        </div>
-        <h2 class="post-title">Not Every Closed Door Is a Loss — Some Rejections Are Redirections</h2>
-        <p class="post-summary">A researcher rejected by his dream lab ended up analyzing data for that same lab years later — through his own clients.</p>
-      </a>
-
-      <a href="posts/post70.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Science</span>
-          <span class="post-date">2025-06-02</span>
-        </div>
-        <h2 class="post-title">40% of Expected NIH Cut Reversed</h2>
-        <p class="post-summary">Good news: 40% of the expected NIH cut is reversed and the budget is recommended to boost by $400 million.</p>
-      </a>
-
-      <a href="posts/post71.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Science</span>
-          <span class="post-date">2025-06-03</span>
-        </div>
-        <h2 class="post-title">H-1B Visas and U.S. College Grads — A Closer Look</h2>
-        <p class="post-summary">Are H-1B visa holders displacing U.S. college graduates in tech, or filling genuine skill gaps? The debate intensifies.</p>
-      </a>
-
-      <a href="posts/post72.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Reflection</span>
-          <span class="post-date">2025-06-04</span>
-        </div>
-        <h2 class="post-title">#RealPostdoc_Stories 1: Back to the Darkroom — in 2023!</h2>
-        <p class="post-summary">Discovering scanned film-based Western blot images from 2023 brought back memories of old-school lab methods that still command respect.</p>
-      </a>
-
-      <a href="posts/post73.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-06-04</span>
-        </div>
-        <h2 class="post-title">You Cannot Imagine How Important It Is to Like Your Job</h2>
-        <p class="post-summary">Take baby steps toward work you love — one step opens your motivation gates, and life starts reflecting your dream back to you.</p>
-      </a>
-
-      <a href="posts/post74.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Publication</span>
-          <span class="post-date">2025-06-05</span>
-        </div>
-        <h2 class="post-title">Publication: Single-Cell Transcriptomic Insights in Pulmonary Hypertension</h2>
-        <p class="post-summary">Sharing a project on single-cell transcriptomic insights in pulmonary hypertension progression and therapeutic response to anaplerosis inhibition.</p>
-      </a>
-
-      <a href="posts/post75.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Publication</span>
-          <span class="post-date">2025-06-05</span>
-        </div>
-        <h2 class="post-title">Publication: Single-Cell Transcriptomic Dissection of GLUT4-Driven Pulmonary Hypertension</h2>
-        <p class="post-summary">Sharing a project on single-cell transcriptomic dissection of GLUT4-driven pulmonary hypertension.</p>
-      </a>
-
-      <a href="posts/post76.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-06-10</span>
-        </div>
-        <h2 class="post-title">kinit and Kerberos Authentication for HPC Data Transfer</h2>
-        <p class="post-summary">A Q&amp;A dive into kinit, Kerberos, TGTs, principals, and klist — everything needed to access SDA for large single-cell data transfers.</p>
-      </a>
-
-      <a href="posts/post77.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Reflection</span>
-          <span class="post-date">2025-06-15</span>
-        </div>
-        <h2 class="post-title">Certificate of Appreciation from SHtSBiB 2025</h2>
-        <p class="post-summary">Received a Certificate of Appreciation for the talk "Let Your Passion Shape You: My Journey to Single-Cell RNA Sequencing" at SHtSBiB 2025.</p>
-      </a>
-
-      <a href="posts/post78.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-06-17</span>
-        </div>
-        <h2 class="post-title">Extending Kerberos Ticket Lifetime for Long Data Transfers</h2>
-        <p class="post-summary">Use kinit -l 24h -r 72h to set ticket lifetime to 24 hours instead of the default 1 hour — stopping genomics transfer failures mid-process.</p>
-      </a>
-
-      <a href="posts/post79.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-06-18</span>
-        </div>
-        <h2 class="post-title">Why Bundle Files into .tar.gz Before Storing Them</h2>
-        <p class="post-summary">Thousands of tiny files eat up inode quota and slow filesystems — bundling into .tar.gz cuts metadata overhead and speeds up transfers.</p>
-      </a>
-
-      <a href="posts/post80.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-06-19</span>
-        </div>
-        <h2 class="post-title">du -sh vs du -sh --apparent-size on HPC Scratch Filesystems</h2>
-        <p class="post-summary">A file showing 26 GB after copying from 15 GB isn't corrupted — scratch filesystems report allocated blocks, not logical size. Use --apparent-size.</p>
-      </a>
-
-      <a href="posts/post81.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-06-20</span>
-        </div>
-        <h2 class="post-title">Factor vs Level in Seurat — The Chess Analogy</h2>
-        <p class="post-summary">Factor = the whole chess set, levels = the piece types. Reordering levels in Seurat changes legend order, color assignment, and axis order.</p>
-      </a>
-
-      <a href="posts/post82.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Publication</span>
-          <span class="post-date">2025-07-01</span>
-        </div>
-        <h2 class="post-title">Publication: CDK5-Mediated EndMT — A Single-Cell Perspective in Pulmonary Hypertension</h2>
-        <p class="post-summary">Sharing a single-cell transcriptomic project on CDK5-mediated endothelial-to-mesenchymal transition in pulmonary hypertension.</p>
-      </a>
-
-      <a href="posts/post83.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-07-05</span>
-        </div>
-        <h2 class="post-title">Species Gene Nomenclature Mismatch in Human–Rat Single-Cell Integration</h2>
-        <p class="post-summary">Hours lost chasing an "Assay5" Seurat error — the real problem was mixing human (PF4) and rat (Pf4) gene symbols before anchoring.</p>
-      </a>
-
-      <a href="posts/post84.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-07-06</span>
-        </div>
-        <h2 class="post-title">Regex in R and Single-Cell Analysis</h2>
-        <p class="post-summary">Regex is everywhere in scRNA-seq — from ^MT- for mitochondrial genes to barcode filtering and metadata wrangling. Build mindfulness, not memorization.</p>
-      </a>
-
-      <a href="posts/post85.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-07-06</span>
-        </div>
-        <h2 class="post-title">Being Active on LinkedIn Doesn't Mean You Don't Work</h2>
-        <p class="post-summary">Thoughts on what active LinkedIn presence actually means for researchers and how others perceive it.</p>
-      </a>
-
-      <a href="posts/post86.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-07-07</span>
-        </div>
-        <h2 class="post-title">How to Quickly Recognize GEO and SRA Accession IDs</h2>
-        <p class="post-summary">GSE, GSM, SRP, SRX, SRR, SAMN, PRJNA — a quick guide to reading public genomics database IDs at a glance.</p>
-      </a>
-
-      <a href="posts/post87.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-07-08</span>
-        </div>
-        <h2 class="post-title">droplevels() to Remove Unused Factor Levels in Seurat</h2>
-        <p class="post-summary">After subsetting a Seurat object, empty groups still show up in table(). droplevels() discards those unused factor levels. Easy peasy.</p>
-      </a>
-
-      <a href="posts/post88.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-07-09</span>
-        </div>
-        <h2 class="post-title">scDblFinder() Parameters for Better Doublet Detection</h2>
-        <p class="post-summary">clusters, clustCor, and samples parameters improve doublet-calling accuracy — but real-world UMAP separation may still disappoint.</p>
-      </a>
-
-      <a href="posts/post89.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-07-10</span>
-        </div>
-        <h2 class="post-title">The Ellipsis (...) in R — Stop Rewriting Function Arguments</h2>
-        <p class="post-summary">The "..." ellipsis is a placeholder for any number of additional arguments — use it in wrapper functions to avoid rewriting the same parameters.</p>
-      </a>
-
-      <a href="posts/post90.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-07-11</span>
-        </div>
-        <h2 class="post-title">Nextflow — Turning Single-Cell Pipelines into Reproducible Workflows</h2>
-        <p class="post-summary">Nextflow replaces scattered manual scripts with orchestrated, reproducible, scalable workflows — essential for modern data-driven biology.</p>
-      </a>
-
-      <a href="posts/post91.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-07-12</span>
-        </div>
-        <h2 class="post-title">Understanding PCA Eigenvalues in Single-Cell RNA-seq — Q&amp;A</h2>
-        <p class="post-summary">Eigenvalues, variance explained, ElbowPlot, ScreePlot, DimHeatmap — a Q&amp;A breakdown of PCA concepts that often confuse scRNA-seq users.</p>
-      </a>
-
-      <a href="posts/post92.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-07-13</span>
-        </div>
-        <h2 class="post-title">Robust Annotation in Single Cell Might Pave the Way for Discoveries</h2>
-        <p class="post-summary">There's no free bread in single-cell annotation — check markers, cross-reference atlases, iterate. A mystery cluster might be your next R01.</p>
-      </a>
-
-      <a href="posts/post93.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-07-14</span>
-        </div>
-        <h2 class="post-title">Shell Tip — Stop Repeating Yourself with Variables ($VAR vs ${VAR})</h2>
-        <p class="post-summary">Store repeated strings in bash variables. Use ${VAR} instead of $VAR when the variable sits next to other text to avoid ambiguity.</p>
-      </a>
-
-      <a href="posts/post94.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-07-14</span>
-        </div>
-        <h2 class="post-title">Shell Tip — Single vs Double Quotes and Variable Expansion</h2>
-        <p class="post-summary">Double quotes expand variables; single quotes treat everything literally. This small difference prevents a lot of scripting headaches.</p>
-      </a>
-
-      <a href="posts/post95.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-07-15</span>
-        </div>
-        <h2 class="post-title">AggregateExpression() in Seurat — Summarizing Single-Cell Data</h2>
-        <p class="post-summary">AggregateExpression() collapses single-cell expression to mean, sum, median, max, or min — purpose-built for sparse matrices and Seurat metadata.</p>
-      </a>
-
-      <a href="posts/post96.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Single-Cell</span>
-          <span class="post-date">2025-07-16</span>
-        </div>
-        <h2 class="post-title">Single-Cell RNA-seq Metadata Tips</h2>
-        <p class="post-summary">Tips on managing metadata in single-cell RNA-seq workflows.</p>
-      </a>
-
-      <a href="posts/post97.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Science</span>
-          <span class="post-date">2025-07-17</span>
-        </div>
-        <h2 class="post-title">Science Is a Dynamic Journey — Be Open to New Hypotheses</h2>
-        <p class="post-summary">True scientific growth means acknowledging your route might not be correct — and having the courage to pivot. That's not failure, that's discovery.</p>
-      </a>
-
-      <a href="posts/post98.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-07-18</span>
-        </div>
-        <h2 class="post-title">Why Every FASTQ Needs an MD5 Checksum</h2>
-        <p class="post-summary">MD5 is the fingerprint that proves your FASTQ files arrived intact — generate with certutil (Windows) or md5sum (Linux/Mac) before submitting to GEO/SRA.</p>
-      </a>
-
-      <a href="posts/post99.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-07-18</span>
-        </div>
-        <h2 class="post-title">Automating Repetitive Metadata Submissions for GEO and SRA</h2>
-        <p class="post-summary">FillaZilla auto-populates submission forms using predefined templates or CSV files — cutting copy-paste fatigue when submitting metadata for scRNA-seq datasets.</p>
-      </a>
-
-      <a href="posts/post100.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-11-01</span>
-        </div>
-        <h2 class="post-title">Don't Push Everything to GitHub — Use .gitignore</h2>
-        <p class="post-summary">Create a .gitignore file to tell Git which files and folders to skip — keeping your GitHub repo clean, secure, and lightweight.</p>
-      </a>
-
-      <a href="posts/post101.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-11-01</span>
-        </div>
-        <h2 class="post-title">Open Current Directory in File Explorer with One Command</h2>
-        <p class="post-summary">Type "start ." in Windows Command Prompt to instantly open the current folder in File Explorer — no clicking, no searching.</p>
-      </a>
-
-      <a href="posts/post102.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-11-01</span>
-        </div>
-        <h2 class="post-title">Quick R Tip — Locate Your Installed Packages Easily</h2>
-        <p class="post-summary">Use .libPaths() to see all R library paths and find.package("Seurat") to pinpoint where a specific package is installed.</p>
-      </a>
-
-      <a href="posts/post103.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-11-01</span>
-        </div>
-        <h2 class="post-title">Simplifying Paths — The Power of shortPathName() in R</h2>
-        <p class="post-summary">shortPathName() converts long Windows paths with spaces and brackets into clean 8.3 format — fixing silent R path errors instantly.</p>
-      </a>
-
-      <a href="posts/post104.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-11-01</span>
-        </div>
-        <h2 class="post-title">R's %||% Operator — Clean Default Assignment</h2>
-        <p class="post-summary">The %||% operator works like JavaScript's ?? — if the left side is NULL, use the right side. Perfect for Seurat pipeline defaults.</p>
-      </a>
-
-      <a href="posts/post105.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-10-15</span>
-        </div>
-        <h2 class="post-title">setNames() — Dynamic Naming for Seurat Object Lists</h2>
-        <p class="post-summary">Use setNames(obj_list, sample_names) to dynamically name Seurat object lists instead of manually typing names for dozens of samples.</p>
-      </a>
-
-      <a href="posts/post106.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-10-15</span>
-        </div>
-        <h2 class="post-title">grep --include Syntax: That Sneaky Space Bug</h2>
-        <p class="post-summary">A single space between --include and = breaks grep completely. --include="*.sh" works; --include = "*.sh" fails with a misleading error.</p>
-      </a>
-
-      <a href="posts/post107.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-10-15</span>
-        </div>
-        <h2 class="post-title">Submit 16 SLURM Jobs with a for Loop</h2>
-        <p class="post-summary">How to batch-submit 16 single-cell SLURM jobs using a for loop on a Linux HPC cluster — with correct {1..16} brace expansion syntax.</p>
-      </a>
-
-      <a href="posts/post108.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-10-15</span>
-        </div>
-        <h2 class="post-title">R's gl() Function — Generate Factor Levels for Grouping Data</h2>
-        <p class="post-summary">gl() generates factor level vectors for splitting datasets into groups — no for loop needed, perfect for labeling batches and replicates.</p>
-      </a>
-
-      <a href="posts/post109.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-10-15</span>
-        </div>
-        <h2 class="post-title">Stop Worrying About AI — Start Living the Present!</h2>
-        <p class="post-summary">Your energy belongs to the present. Focus on doing your best today — worry about AI taking jobs is a distraction from what matters now.</p>
-      </a>
-
-      <a href="posts/post110.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-10-15</span>
-        </div>
-        <h2 class="post-title">tar Broken Pipe Error — The Sneaky Extra Slash</h2>
-        <p class="post-summary">An extra slash after the archive filename (ILMN_9999.tar.gz/) makes tar treat it as a directory, causing a broken pipe error.</p>
-      </a>
-
-      <a href="posts/post111.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-10-01</span>
-        </div>
-        <h2 class="post-title">-r vs -R in Linux: Does It Follow Symbolic Links?</h2>
-        <p class="post-summary">-r searches real folders only; -R also dives into symbolic links. One capital letter changes how far your recursive command travels.</p>
-      </a>
-
-      <a href="posts/post112.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-10-01</span>
-        </div>
-        <h2 class="post-title">Stop Rerunning Your SLURM Jobs — Start Resuming Them with Nextflow</h2>
-        <p class="post-summary">Nextflow lets you resume a failed SLURM pipeline exactly where it stopped — no need to rerun everything from scratch after a cluster timeout.</p>
-      </a>
-
-      <a href="posts/post113.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-10-01</span>
-        </div>
-        <h2 class="post-title">CORS Error Fix — Run a Local Web Server with Python</h2>
-        <p class="post-summary">Opening HTML via file:// triggers CORS errors. Fix it instantly: python -m http.server 8000, then visit http://localhost:8000.</p>
-      </a>
-
-      <a href="posts/post114.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-10-01</span>
-        </div>
-        <h2 class="post-title">Understanding defer in JavaScript</h2>
-        <p class="post-summary">The defer attribute tells the browser to download a script but wait until the entire page loads before running it — preventing "element not found" errors.</p>
-      </a>
-
-      <a href="posts/post115.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-10-01</span>
-        </div>
-        <h2 class="post-title">Modern JavaScript: export vs window</h2>
-        <p class="post-summary">window makes things globally visible everywhere; export/import gives you modular, maintainable code. Explicit beats implicit as projects scale.</p>
-      </a>
-
-      <a href="posts/post116.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-10-01</span>
-        </div>
-        <h2 class="post-title">Why Your Imported Functions Sometimes Don't Highlight in VS Code</h2>
-        <p class="post-summary">VS Code dims unused imports automatically — it's not a bug. Faded color means the import was never actually called in that module.</p>
-      </a>
-
-      <a href="posts/post117.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-10-01</span>
-        </div>
-        <h2 class="post-title">Understanding the DOM — The Real Engine Behind Every Webpage</h2>
-        <p class="post-summary">The browser converts HTML into a live tree of JavaScript objects (the DOM) — that's what JavaScript actually manipulates, not raw HTML text.</p>
-      </a>
-
-      <a href="posts/post118.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-10-01</span>
-        </div>
-        <h2 class="post-title">The Most Efficient Learning Method</h2>
-        <p class="post-summary">Most efficient learning method is to do something that you like!!! This is the key for success…</p>
-      </a>
-
-      <a href="posts/post119.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-10-01</span>
-        </div>
-        <h2 class="post-title">Aspera Connect vs FileZilla — A Two-Day Upload Battle I Finally Won</h2>
-        <p class="post-summary">FileZilla estimated 2 weeks to upload 200 GB of spatial transcriptomics data. Aspera Connect uploaded it in a couple of hours — for free.</p>
-      </a>
-
-      <a href="posts/post120.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-15</span>
-        </div>
-        <h2 class="post-title">onclick vs addEventListener — Know the Difference</h2>
-        <p class="post-summary">onclick allows only one handler — the second overwrites the first. addEventListener stacks unlimited handlers safely. Modern JS always prefers addEventListener.</p>
-      </a>
-
-      <a href="posts/post121.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-15</span>
-        </div>
-        <h2 class="post-title">Importance of Order in Ternary Operators</h2>
-        <p class="post-summary">Order matters in ternary operators — a lesson in Java Language with a practical scoring example.</p>
-      </a>
-
-      <a href="posts/post122.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Bioinformatics</span>
-          <span class="post-date">2025-09-15</span>
-        </div>
-        <h2 class="post-title">Seurat "Subscript Out of Bounds" — What It Really Means</h2>
-        <p class="post-summary">This Seurat error simply means you asked for something the object doesn't have — a reduction, metadata column, gene, or assay that doesn't exist.</p>
-      </a>
-
-      <a href="posts/post123.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Post</span>
-          <span class="post-date">2025-09-15</span>
-        </div>
-        <h2 class="post-title">LinkedIn Post</h2>
-        <p class="post-summary">This post is currently unavailable on LinkedIn.</p>
-      </a>
-
-      <a href="posts/post124.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Bioinformatics</span>
-          <span class="post-date">2025-09-15</span>
-        </div>
-        <h2 class="post-title">Doublets vs Transitional States in Single-Cell RNA-seq</h2>
-        <p class="post-summary">Is that ambiguous cluster a technical doublet or a genuine transitional cell state? Careful judgment, multiple tools, and biological context are essential.</p>
-      </a>
-
-      <a href="posts/post125.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-01</span>
-        </div>
-        <h2 class="post-title">JavaScript Dynamic Object Properties — Comparing to R</h2>
-        <p class="post-summary">In JavaScript you can add properties to objects at any time without declaring them first — a powerful flexibility that feels unusual coming from R.</p>
-      </a>
-
-      <a href="posts/post126.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-01</span>
-        </div>
-        <h2 class="post-title">Windows + R: Why Your File Paths Break</h2>
-        <p class="post-summary">Pasting Windows paths into R breaks because \ is a special character. Fix: use forward slashes (C:/Users/...) or file.path() instead.</p>
-      </a>
-
-      <a href="posts/post127.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-01</span>
-        </div>
-        <h2 class="post-title">Higher-Order Functions in R and JavaScript</h2>
-        <p class="post-summary">Higher-order functions take other functions as input — like map() in JS and sapply() in R. You've used them; now you know their name.</p>
-      </a>
-
-      <a href="posts/post128.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-01</span>
-        </div>
-        <h2 class="post-title">Function Factories in R and JavaScript</h2>
-        <p class="post-summary">A function factory returns another function — one factory creates many specialized functions, like make_multiplier(2) returning a doubling function.</p>
-      </a>
-
-      <a href="posts/post129.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-01</span>
-        </div>
-        <h2 class="post-title">Method Chaining in JavaScript</h2>
-        <p class="post-summary">Each method returns "this", allowing multiple actions to chain in one line — a clean, expressive pattern used in jQuery, animation libraries, and fluent APIs.</p>
-      </a>
-
-      <a href="posts/post130.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-01</span>
-        </div>
-        <h2 class="post-title">Template Literals Make Strings Cleaner in JavaScript</h2>
-        <p class="post-summary">Backtick strings support ${variable} interpolation and multiline text naturally — no more messy + concatenation or \n escape sequences.</p>
-      </a>
-
-      <a href="posts/post131.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-01</span>
-        </div>
-        <h2 class="post-title">JavaScript indexOf() Explained Simply</h2>
-        <p class="post-summary">indexOf() returns the position of a substring (or -1 if not found) and is case-sensitive. Simple, fast, useful in everyday JavaScript.</p>
-      </a>
-
-      <a href="posts/post132.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-01</span>
-        </div>
-        <h2 class="post-title">innerText vs textContent vs innerHTML</h2>
-        <p class="post-summary">innerText = visible text; textContent = all text including hidden; innerHTML = raw HTML markup. Never use innerHTML with user input — it's dangerous.</p>
-      </a>
-
-      <a href="posts/post133.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-09-02</span>
-        </div>
-        <h2 class="post-title">You Cannot Truly Master Many Things at the Same Time</h2>
-        <p class="post-summary">True mastery takes time, consistency, and questioning core principles. Discovery without understanding the underlying methods is rarely sustainable.</p>
-      </a>
-
-      <a href="posts/post134.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-03</span>
-        </div>
-        <h2 class="post-title">What's Inside a Python Virtual Environment?</h2>
-        <p class="post-summary">Python venv creates 3 folders (Include, Lib, Scripts) and one config file (pyvenv.cfg). Understanding the structure helps with debugging and reproducibility.</p>
-      </a>
-
-      <a href="posts/post135.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-04</span>
-        </div>
-        <h2 class="post-title">Never Save Project Files Inside Your Python Environment</h2>
-        <p class="post-summary">Environments are disposable and git-ignored. Keep notebooks, scripts, and data alongside your environment — not inside it. Small habit, big long-term payoff.</p>
-      </a>
-
-      <a href="posts/post136.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-05</span>
-        </div>
-        <h2 class="post-title">Jupyter Notebooks vs VS Code — I Was Wrong</h2>
-        <p class="post-summary">VS Code is an IDE; Jupyter is a Python app that runs in your browser. VS Code connects to Jupyter but is not Jupyter itself.</p>
-      </a>
-
-      <a href="posts/post137.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-06</span>
-        </div>
-        <h2 class="post-title">Need the Arrow Package to Load Visium HD Spatial Parquet Files</h2>
-        <p class="post-summary">Getting "Please install arrow to read parquet files" error when loading Visium HD spatial data in Seurat? Install the arrow package to fix it.</p>
-      </a>
-
-      <a href="posts/post138.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-09-07</span>
-        </div>
-        <h2 class="post-title">Split Large Files with 7-Zip, Transfer Chunks, Merge with cat</h2>
-        <p class="post-summary">Dealing with huge file transfers on unstable connections? Split with 7-Zip into chunks, transfer one by one, then merge at the destination with cat.</p>
-      </a>
-
-      <a href="posts/post139.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-08</span>
-        </div>
-        <h2 class="post-title">JavaScript Has No Separate Number Types — No Float, Double, or Int</h2>
-        <p class="post-summary">In JavaScript, all numbers — integers, decimals, negatives, Infinity, NaN — are the same "number" type. No float/double/int distinction like Java or C.</p>
-      </a>
-
-      <a href="posts/post140.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-09-09</span>
-        </div>
-        <h2 class="post-title">diff() in R and Seurat's Sparse Matrix @p Slot Explained</h2>
-        <p class="post-summary">The @p slot stores cumulative edge positions. diff(@p) gives neighbors per cell. A thread explaining how this simple function unlocks graph structure in Seurat.</p>
-      </a>
-
-      <a href="posts/post141.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-10</span>
-        </div>
-        <h2 class="post-title">Python Is a Weird Language — How Functions End Across Languages</h2>
-        <p class="post-summary">Curly braces (R, JS, C), keywords (Bash, Ruby), or indentation (Python only). Python forces good formatting — misalignment equals a syntax error.</p>
-      </a>
-
-      <a href="posts/post142.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-11</span>
-        </div>
-        <h2 class="post-title">Seurat DotPlot — split.by vs group.by Pitfall</h2>
-        <p class="post-summary">split.by doesn't recompute expression scales per condition, causing distorted visuals. Use paste() to predefine groups and group.by for safer comparisons.</p>
-      </a>
-
-      <a href="posts/post143.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-09-12</span>
-        </div>
-        <h2 class="post-title">Seurat Sparse Matrix i, p, x — CSC Format Explained</h2>
-        <p class="post-summary">dgCMatrix stores only non-zero values using x (values), i (row indices), and p (column pointers). A 6-part thread explaining why Seurat uses sparse format.</p>
-      </a>
-
-      <a href="posts/post144.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-09-13</span>
-        </div>
-        <h2 class="post-title">UMAP Clustering vs PCA Clustering — Why Visuals Can Mislead</h2>
-        <p class="post-summary">UMAP looks tighter but is biologically less accurate. Use PCA-based clustering for accuracy; UMAP only for plotting. Don't let visualization drive biology.</p>
-      </a>
-
-      <a href="posts/post145.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-09-14</span>
-        </div>
-        <h2 class="post-title">Basics Matter — Vibe Coding Without Understanding Leads to a Dead End</h2>
-        <p class="post-summary">Like chess: copying moves without understanding leads to a dead end. Understanding keeps you motivated, robust, and able to enjoy the process.</p>
-      </a>
-
-      <a href="posts/post146.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-09-15</span>
-        </div>
-        <h2 class="post-title">FindNeighbors() — RNA_nn and RNA_snn Explained</h2>
-        <p class="post-summary">RNA_nn stores k-nearest neighbors (raw proximity). RNA_snn stores shared neighbors via Jaccard index (shared structure). SNN is what FindClusters() uses.</p>
-      </a>
-
-      <a href="posts/post147.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-09-16</span>
-        </div>
-        <h2 class="post-title">Two Concerns About AI Agents — Repetition and Biology</h2>
-        <p class="post-summary">Without hands-on repetition, you can use AI but not digest it. And in biology, AI only knows what's already discovered — polishing our minds still matters.</p>
-      </a>
-
-      <a href="posts/post148.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-09-17</span>
-        </div>
-        <h2 class="post-title">UMAP Subsets Can Create False Structure — Always Map Back to Original</h2>
-        <p class="post-summary">Subclustered cells that form a clean island may scatter across the original UMAP. Always cross-check against the original embedding and biological plausibility.</p>
-      </a>
-
-      <a href="posts/post149.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-09-18</span>
-        </div>
-        <h2 class="post-title">AI Doing the Job vs AI Under Your Supervision</h2>
-        <p class="post-summary">Getting AI to do your job is like winning the lottery — you don't appreciate it. Earning less but understanding every step is where real growth lives.</p>
-      </a>
-
-      <a href="posts/post150.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-19</span>
-        </div>
-        <h2 class="post-title">FindSubCluster() in Seurat for Targeted Subclustering</h2>
-        <p class="post-summary">FindSubCluster() lets you subcluster only one cluster without changing global resolution — perfect for digging into a T-cell subpopulation without fragmenting everything else.</p>
-      </a>
-
-      <a href="posts/post151.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-09-20</span>
-        </div>
-        <h2 class="post-title">Mouse vs Rat Species Identification from Gene Names</h2>
-        <p class="post-summary">Use hemoglobin (Hba-a2), olfactory pseudogenes (-ps1), prolactin family, and Igkv gene counts to distinguish mouse from rat scRNA-seq data by gene names alone.</p>
-      </a>
-
-      <a href="posts/post152.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-21</span>
-        </div>
-        <h2 class="post-title">Seurat DotPlot Legend Order Swaps — Fix with guides()</h2>
-        <p class="post-summary">Seurat DotPlot legend order (Average Expression vs Percent Expressed) can swap unexpectedly. Fix it with guides(color = guide_colorbar(order = 1), ...) in ggplot.</p>
-      </a>
-
-      <a href="posts/post153.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-09-22</span>
-        </div>
-        <h2 class="post-title">grep and find to Locate Lost SLURM .sh Files by Keyword</h2>
-        <p class="post-summary">Remember one keyword from a forgotten SLURM script and use grep -r or find + grep to locate it. Both worked — grep gives colorful output.</p>
-      </a>
-
-      <a href="posts/post154.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-09-23</span>
-        </div>
-        <h2 class="post-title">folder_tree.py — Extract Single-Cell Project Folder Structure</h2>
-        <p class="post-summary">Download folder_tree.py and show_folder_tree.bat, place them in your project folder, double-click to get the full folder structure saved as a .txt file.</p>
-      </a>
-
-      <a href="posts/post155.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-09-24</span>
-        </div>
-        <h2 class="post-title">tree Command — Simpler Than folder_tree.py</h2>
-        <p class="post-summary">After writing a whole post about folder_tree.py, learned tree &lt;path&gt; is built-in on Linux, macOS, and Windows. Back to basics always wins.</p>
-      </a>
-
-      <a href="posts/post156.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-09-25</span>
-        </div>
-        <h2 class="post-title">FindAllMarkers() Repeated Genes Across Clusters — Shared Biology, Not Errors</h2>
-        <p class="post-summary">Same genes appearing in multiple clusters = shared biological programs, not errors. And gene names with …1 …2 suffixes in rownames are R artifacts, not new genes.</p>
-      </a>
-
-      <a href="posts/post157.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-09-26</span>
-        </div>
-        <h2 class="post-title">Domain Knowledge Is Your Superpower in Bioinformatics</h2>
-        <p class="post-summary">AI can write chunks of code, but combining them into a pipeline that makes biological sense requires domain expertise. Use AI wisely — your brain is still the engine.</p>
-      </a>
-
-      <a href="posts/post158.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-09-27</span>
-        </div>
-        <h2 class="post-title">Don't Just Learn Bioinformatics — Make It Count</h2>
-        <p class="post-summary">Let curiosity drive learning. Turn insights into GitHub projects, blog posts, or articles. Producing solidifies what you know and makes learning permanent.</p>
-      </a>
-
-      <a href="posts/post159.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-09-28</span>
-        </div>
-        <h2 class="post-title">Thank You to My LinkedIn Community — Consistent Engagers</h2>
-        <p class="post-summary">A sincere thank-you to 13 people who consistently engaged with 72 posts over 4 months. Quiet support matters more than we often realize.</p>
-      </a>
-
-      <a href="posts/post160.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-09-29</span>
-        </div>
-        <h2 class="post-title">Don't Chase Every Bioinformatics Package — Stick with Seurat</h2>
-        <p class="post-summary">Deep familiarity with one tool beats surface knowledge of many. I use Seurat for 90% of my work — not because I'm behind, but because I know it cold.</p>
-      </a>
-
-      <a href="posts/post161.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-09-30</span>
-        </div>
-        <h2 class="post-title">Wet Lab Origin Single-Cell Analyst — Experience Builds Confidence</h2>
-        <p class="post-summary">Repeated practice on live experimental data builds confidence. No panic at errors, faster delivery, and deeper biological meaning in every result.</p>
-      </a>
-
-      <a href="posts/post162.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-10-01</span>
-        </div>
-        <h2 class="post-title">Robust Annotation in Single-Cell Might Pave the Way for Discoveries</h2>
-        <p class="post-summary">There's no one-click annotation. Treatments create new coordinates, rare subclusters, and edge cases. Do the hard work — that's where discoveries live.</p>
-      </a>
-
-      <a href="posts/post163.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2025-10-02</span>
-        </div>
-        <h2 class="post-title">Stop Rerunning Your SLURM Jobs — Start Resuming Them with Nextflow</h2>
-        <p class="post-summary">Nextflow lets you resume failed pipelines exactly from where they stopped. No more resubmitting from scratch when cluster jobs time out or fail.</p>
-      </a>
-
-      <a href="posts/post164.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-10-03</span>
-        </div>
-        <h2 class="post-title">Local vs Global Variables in R — US/State Analogy</h2>
-        <p class="post-summary">A function's local variable is like a state law — it doesn't change federal (global) scope. Same name, different level. Functions must explicitly return to go global.</p>
-      </a>
-
-      <a href="posts/post165.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Reflection</span>
-          <span class="post-date">2025-10-04</span>
-        </div>
-        <h2 class="post-title">Draw a Seurat Object Challenge</h2>
-        <p class="post-summary">A fun challenge: draw a Seurat object using AI, pen and paper, or PowerPoint. If Seurat objects were alive, what would yours look like?</p>
-      </a>
-
-      <a href="posts/post166.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-10-05</span>
-        </div>
-        <h2 class="post-title">Double Arrow &lt;&lt;- Super Assignment in R — Surprised Discovery</h2>
-        <p class="post-summary">&lt;&lt;- reaches outside a function and modifies an existing global variable — unlike &lt;- which only assigns locally. Powerful, but dangerous if misused.</p>
-      </a>
-
-      <a href="posts/post167.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Post</span>
-          <span class="post-date">2025-10-06</span>
-        </div>
-        <h2 class="post-title">Which One Do You Use and Which Do You Think Is Better?</h2>
-        <p class="post-summary">Post currently unavailable on LinkedIn. Original title: "Please, let's put an end. Which one do you use and which one do u think better?"</p>
-      </a>
-
-      <a href="posts/post168.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-10-07</span>
-        </div>
-        <h2 class="post-title">c() in R — It Doesn't Just List Items, It Creates a Vector</h2>
-        <p class="post-summary">c() stands for combine. It bundles separate values into one vector — exactly what Seurat expects in FeaturePlot(), DotPlot(), and AddModuleScore().</p>
-      </a>
-
-      <a href="posts/post169.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-10-08</span>
-        </div>
-        <h2 class="post-title">Switching from Seurat to Scanpy? AnnData Object Structure Explained</h2>
-        <p class="post-summary">AnnData flips orientation vs Seurat: cells x genes in adata.X. adata.obs = cell metadata, adata.var = gene metadata. Fix unreadable gene IDs with adata.var.index.</p>
-      </a>
-
-      <a href="posts/post170.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-10-09</span>
-        </div>
-        <h2 class="post-title">Switching from Wet Lab to Bioinformatics? You're Starting 1–0 Ahead</h2>
-        <p class="post-summary">Histology and biology knowledge let you interpret annotations, spot strange results, and ask better questions — advantages no amount of coding alone provides.</p>
-      </a>
-
-      <a href="posts/post171.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-10-10</span>
-        </div>
-        <h2 class="post-title">PCA Alternatives for Single-Cell RNA-Seq — NMF, ICA, LDA, VAE, FA</h2>
-        <p class="post-summary">PCA assumes linearity and enforces orthogonality. NMF, ICA, topic modeling (LDA), VAEs (scVI), and Factor Analysis (MOFA+) reveal richer biological structure.</p>
-      </a>
-
-      <a href="posts/post172.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-10-11</span>
-        </div>
-        <h2 class="post-title">FetchData() vs GetAssayData() in Seurat — Know the Difference</h2>
-        <p class="post-summary">FetchData() returns a data frame for a few genes or metadata — great for labeling cells. GetAssayData() returns the full sparse matrix — use for large-scale operations.</p>
-      </a>
-
-      <a href="posts/post173.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-10-14</span>
-        </div>
-        <h2 class="post-title">ScType for Automated Cell Type Annotation</h2>
-        <p class="post-summary">ScType is a fully automated, marker-based cell type annotation tool for single-cell RNA-seq. It uses a built-in tissue-specific marker database and scores each cluster — no manual thresholds needed.</p>
-      </a>
-
-      <a href="posts/post174.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-10-15</span>
-        </div>
-        <h2 class="post-title">MAST for Single-Cell Differential Expression</h2>
-        <p class="post-summary">MAST (Model-based Analysis of Single-cell Transcriptomics) handles the bimodal, zero-inflated nature of scRNA-seq data using a hurdle model — giving more accurate DE results than bulk RNA-seq methods.</p>
-      </a>
-
-      <a href="posts/post175.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-10-14</span>
-        </div>
-        <h2 class="post-title">GitShine — A Free Tool to Beautify Your GitHub Profile</h2>
-        <p class="post-summary">GitShine fetches your real GitHub data instantly and generates a beautiful profile card, top languages visualization, and a ready-to-use README.md — no login, no sign-up, completely free.</p>
-      </a>
-
-      <a href="posts/post176.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-10-17</span>
-        </div>
-        <h2 class="post-title">Harmony Integration for Batch Correction in Single-Cell RNA-Seq</h2>
-        <p class="post-summary">Harmony corrects batch effects in single-cell RNA-seq by iteratively adjusting PCA embeddings — fast, scalable, and integrates directly into the Seurat workflow via RunHarmony().</p>
-      </a>
-
-      <a href="posts/post177.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-10-18</span>
-        </div>
-        <h2 class="post-title">Monocle3 for Trajectory Analysis in Single-Cell RNA-Seq</h2>
-        <p class="post-summary">Monocle3 reconstructs developmental trajectories from scRNA-seq data using reversed graph embedding. It learns a principal graph through your cells and orders them in pseudotime automatically.</p>
-      </a>
-
-      <a href="posts/post178.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-10-20</span>
-        </div>
-        <h2 class="post-title">venv vs conda — Python Environment Management</h2>
-        <p class="post-summary">venv is Python's built-in lightweight environment tool — perfect for pure Python projects. conda manages both Python and non-Python dependencies (like R or C libraries) and is better for bioinformatics.</p>
-      </a>
-
-      <a href="posts/post179.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-10-21</span>
-        </div>
-        <h2 class="post-title">DoubletFinder for Detecting Doublets in scRNA-Seq</h2>
-        <p class="post-summary">DoubletFinder detects cell doublets in scRNA-seq by simulating artificial doublets from your data and finding real cells that resemble them — a critical QC step before downstream analysis.</p>
-      </a>
-
-      <a href="posts/post180.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-10-22</span>
-        </div>
-        <h2 class="post-title">CellChat for Cell-Cell Communication Analysis</h2>
-        <p class="post-summary">CellChat quantifies intercellular communication by modeling ligand-receptor interactions from scRNA-seq data. It identifies communication networks between cell types and visualizes signaling pathways.</p>
-      </a>
-
-      <a href="posts/post181.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-10-23</span>
-        </div>
-        <h2 class="post-title">Weighted Nearest Neighbor (WNN) for Multi-Modal Single-Cell Analysis</h2>
-        <p class="post-summary">WNN analysis in Seurat integrates multiple modalities (RNA + ATAC, RNA + protein) by learning the relative importance of each modality per cell, creating a joint embedding that reflects all data types.</p>
-      </a>
-
-      <a href="posts/post182.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-10-24</span>
-        </div>
-        <h2 class="post-title">Label Transfer Between Seurat Objects</h2>
-        <p class="post-summary">Seurat's label transfer maps cell type annotations from a reference dataset to a query dataset using anchors — enabling automated annotation without re-clustering from scratch.</p>
-      </a>
-
-      <a href="posts/post183.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-10-25</span>
-        </div>
-        <h2 class="post-title">Azimuth for Reference-Based Cell Annotation</h2>
-        <p class="post-summary">Azimuth uses a pre-built, curated reference atlas to annotate cell types in your scRNA-seq data in minutes — no clustering or manual marker review needed.</p>
-      </a>
-
-      <a href="posts/post187.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-10-26</span>
-        </div>
-        <h2 class="post-title">ChIP-seq vs ATAC-seq vs CUT&amp;RUN — Chromatin Accessibility Methods Compared</h2>
-        <p class="post-summary">ChIP-seq maps where proteins bind DNA. ATAC-seq maps open chromatin. CUT&amp;RUN cuts DNA at protein binding sites with high precision and low background — each answers a different question about chromatin.</p>
-      </a>
-
-      <a href="posts/post188.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-10-27</span>
-        </div>
-        <h2 class="post-title">npcs vs dims in Seurat — What's the Difference?</h2>
-        <p class="post-summary">npcs in RunPCA() sets how many PCs to compute. dims in FindNeighbors() selects which of those PCs to actually use for clustering. Computing more gives you options; dims decides what drives your biology.</p>
-      </a>
-
-      <a href="posts/post189.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-10-28</span>
-        </div>
-        <h2 class="post-title">US States Map Quiz — Test Your Geography Knowledge</h2>
-        <p class="post-summary">A free interactive quiz that tests your knowledge of all 50 US states by clicking on the map. No login, no sign-up — just a fun, clean geography tool built with pure HTML, CSS, and JavaScript.</p>
-      </a>
-
-      <a href="posts/post190.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-10-29</span>
-        </div>
-        <h2 class="post-title">WikiPathways vs KEGG — Pathway Database Comparison</h2>
-        <p class="post-summary">KEGG is the most comprehensive but requires a license for commercial use. WikiPathways is fully open-source and community-driven — both work with clusterProfiler, but your choice depends on use case and access.</p>
-      </a>
-
-      <a href="posts/post191.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-10-30</span>
-        </div>
-        <h2 class="post-title">GitHub Repository Symbols Explained</h2>
-        <p class="post-summary">The icons and badges on GitHub repositories — stars, forks, watchers, issues, pull requests — each tell you something specific about the project's activity, community size, and health.</p>
-      </a>
-
-      <a href="posts/post192.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-10-31</span>
-        </div>
-        <h2 class="post-title">seuratPassport R Package — Portable Seurat Summaries</h2>
-        <p class="post-summary">seuratPassport generates a portable, shareable HTML summary of any Seurat object — including QC metrics, UMAP plots, and cluster markers — without requiring the recipient to have Seurat installed.</p>
-      </a>
-
-      <a href="posts/post193.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-11-02</span>
-        </div>
-        <h2 class="post-title">Bioinformatics Day and Margaret Dayhoff's Legacy</h2>
-        <p class="post-summary">Margaret Dayhoff created the first protein sequence database and the one-letter amino acid code — foundational contributions to bioinformatics that we still use today, honored on Bioinformatics Day.</p>
-      </a>
-
-      <a href="posts/post194.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-11-03</span>
-        </div>
-        <h2 class="post-title">doyouMind — No-Account Version Now Available</h2>
-        <p class="post-summary">doyouMind now has a no-account version — use the mind mapping tool instantly without creating an account. Your maps stay local in the browser. Perfect for quick brainstorming sessions.</p>
-      </a>
-
-      <a href="posts/post196.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-11-10</span>
-        </div>
-        <h2 class="post-title">DietSeurat() — Slim Down Your Seurat Object</h2>
-        <p class="post-summary">DietSeurat() strips non-essential slots from a Seurat object — removing scale.data, graphs, reductions — to drastically reduce file size before saving or sharing. Essential for large datasets.</p>
-      </a>
-
-      <a href="posts/post197.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-11-11</span>
-        </div>
-        <h2 class="post-title">CellCycleScoring() in Seurat — Assign Cell Cycle Phase</h2>
-        <p class="post-summary">CellCycleScoring() assigns each cell a G1, S, or G2M phase score based on known cell cycle genes. Use it to regress out cell cycle effects or to study cell cycle biology in your single-cell data.</p>
-      </a>
-
-      <a href="posts/post198.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-11-12</span>
-        </div>
-        <h2 class="post-title">counts vs data vs scale.data in Seurat — What's Stored Where?</h2>
-        <p class="post-summary">counts holds raw UMI counts. data holds normalized values (log-normalized by default). scale.data holds z-scored values used for PCA. Each slot serves a different purpose in the Seurat workflow.</p>
-      </a>
-
-      <a href="posts/post199.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-11-13</span>
-        </div>
-        <h2 class="post-title">genes×cells vs cells×features Matrix Orientation in Seurat</h2>
-        <p class="post-summary">Seurat stores matrices as genes×cells (rows=genes, cols=cells) internally, but many functions expect cells×features. Knowing which orientation a function expects prevents silent errors in your analysis.</p>
-      </a>
-
-      <a href="posts/post200.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-11-14</span>
-        </div>
-        <h2 class="post-title">Transposing a Matrix Inside vs Outside Seurat</h2>
-        <p class="post-summary">When you need to transpose a matrix in R, t() works on dense matrices. For sparse dgCMatrix objects (like those in Seurat), use Matrix::t() to preserve sparsity and avoid memory blowup.</p>
-      </a>
-
-      <a href="posts/post201.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-11-15</span>
-        </div>
-        <h2 class="post-title">head(mat, c(6,2)) — Peeking at Matrix Corners in R</h2>
-        <p class="post-summary">head() accepts a vector argument for matrices: head(mat, c(6,2)) returns the top 6 rows and first 2 columns. A quick way to peek at any corner of a large matrix without printing it all.</p>
-      </a>
-
-      <a href="posts/post202.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-11-16</span>
-        </div>
-        <h2 class="post-title">Sparse Matrix dgCMatrix Storage — How Seurat Saves Memory</h2>
-        <p class="post-summary">dgCMatrix stores only non-zero values plus their row indices and column pointers — making it 10-100x more memory-efficient than dense matrices for the zero-inflated data typical in scRNA-seq.</p>
-      </a>
-
-      <a href="posts/post203.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-11-16</span>
-        </div>
-        <h2 class="post-title">DualScreen — Free Multi-Monitor Window Manager</h2>
-        <p class="post-summary">DualScreen is a free browser-based tool to organize your windows across multiple monitors. Set custom layouts, snap windows to zones, and manage multi-screen workflows without installing any software.</p>
-      </a>
-
-      <a href="posts/post204.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-11-17</span>
-        </div>
-        <h2 class="post-title">FetchData() + ggplot for Custom Single-Cell Visualizations</h2>
-        <p class="post-summary">FetchData() extracts any combination of gene expression, metadata, and embeddings into a tidy data frame — the perfect foundation for custom ggplot2 visualizations beyond Seurat's built-in plots.</p>
-      </a>
-
-      <a href="posts/post205.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-11-19</span>
-        </div>
-        <h2 class="post-title">all.equal() for Comparing Seurat Objects in R</h2>
-        <p class="post-summary">all.equal() checks if two R objects are nearly equal, accounting for floating-point differences. Use it to verify that a pipeline step didn't silently change your Seurat object in unexpected ways.</p>
-      </a>
-
-      <a href="posts/post206.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-11-20</span>
-        </div>
-        <h2 class="post-title">doyouMind v2 — Cloud Save Now Available</h2>
-        <p class="post-summary">doyouMind v2 adds cloud save so your mind maps persist across sessions and devices. Create an account to sync your maps, or continue using the no-account version for local-only brainstorming.</p>
-      </a>
-
-      <a href="posts/post207.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-11-20</span>
-        </div>
-        <h2 class="post-title">The R Factor Trap — as.numeric() on Factor Gives Levels, Not Values</h2>
-        <p class="post-summary">Calling as.numeric() on an R factor returns the integer level codes, not the actual values. Use as.numeric(as.character(f)) to get the real numbers — a classic R gotcha that silently corrupts data.</p>
-      </a>
-
-      <a href="posts/post208.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-11-21</span>
-        </div>
-        <h2 class="post-title">R's || Short-Circuit Operator — When to Use || vs |</h2>
-        <p class="post-summary">|| evaluates only the left side if it's TRUE (short-circuit). | evaluates both sides always (vectorized). Use || in if() conditions for safety; use | for element-wise comparisons on vectors.</p>
-      </a>
-
-      <a href="posts/post209.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-11-21</span>
-        </div>
-        <h2 class="post-title">doyouMind + DualScreen — The Productivity Combo</h2>
-        <p class="post-summary">Using doyouMind for mind mapping alongside DualScreen for multi-monitor window management creates a powerful productivity setup for researchers juggling analysis, writing, and planning simultaneously.</p>
-      </a>
-
-      <a href="posts/post210.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-11-24</span>
-        </div>
-        <h2 class="post-title">scPassport Submitted to Bioconductor</h2>
-        <p class="post-summary">scPassport, the R package for generating portable Seurat object summaries, has been submitted to Bioconductor — making it accessible to the broader single-cell community through the standard R package ecosystem.</p>
-      </a>
-
-      <a href="posts/post211.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-11-30</span>
-        </div>
-        <h2 class="post-title">grep() vs grepl() in R — Return Indices vs Logical Vector</h2>
-        <p class="post-summary">grep() returns the indices (or values) of matches. grepl() returns a logical TRUE/FALSE vector of the same length as the input. Use grep() for subsetting by position; grepl() for filtering with logical indexing.</p>
-      </a>
-
-      <a href="posts/post212.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-11-30</span>
-        </div>
-        <h2 class="post-title">RStudio Background Jobs — Run Long Scripts Without Blocking Your Session</h2>
-        <p class="post-summary">RStudio's Background Jobs panel lets you run long R scripts in a separate session while you keep working interactively. No more waiting for a script to finish before writing your next line of code.</p>
-      </a>
-
-      <a href="posts/post213.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-12-02</span>
-        </div>
-        <h2 class="post-title">Nutfah Single-cell Omics LLC — Official Launch</h2>
-        <p class="post-summary">Nutfah Single-cell Omics LLC is officially launched — a single-cell omics consulting company providing expert analysis, custom pipelines, and bioinformatics services to researchers nationwide.</p>
-      </a>
-
-      <a href="posts/post214.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-12-04</span>
-        </div>
-        <h2 class="post-title">pip install is Not Python — Understanding Python Environment Isolation</h2>
-        <p class="post-summary">Running pip install without activating an environment installs packages globally, polluting your system Python. Always activate your venv or conda environment first — pip installs to wherever Python points.</p>
-      </a>
-
-      <a href="posts/post215.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-12-08</span>
-        </div>
-        <h2 class="post-title">Marker Knowledge Separates the Coder from the Scientist</h2>
-        <p class="post-summary">Anyone can run FindAllMarkers(). The scientist knows which markers matter, why CD14 marks monocytes, and what biology the clusters represent. Computational skill is the tool; biology is the insight.</p>
-      </a>
-
-      <a href="posts/post216.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-12-11</span>
-        </div>
-        <h2 class="post-title">Age of Empires and R Keyboard Shortcuts</h2>
-        <p class="post-summary">Learning R keyboard shortcuts is like learning hotkeys in Age of Empires — the same action, done faster, changes what's possible. Speed unlocks new strategies; fluency unlocks new thinking.</p>
-      </a>
-
-      <a href="posts/post217.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-12-12</span>
-        </div>
-        <h2 class="post-title">Converting Sparse to Dense Matrix — The 50 GiB Warning</h2>
-        <p class="post-summary">Calling as.matrix() on a large sparse dgCMatrix converts it to dense format, potentially expanding memory usage 10-50x. For a typical 30k-cell dataset, this can mean going from 2 GiB to 50+ GiB.</p>
-      </a>
-
-      <a href="posts/post218.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-12-13</span>
-        </div>
-        <h2 class="post-title">Free Business Card Builder — Design Your Card in the Browser</h2>
-        <p class="post-summary">A free browser-based business card designer — customize layout, colors, and text, then export as PNG or PDF. No account, no subscription, no Canva — just a clean, fast design tool.</p>
-      </a>
-
-      <a href="posts/post219.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-12-14</span>
-        </div>
-        <h2 class="post-title">Node.js and npm — What They Are and Why Bioinformaticians Encounter Them</h2>
-        <p class="post-summary">Node.js is a JavaScript runtime for running JS outside the browser. npm is its package manager. You'll encounter both when installing tools like JupyterLab extensions, VSCode, or modern web-based bioinformatics tools.</p>
-      </a>
-
-      <a href="posts/post220.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-12-17</span>
-        </div>
-        <h2 class="post-title">IU Pulmonary Presentation — Sharing Single-Cell Research</h2>
-        <p class="post-summary">Presenting single-cell RNA-seq findings to the IU Pulmonary division — sharing insights from PAH research, cluster annotations, and the bioinformatics pipeline built to analyze a million-cell dataset.</p>
-      </a>
-
-      <a href="posts/post221.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-12-18</span>
-        </div>
-        <h2 class="post-title">STAR + featureCounts — The Classic RNA-seq Alignment Pipeline</h2>
-        <p class="post-summary">STAR aligns RNA-seq reads to a reference genome at splice junctions. featureCounts then quantifies reads per gene from the BAM output. Together they form the standard bulk RNA-seq quantification pipeline.</p>
-      </a>
-
-      <a href="posts/post222.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-12-21</span>
-        </div>
-        <h2 class="post-title">UMAP vs the Neighbor Graph — What Actually Drives Clustering</h2>
-        <p class="post-summary">Seurat clusters cells using the KNN neighbor graph built from PCA embeddings — not UMAP. UMAP is only for visualization. Moving cells on a UMAP plot doesn't change which cluster they belong to.</p>
-      </a>
-
-      <a href="posts/post223.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-12-25</span>
-        </div>
-        <h2 class="post-title">FindAllMarkers with LR Test and latent.vars for Composition-Aware DE</h2>
-        <p class="post-summary">Using test.use="LR" with latent.vars in FindAllMarkers() lets you control for cell composition differences between conditions — giving more honest differential expression results in heterogeneous datasets.</p>
-      </a>
-
-      <a href="posts/post224.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-12-26</span>
-        </div>
-        <h2 class="post-title">Self-Directed Learning Is the Hardest and Most Rewarding Path</h2>
-        <p class="post-summary">Nobody assigns you the papers, nobody grades your analysis, nobody checks if you understood. Self-directed learning in bioinformatics demands discipline — and returns the deepest expertise.</p>
-      </a>
-
-      <a href="posts/post225.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Career</span>
-          <span class="post-date">2025-12-26</span>
-        </div>
-        <h2 class="post-title">Expert Annotation Is Not Optional in Single-Cell Analysis</h2>
-        <p class="post-summary">Automated tools can cluster cells, but only a biologist who knows the tissue, the markers, and the biology can validate the annotations. Expert annotation is where computation meets scientific judgment.</p>
-      </a>
-
-      <a href="posts/post226.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2025-12-27</span>
-        </div>
-        <h2 class="post-title">FeaturePlot Rasterization — Speed Up Large Single-Cell Plots</h2>
-        <p class="post-summary">Setting raster=TRUE in FeaturePlot() converts the vector plot to a rasterized bitmap — dramatically reducing file size and render time for large datasets with tens of thousands of cells.</p>
-      </a>
-
-      <a href="posts/post227.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2025-12-29</span>
-        </div>
-        <h2 class="post-title">Rust for Single-Cell Genomics — Why Speed Matters at Scale</h2>
-        <p class="post-summary">Rust is entering single-cell genomics through tools like Alevin-fry and seqspec. Its memory safety and zero-cost abstractions make it ideal for processing the massive datasets modern single-cell experiments generate.</p>
-      </a>
-
-      <a href="posts/post228.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Research</span>
-          <span class="post-date">2025-12-29</span>
-        </div>
-        <h2 class="post-title">PAH Research — Analyzing Over 1 Million Single Cells</h2>
-        <p class="post-summary">Processing and annotating a dataset of over 1 million single cells from pulmonary arterial hypertension samples — integrating multiple batches, annotating 40+ cell types, and extracting disease-relevant signals.</p>
-      </a>
-
-      <a href="posts/post229.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2026-01-05</span>
-        </div>
-        <h2 class="post-title">ATS 2026 — Chord Diagrams for Cell-Cell Communication</h2>
-        <p class="post-summary">Chord diagrams visualize directional interactions between cell types — showing which cells send and receive signals in CellChat analysis. Preparing these for the ATS 2026 conference presentation.</p>
-      </a>
-
-      <a href="posts/post230.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Research</span>
-          <span class="post-date">2026-01-10</span>
-        </div>
-        <h2 class="post-title">ATS 2026 Visualization Observations — What the Data Revealed</h2>
-        <p class="post-summary">Key observations from single-cell visualizations prepared for ATS 2026 — unexpected cell type proportions, dominant signaling pathways, and cluster patterns that are shaping the research narrative.</p>
-      </a>
-
-      <a href="posts/post231.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2026-01-15</span>
-        </div>
-        <h2 class="post-title">Debugging Trajectory Analysis — When Monocle3 Gives Unexpected Results</h2>
-        <p class="post-summary">Trajectory analysis failures are often rooted in cluster resolution, UMAP parameters, or which cells you include. Systematic debugging — checking embeddings, root cells, and graph connectivity — is the path forward.</p>
-      </a>
-
-      <a href="posts/post232.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2026-01-24</span>
-        </div>
-        <h2 class="post-title">.pkl Files in Python — What They Are and How to Use Them</h2>
-        <p class="post-summary">.pkl (pickle) files serialize Python objects to disk — saving any Python object (lists, dicts, models, AnnData) and loading it back exactly. The R equivalent is saveRDS()/readRDS().</p>
-      </a>
-
-      <a href="posts/post233.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2026-01-26</span>
-        </div>
-        <h2 class="post-title">setdiff() with Dynamic Object Names in R</h2>
-        <p class="post-summary">Using get() with setdiff() lets you compute set differences between dynamically named objects in R — useful when you're iterating over sample names and need to compare gene lists stored in variables like paste0("genes_", sample).</p>
-      </a>
-
-      <a href="posts/post234.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2026-01-29</span>
-        </div>
-        <h2 class="post-title">CD14 — The Monocyte Marker and What It Tells You</h2>
-        <p class="post-summary">CD14 is the canonical marker for classical monocytes. Understanding what it is (an LPS co-receptor), why it's expressed in monocytes, and how it changes in disease states is what separates biology-driven annotation from marker lookup.</p>
-      </a>
-
-      <a href="posts/post235.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2026-01-30</span>
-        </div>
-        <h2 class="post-title">Figure Builder — Design Publication-Quality Figures in the Browser</h2>
-        <p class="post-summary">Figure Builder is a free browser-based tool for assembling multi-panel publication figures — drag-and-drop panels, add labels, adjust spacing, and export as high-resolution PNG or SVG.</p>
-      </a>
-
-      <a href="posts/post236.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tool</span>
-          <span class="post-date">2026-02-04</span>
-        </div>
-        <h2 class="post-title">IPython for Bioinformatics — Interactive Python Beyond Jupyter</h2>
-        <p class="post-summary">IPython gives you a powerful interactive Python shell with tab completion, magic commands, and object inspection — perfect for exploratory bioinformatics without the overhead of a full Jupyter notebook.</p>
-      </a>
-
-      <a href="posts/post237.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2026-02-07</span>
-        </div>
-        <h2 class="post-title">Cell Type Annotation Is the Hardest Step in Single-Cell Analysis</h2>
-        <p class="post-summary">Clustering is algorithmic. Annotation is scientific judgment. Deciding whether a cluster is a macrophage, a monocyte, or a transitional state requires marker knowledge, tissue context, and experience — no tool replaces that.</p>
-      </a>
-
-      <a href="posts/post238.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2026-02-12</span>
-        </div>
-        <h2 class="post-title">PCA Goldilocks — How Many Dimensions Are Just Right?</h2>
-        <p class="post-summary">Too few PCs and you miss biology. Too many and you include noise. The elbow plot, JackStraw, and cumulative variance methods each help find the sweet spot — but biological validation is the final check.</p>
-      </a>
-
-      <a href="posts/post239.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">HPC</span>
-          <span class="post-date">2026-02-25</span>
-        </div>
-        <h2 class="post-title">CellRanger on Linux — HPC Setup and Configuration</h2>
-        <p class="post-summary">Setting up CellRanger on a Linux HPC cluster — downloading, configuring PATH, creating reference genomes, and submitting jobs with SLURM. The practical steps that documentation skips.</p>
-      </a>
-
-      <a href="posts/post240.html" target="_blank" class="post-card">
-        <div class="post-card-meta">
-          <span class="post-category">Tutorial</span>
-          <span class="post-date">2026-02-27</span>
-        </div>
-        <h2 class="post-title">CellRanger in Bioinformatics — What It Does and Why It Matters</h2>
-        <p class="post-summary">CellRanger is 10x Genomics' pipeline for processing raw single-cell sequencing data — demultiplexing, alignment, and generating the feature-barcode matrix that feeds into Seurat, Scanpy, and downstream analysis.</p>
-      </a>
-
+    <input id="posts-search" class="posts-search" type="text" placeholder="Search posts by title..." autocomplete="off" />
+
+    <div class="cat-tiles">
+      <button class="cat-btn active" data-filter="all">All <span class="cat-count-badge" id="cnt-all">240</span></button>
+      <button class="cat-btn" data-filter="tutorial">Tutorial <span class="cat-count-badge" id="cnt-tutorial"></span></button>
+      <button class="cat-btn" data-filter="tool">Tool <span class="cat-count-badge" id="cnt-tool"></span></button>
+      <button class="cat-btn" data-filter="career">Career <span class="cat-count-badge" id="cnt-career"></span></button>
+      <button class="cat-btn" data-filter="hpc">HPC <span class="cat-count-badge" id="cnt-hpc"></span></button>
+      <button class="cat-btn" data-filter="research">Research <span class="cat-count-badge" id="cnt-research"></span></button>
+      <button class="cat-btn" data-filter="other">Other <span class="cat-count-badge" id="cnt-other"></span></button>
     </div>
+
+    <p class="posts-meta-line">Showing <span id="showing-count">240</span> posts</p>
+
+    <div class="posts-list" id="posts-list"></div>
+    <div class="no-results" id="no-results">No posts match your search.</div>
+
   </div>
 </section>
 
@@ -2171,6 +166,314 @@
     <p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p>
   </div>
 </footer>
+
+<script>
+const posts = [
+  {f:"posts/post240.html",cat:"Tutorial",g:"tutorial",d:"2026-02-27",t:"Dry Run Mode — Validate Before You Submit"},
+  {f:"posts/post239.html",cat:"HPC",g:"hpc",d:"2026-02-25",t:"CellRanger on Linux — HPC Setup and Configuration"},
+  {f:"posts/post238.html",cat:"Tutorial",g:"tutorial",d:"2026-02-12",t:"PCA Goldilocks — How Many Dimensions Are Just Right?"},
+  {f:"posts/post237.html",cat:"Tutorial",g:"tutorial",d:"2026-02-07",t:"Cell Type Annotation Is the Hardest Step in Single-Cell Analysis"},
+  {f:"posts/post236.html",cat:"Tool",g:"tool",d:"2026-02-04",t:"IPython for Bioinformatics — Interactive Python Beyond Jupyter"},
+  {f:"posts/post235.html",cat:"Tool",g:"tool",d:"2026-01-30",t:"Figure Builder — Design Publication-Quality Figures in the Browser"},
+  {f:"posts/post234.html",cat:"Tutorial",g:"tutorial",d:"2026-01-29",t:"CD14 — The Monocyte Marker and What It Tells You"},
+  {f:"posts/post233.html",cat:"Tutorial",g:"tutorial",d:"2026-01-26",t:"setdiff() with Dynamic Object Names in R"},
+  {f:"posts/post232.html",cat:"Tutorial",g:"tutorial",d:"2026-01-24",t:".pkl Files in Python — What They Are and How to Use Them"},
+  {f:"posts/post231.html",cat:"Tutorial",g:"tutorial",d:"2026-01-15",t:"Debugging Trajectory Analysis — When Monocle3 Gives Unexpected Results"},
+  {f:"posts/post230.html",cat:"Research",g:"research",d:"2026-01-10",t:"ATS 2026 Visualization Observations — What the Data Revealed"},
+  {f:"posts/post229.html",cat:"Tutorial",g:"tutorial",d:"2026-01-05",t:"ATS 2026 — Chord Diagrams for Cell-Cell Communication"},
+  {f:"posts/post228.html",cat:"Research",g:"research",d:"2025-12-29",t:"PAH Research — Analyzing Over 1 Million Single Cells"},
+  {f:"posts/post227.html",cat:"Tool",g:"tool",d:"2025-12-29",t:"Rust for Single-Cell Genomics — Why Speed Matters at Scale"},
+  {f:"posts/post226.html",cat:"Tutorial",g:"tutorial",d:"2025-12-27",t:"FeaturePlot Rasterization — Speed Up Large Single-Cell Plots"},
+  {f:"posts/post225.html",cat:"Career",g:"career",d:"2025-12-26",t:"Expert Annotation Is Not Optional in Single-Cell Analysis"},
+  {f:"posts/post224.html",cat:"Career",g:"career",d:"2025-12-26",t:"Self-Directed Learning Is the Hardest and Most Rewarding Path"},
+  {f:"posts/post223.html",cat:"Tutorial",g:"tutorial",d:"2025-12-25",t:"FindAllMarkers with LR Test and latent.vars for Composition-Aware DE"},
+  {f:"posts/post222.html",cat:"Tutorial",g:"tutorial",d:"2025-12-21",t:"UMAP vs the Neighbor Graph — What Actually Drives Clustering"},
+  {f:"posts/post221.html",cat:"Tutorial",g:"tutorial",d:"2025-12-18",t:"STAR + featureCounts — The Classic RNA-seq Alignment Pipeline"},
+  {f:"posts/post220.html",cat:"Career",g:"career",d:"2025-12-17",t:"IU Pulmonary Presentation — Sharing Single-Cell Research"},
+  {f:"posts/post219.html",cat:"Tool",g:"tool",d:"2025-12-14",t:"Node.js and npm — What They Are and Why Bioinformaticians Encounter Them"},
+  {f:"posts/post218.html",cat:"Tool",g:"tool",d:"2025-12-13",t:"Free Business Card Builder — Design Your Card in the Browser"},
+  {f:"posts/post217.html",cat:"Tutorial",g:"tutorial",d:"2025-12-12",t:"Converting Sparse to Dense Matrix — The 50 GiB Warning"},
+  {f:"posts/post216.html",cat:"Career",g:"career",d:"2025-12-11",t:"Age of Empires and R Keyboard Shortcuts"},
+  {f:"posts/post215.html",cat:"Career",g:"career",d:"2025-12-08",t:"Marker Knowledge Separates the Coder from the Scientist"},
+  {f:"posts/post214.html",cat:"Tutorial",g:"tutorial",d:"2025-12-04",t:"pip install is Not Python — Understanding Python Environment Isolation"},
+  {f:"posts/post213.html",cat:"Career",g:"career",d:"2025-12-02",t:"Nutfah Single-cell Omics LLC — Official Launch"},
+  {f:"posts/post212.html",cat:"Tool",g:"tool",d:"2025-11-30",t:"RStudio Background Jobs — Run Long Scripts Without Blocking Your Session"},
+  {f:"posts/post211.html",cat:"Tutorial",g:"tutorial",d:"2025-11-30",t:"grep() vs grepl() in R — Return Indices vs Logical Vector"},
+  {f:"posts/post210.html",cat:"Tool",g:"tool",d:"2025-11-24",t:"scPassport Submitted to Bioconductor"},
+  {f:"posts/post209.html",cat:"Tool",g:"tool",d:"2025-11-21",t:"doyouMind + DualScreen — The Productivity Combo"},
+  {f:"posts/post208.html",cat:"Tutorial",g:"tutorial",d:"2025-11-21",t:"R's || Short-Circuit Operator — When to Use || vs |"},
+  {f:"posts/post207.html",cat:"Tutorial",g:"tutorial",d:"2025-11-20",t:"The R Factor Trap — as.numeric() on Factor Gives Levels, Not Values"},
+  {f:"posts/post206.html",cat:"Tool",g:"tool",d:"2025-11-20",t:"doyouMind v2 — Cloud Save Now Available"},
+  {f:"posts/post205.html",cat:"Tutorial",g:"tutorial",d:"2025-11-19",t:"all.equal() for Comparing Seurat Objects in R"},
+  {f:"posts/post204.html",cat:"Tutorial",g:"tutorial",d:"2025-11-17",t:"FetchData() + ggplot for Custom Single-Cell Visualizations"},
+  {f:"posts/post203.html",cat:"Tool",g:"tool",d:"2025-11-16",t:"DualScreen — Free Multi-Monitor Window Manager"},
+  {f:"posts/post202.html",cat:"Tutorial",g:"tutorial",d:"2025-11-16",t:"Sparse Matrix dgCMatrix Storage — How Seurat Saves Memory"},
+  {f:"posts/post201.html",cat:"Tutorial",g:"tutorial",d:"2025-11-15",t:"head(mat, c(6,2)) — Peeking at Matrix Corners in R"},
+  {f:"posts/post200.html",cat:"Tutorial",g:"tutorial",d:"2025-11-14",t:"Transposing a Matrix Inside vs Outside Seurat"},
+  {f:"posts/post199.html",cat:"Tutorial",g:"tutorial",d:"2025-11-13",t:"genes×cells vs cells×features Matrix Orientation in Seurat"},
+  {f:"posts/post198.html",cat:"Tutorial",g:"tutorial",d:"2025-11-12",t:"counts vs data vs scale.data in Seurat — What's Stored Where?"},
+  {f:"posts/post197.html",cat:"Tutorial",g:"tutorial",d:"2025-11-11",t:"CellCycleScoring() in Seurat — Assign Cell Cycle Phase"},
+  {f:"posts/post196.html",cat:"Tutorial",g:"tutorial",d:"2025-11-10",t:"DietSeurat() — Slim Down Your Seurat Object"},
+  {f:"posts/post194.html",cat:"Tool",g:"tool",d:"2025-11-03",t:"doyouMind — No-Account Version Now Available"},
+  {f:"posts/post193.html",cat:"Career",g:"career",d:"2025-11-02",t:"Bioinformatics Day and Margaret Dayhoff's Legacy"},
+  {f:"posts/post104.html",cat:"Tool",g:"tool",d:"2025-11-01",t:"R's %||% Operator — Clean Default Assignment"},
+  {f:"posts/post103.html",cat:"Tool",g:"tool",d:"2025-11-01",t:"Simplifying Paths — The Power of shortPathName() in R"},
+  {f:"posts/post102.html",cat:"Tool",g:"tool",d:"2025-11-01",t:"Quick R Tip — Locate Your Installed Packages Easily"},
+  {f:"posts/post101.html",cat:"HPC",g:"hpc",d:"2025-11-01",t:"Open Current Directory in File Explorer with One Command"},
+  {f:"posts/post100.html",cat:"HPC",g:"hpc",d:"2025-11-01",t:"Don't Push Everything to GitHub — Use .gitignore"},
+  {f:"posts/post192.html",cat:"Tool",g:"tool",d:"2025-10-31",t:"seuratPassport R Package — Portable Seurat Summaries"},
+  {f:"posts/post191.html",cat:"Tool",g:"tool",d:"2025-10-30",t:"GitHub Repository Symbols Explained"},
+  {f:"posts/post190.html",cat:"Tutorial",g:"tutorial",d:"2025-10-29",t:"WikiPathways vs KEGG — Pathway Database Comparison"},
+  {f:"posts/post189.html",cat:"Tool",g:"tool",d:"2025-10-28",t:"US States Map Quiz — Test Your Geography Knowledge"},
+  {f:"posts/post188.html",cat:"Tutorial",g:"tutorial",d:"2025-10-27",t:"npcs vs dims in Seurat — What's the Difference?"},
+  {f:"posts/post187.html",cat:"Tutorial",g:"tutorial",d:"2025-10-26",t:"ChIP-seq vs ATAC-seq vs CUT&RUN — Chromatin Accessibility Methods Compared"},
+  {f:"posts/post183.html",cat:"Tutorial",g:"tutorial",d:"2025-10-25",t:"Azimuth for Reference-Based Cell Annotation"},
+  {f:"posts/post182.html",cat:"Tutorial",g:"tutorial",d:"2025-10-24",t:"Label Transfer Between Seurat Objects"},
+  {f:"posts/post181.html",cat:"Tutorial",g:"tutorial",d:"2025-10-23",t:"Weighted Nearest Neighbor (WNN) for Multi-Modal Single-Cell Analysis"},
+  {f:"posts/post180.html",cat:"Tutorial",g:"tutorial",d:"2025-10-22",t:"CellChat for Cell-Cell Communication Analysis"},
+  {f:"posts/post179.html",cat:"Tutorial",g:"tutorial",d:"2025-10-21",t:"DoubletFinder for Detecting Doublets in scRNA-Seq"},
+  {f:"posts/post178.html",cat:"Tutorial",g:"tutorial",d:"2025-10-20",t:"venv vs conda — Python Environment Management"},
+  {f:"posts/post177.html",cat:"Tutorial",g:"tutorial",d:"2025-10-18",t:"Monocle3 for Trajectory Analysis in Single-Cell RNA-Seq"},
+  {f:"posts/post176.html",cat:"Tutorial",g:"tutorial",d:"2025-10-17",t:"Harmony Integration for Batch Correction in Single-Cell RNA-Seq"},
+  {f:"posts/post175.html",cat:"Tool",g:"tool",d:"2025-10-14",t:"GitShine — A Free Tool to Beautify Your GitHub Profile"},
+  {f:"posts/post174.html",cat:"Tutorial",g:"tutorial",d:"2025-10-15",t:"MAST for Single-Cell Differential Expression"},
+  {f:"posts/post173.html",cat:"Tutorial",g:"tutorial",d:"2025-10-14",t:"ScType for Automated Cell Type Annotation"},
+  {f:"posts/post172.html",cat:"Tool",g:"tool",d:"2025-10-11",t:"FetchData() vs GetAssayData() in Seurat — Know the Difference"},
+  {f:"posts/post171.html",cat:"Tutorial",g:"tutorial",d:"2025-10-10",t:"PCA Alternatives for Single-Cell RNA-Seq — NMF, ICA, LDA, VAE, FA"},
+  {f:"posts/post170.html",cat:"Career",g:"career",d:"2025-10-09",t:"Switching from Wet Lab to Bioinformatics? You're Starting 1–0 Ahead"},
+  {f:"posts/post169.html",cat:"Tutorial",g:"tutorial",d:"2025-10-08",t:"Switching from Seurat to Scanpy? AnnData Object Structure Explained"},
+  {f:"posts/post168.html",cat:"Tool",g:"tool",d:"2025-10-07",t:"c() in R — It Doesn't Just List Items, It Creates a Vector"},
+  {f:"posts/post167.html",cat:"Other",g:"other",d:"2025-10-06",t:"Which One Do You Use and Which Do You Think Is Better?"},
+  {f:"posts/post166.html",cat:"Tool",g:"tool",d:"2025-10-05",t:"Double Arrow <<- Super Assignment in R — Surprised Discovery"},
+  {f:"posts/post165.html",cat:"Reflection",g:"other",d:"2025-10-04",t:"Draw a Seurat Object Challenge"},
+  {f:"posts/post164.html",cat:"Tool",g:"tool",d:"2025-10-03",t:"Local vs Global Variables in R — US/State Analogy"},
+  {f:"posts/post163.html",cat:"HPC",g:"hpc",d:"2025-10-02",t:"Stop Rerunning Your SLURM Jobs — Start Resuming Them with Nextflow"},
+  {f:"posts/post162.html",cat:"Tutorial",g:"tutorial",d:"2025-10-01",t:"Robust Annotation in Single-Cell Might Pave the Way for Discoveries"},
+  {f:"posts/post119.html",cat:"HPC",g:"hpc",d:"2025-10-01",t:"Aspera Connect vs FileZilla — A Two-Day Upload Battle I Finally Won"},
+  {f:"posts/post118.html",cat:"Career",g:"career",d:"2025-10-01",t:"The Most Efficient Learning Method"},
+  {f:"posts/post117.html",cat:"Tool",g:"tool",d:"2025-10-01",t:"Understanding the DOM — The Real Engine Behind Every Webpage"},
+  {f:"posts/post116.html",cat:"Tool",g:"tool",d:"2025-10-01",t:"Why Your Imported Functions Sometimes Don't Highlight in VS Code"},
+  {f:"posts/post115.html",cat:"Tool",g:"tool",d:"2025-10-01",t:"Modern JavaScript: export vs window"},
+  {f:"posts/post114.html",cat:"Tool",g:"tool",d:"2025-10-01",t:"Understanding defer in JavaScript"},
+  {f:"posts/post113.html",cat:"Tool",g:"tool",d:"2025-10-01",t:"CORS Error Fix — Run a Local Web Server with Python"},
+  {f:"posts/post112.html",cat:"HPC",g:"hpc",d:"2025-10-01",t:"Stop Rerunning Your SLURM Jobs — Start Resuming with Nextflow"},
+  {f:"posts/post111.html",cat:"HPC",g:"hpc",d:"2025-10-01",t:"-r vs -R in Linux: Does It Follow Symbolic Links?"},
+  {f:"posts/post161.html",cat:"Career",g:"career",d:"2025-09-30",t:"Wet Lab Origin Single-Cell Analyst — Experience Builds Confidence"},
+  {f:"posts/post160.html",cat:"Career",g:"career",d:"2025-09-29",t:"Don't Chase Every Bioinformatics Package — Stick with Seurat"},
+  {f:"posts/post159.html",cat:"Career",g:"career",d:"2025-09-28",t:"Thank You to My LinkedIn Community — Consistent Engagers"},
+  {f:"posts/post158.html",cat:"Career",g:"career",d:"2025-09-27",t:"Don't Just Learn Bioinformatics — Make It Count"},
+  {f:"posts/post157.html",cat:"Career",g:"career",d:"2025-09-26",t:"Domain Knowledge Is Your Superpower in Bioinformatics"},
+  {f:"posts/post156.html",cat:"Tutorial",g:"tutorial",d:"2025-09-25",t:"FindAllMarkers() Repeated Genes Across Clusters — Shared Biology, Not Errors"},
+  {f:"posts/post155.html",cat:"HPC",g:"hpc",d:"2025-09-24",t:"tree Command — Simpler Than folder_tree.py"},
+  {f:"posts/post154.html",cat:"Tool",g:"tool",d:"2025-09-23",t:"folder_tree.py — Extract Single-Cell Project Folder Structure"},
+  {f:"posts/post153.html",cat:"HPC",g:"hpc",d:"2025-09-22",t:"grep and find to Locate Lost SLURM .sh Files by Keyword"},
+  {f:"posts/post152.html",cat:"Tool",g:"tool",d:"2025-09-21",t:"Seurat DotPlot Legend Order Swaps — Fix with guides()"},
+  {f:"posts/post151.html",cat:"Tutorial",g:"tutorial",d:"2025-09-20",t:"Mouse vs Rat Species Identification from Gene Names"},
+  {f:"posts/post150.html",cat:"Tool",g:"tool",d:"2025-09-19",t:"FindSubCluster() in Seurat for Targeted Subclustering"},
+  {f:"posts/post149.html",cat:"Career",g:"career",d:"2025-09-18",t:"AI Doing the Job vs AI Under Your Supervision"},
+  {f:"posts/post148.html",cat:"Tutorial",g:"tutorial",d:"2025-09-17",t:"UMAP Subsets Can Create False Structure — Always Map Back to Original"},
+  {f:"posts/post147.html",cat:"Career",g:"career",d:"2025-09-16",t:"Two Concerns About AI Agents — Repetition and Biology"},
+  {f:"posts/post146.html",cat:"Tutorial",g:"tutorial",d:"2025-09-15",t:"FindNeighbors() — RNA_nn and RNA_snn Explained"},
+  {f:"posts/post145.html",cat:"Career",g:"career",d:"2025-09-14",t:"Basics Matter — Vibe Coding Without Understanding Leads to a Dead End"},
+  {f:"posts/post144.html",cat:"Tutorial",g:"tutorial",d:"2025-09-13",t:"UMAP Clustering vs PCA Clustering — Why Visuals Can Mislead"},
+  {f:"posts/post143.html",cat:"Tutorial",g:"tutorial",d:"2025-09-12",t:"Seurat Sparse Matrix i, p, x — CSC Format Explained"},
+  {f:"posts/post142.html",cat:"Tool",g:"tool",d:"2025-09-11",t:"Seurat DotPlot — split.by vs group.by Pitfall"},
+  {f:"posts/post141.html",cat:"Tool",g:"tool",d:"2025-09-10",t:"Python Is a Weird Language — How Functions End Across Languages"},
+  {f:"posts/post140.html",cat:"Tutorial",g:"tutorial",d:"2025-09-09",t:"diff() in R and Seurat's Sparse Matrix @p Slot Explained"},
+  {f:"posts/post139.html",cat:"Tool",g:"tool",d:"2025-09-08",t:"JavaScript Has No Separate Number Types — No Float, Double, or Int"},
+  {f:"posts/post138.html",cat:"HPC",g:"hpc",d:"2025-09-07",t:"Split Large Files with 7-Zip, Transfer Chunks, Merge with cat"},
+  {f:"posts/post137.html",cat:"Tool",g:"tool",d:"2025-09-06",t:"Need the Arrow Package to Load Visium HD Spatial Parquet Files"},
+  {f:"posts/post136.html",cat:"Tool",g:"tool",d:"2025-09-05",t:"Jupyter Notebooks vs VS Code — I Was Wrong"},
+  {f:"posts/post135.html",cat:"Tool",g:"tool",d:"2025-09-04",t:"Never Save Project Files Inside Your Python Environment"},
+  {f:"posts/post134.html",cat:"Tool",g:"tool",d:"2025-09-03",t:"What's Inside a Python Virtual Environment?"},
+  {f:"posts/post133.html",cat:"Career",g:"career",d:"2025-09-02",t:"You Cannot Truly Master Many Things at the Same Time"},
+  {f:"posts/post132.html",cat:"Tool",g:"tool",d:"2025-09-01",t:"innerText vs textContent vs innerHTML"},
+  {f:"posts/post131.html",cat:"Tool",g:"tool",d:"2025-09-01",t:"JavaScript indexOf() Explained Simply"},
+  {f:"posts/post130.html",cat:"Tool",g:"tool",d:"2025-09-01",t:"Template Literals Make Strings Cleaner in JavaScript"},
+  {f:"posts/post129.html",cat:"Tool",g:"tool",d:"2025-09-01",t:"Method Chaining in JavaScript"},
+  {f:"posts/post128.html",cat:"Tool",g:"tool",d:"2025-09-01",t:"Function Factories in R and JavaScript"},
+  {f:"posts/post127.html",cat:"Tool",g:"tool",d:"2025-09-01",t:"Higher-Order Functions in R and JavaScript"},
+  {f:"posts/post126.html",cat:"Tool",g:"tool",d:"2025-09-01",t:"Windows + R: Why Your File Paths Break"},
+  {f:"posts/post125.html",cat:"Tool",g:"tool",d:"2025-09-01",t:"JavaScript Dynamic Object Properties — Comparing to R"},
+  {f:"posts/post124.html",cat:"Other",g:"other",d:"2025-09-15",t:"Doublets vs Transitional States in Single-Cell RNA-seq"},
+  {f:"posts/post123.html",cat:"Other",g:"other",d:"2025-09-15",t:"LinkedIn Post (Unavailable)"},
+  {f:"posts/post122.html",cat:"Tutorial",g:"tutorial",d:"2025-09-15",t:"Seurat \"Subscript Out of Bounds\" — What It Really Means"},
+  {f:"posts/post121.html",cat:"Tool",g:"tool",d:"2025-09-15",t:"Importance of Order in Ternary Operators"},
+  {f:"posts/post120.html",cat:"Tool",g:"tool",d:"2025-09-15",t:"onclick vs addEventListener — Know the Difference"},
+  {f:"posts/post110.html",cat:"HPC",g:"hpc",d:"2025-10-15",t:"tar Broken Pipe Error — The Sneaky Extra Slash"},
+  {f:"posts/post109.html",cat:"Career",g:"career",d:"2025-10-15",t:"Stop Worrying About AI — Start Living the Present!"},
+  {f:"posts/post108.html",cat:"Tool",g:"tool",d:"2025-10-15",t:"R's gl() Function — Generate Factor Levels for Grouping Data"},
+  {f:"posts/post107.html",cat:"HPC",g:"hpc",d:"2025-10-15",t:"Submit 16 SLURM Jobs with a for Loop"},
+  {f:"posts/post106.html",cat:"HPC",g:"hpc",d:"2025-10-15",t:"grep --include Syntax: That Sneaky Space Bug"},
+  {f:"posts/post105.html",cat:"Tool",g:"tool",d:"2025-10-15",t:"setNames() — Dynamic Naming for Seurat Object Lists"},
+  {f:"posts/post99.html",cat:"Tool",g:"tool",d:"2025-07-18",t:"Automating Repetitive Metadata Submissions for GEO and SRA"},
+  {f:"posts/post98.html",cat:"Tutorial",g:"tutorial",d:"2025-07-18",t:"Why Every FASTQ Needs an MD5 Checksum"},
+  {f:"posts/post97.html",cat:"Science",g:"research",d:"2025-07-17",t:"Science Is a Dynamic Journey — Be Open to New Hypotheses"},
+  {f:"posts/post96.html",cat:"Single-Cell",g:"other",d:"2025-07-16",t:"Single-Cell RNA-seq Metadata Tips"},
+  {f:"posts/post95.html",cat:"Tool",g:"tool",d:"2025-07-15",t:"AggregateExpression() in Seurat — Summarizing Single-Cell Data"},
+  {f:"posts/post94.html",cat:"HPC",g:"hpc",d:"2025-07-14",t:"Shell Tip — Single vs Double Quotes and Variable Expansion"},
+  {f:"posts/post93.html",cat:"HPC",g:"hpc",d:"2025-07-14",t:"Shell Tip — Stop Repeating Yourself with Variables ($VAR vs ${VAR})"},
+  {f:"posts/post92.html",cat:"Tutorial",g:"tutorial",d:"2025-07-13",t:"Robust Annotation in Single Cell Might Pave the Way for Discoveries"},
+  {f:"posts/post91.html",cat:"Tutorial",g:"tutorial",d:"2025-07-12",t:"Understanding PCA Eigenvalues in Single-Cell RNA-seq — Q&A"},
+  {f:"posts/post90.html",cat:"Tool",g:"tool",d:"2025-07-11",t:"Nextflow — Turning Single-Cell Pipelines into Reproducible Workflows"},
+  {f:"posts/post89.html",cat:"Tool",g:"tool",d:"2025-07-10",t:"The Ellipsis (...) in R — Stop Rewriting Function Arguments"},
+  {f:"posts/post88.html",cat:"Tool",g:"tool",d:"2025-07-09",t:"scDblFinder() Parameters for Better Doublet Detection"},
+  {f:"posts/post87.html",cat:"Tool",g:"tool",d:"2025-07-08",t:"droplevels() to Remove Unused Factor Levels in Seurat"},
+  {f:"posts/post86.html",cat:"Tutorial",g:"tutorial",d:"2025-07-07",t:"How to Quickly Recognize GEO and SRA Accession IDs"},
+  {f:"posts/post85.html",cat:"Career",g:"career",d:"2025-07-06",t:"Being Active on LinkedIn Doesn't Mean You Don't Work"},
+  {f:"posts/post84.html",cat:"Tool",g:"tool",d:"2025-07-06",t:"Regex in R and Single-Cell Analysis"},
+  {f:"posts/post83.html",cat:"Tool",g:"tool",d:"2025-07-05",t:"Species Gene Nomenclature Mismatch in Human–Rat Single-Cell Integration"},
+  {f:"posts/post82.html",cat:"Publication",g:"research",d:"2025-07-01",t:"Publication: CDK5-Mediated EndMT — A Single-Cell Perspective in Pulmonary Hypertension"},
+  {f:"posts/post81.html",cat:"Tool",g:"tool",d:"2025-06-20",t:"Factor vs Level in Seurat — The Chess Analogy"},
+  {f:"posts/post80.html",cat:"HPC",g:"hpc",d:"2025-06-19",t:"du -sh vs du -sh --apparent-size on HPC Scratch Filesystems"},
+  {f:"posts/post79.html",cat:"HPC",g:"hpc",d:"2025-06-18",t:"Why Bundle Files into .tar.gz Before Storing Them"},
+  {f:"posts/post78.html",cat:"HPC",g:"hpc",d:"2025-06-17",t:"Extending Kerberos Ticket Lifetime for Long Data Transfers"},
+  {f:"posts/post77.html",cat:"Reflection",g:"other",d:"2025-06-15",t:"Certificate of Appreciation from SHtSBiB 2025"},
+  {f:"posts/post76.html",cat:"HPC",g:"hpc",d:"2025-06-10",t:"kinit and Kerberos Authentication for HPC Data Transfer"},
+  {f:"posts/post75.html",cat:"Publication",g:"research",d:"2025-06-05",t:"Publication: Single-Cell Transcriptomic Dissection of GLUT4-Driven Pulmonary Hypertension"},
+  {f:"posts/post74.html",cat:"Publication",g:"research",d:"2025-06-05",t:"Publication: Single-Cell Transcriptomic Insights in Pulmonary Hypertension"},
+  {f:"posts/post73.html",cat:"Career",g:"career",d:"2025-06-04",t:"You Cannot Imagine How Important It Is to Like Your Job"},
+  {f:"posts/post72.html",cat:"Reflection",g:"other",d:"2025-06-04",t:"#RealPostdoc_Stories 1: Back to the Darkroom — in 2023!"},
+  {f:"posts/post71.html",cat:"Science",g:"research",d:"2025-06-03",t:"H-1B Visas and U.S. College Grads — A Closer Look"},
+  {f:"posts/post70.html",cat:"Science",g:"research",d:"2025-06-02",t:"40% of Expected NIH Cut Reversed"},
+  {f:"posts/post69.html",cat:"Career",g:"career",d:"2025-06-01",t:"Not Every Closed Door Is a Loss — Some Rejections Are Redirections"},
+  {f:"posts/post68.html",cat:"HPC",g:"hpc",d:"2025-05-23",t:"Running Out of Storage? It Might Be FILES, Not SPACE"},
+  {f:"posts/post67.html",cat:"HPC",g:"hpc",d:"2025-05-22",t:"AWS S3 and EC2 for Bioinformatics"},
+  {f:"posts/post66.html",cat:"HPC",g:"hpc",d:"2025-05-20",t:"tar.gz Is a Data Survival Strategy in Computational Biology"},
+  {f:"posts/post65.html",cat:"Career",g:"career",d:"2025-05-18",t:"Don't Chase Every New Bioinformatics Package — Master What You Know"},
+  {f:"posts/post64.html",cat:"Tutorial",g:"tutorial",d:"2025-05-17",t:"Don't Confuse Doublets or Mixture of Barcodes as Transitional Cells"},
+  {f:"posts/post63.html",cat:"Reflection",g:"other",d:"2025-05-15",t:"What Experience in Single-Cell Bioinformatics Really Means"},
+  {f:"posts/post62.html",cat:"Tool",g:"tool",d:"2025-05-11",t:"FetchData() vs. GetAssayData() in Seurat"},
+  {f:"posts/post61.html",cat:"Career",g:"career",d:"2025-05-10",t:"Domain Knowledge Is Your Superpower in Bioinformatics"},
+  {f:"posts/post60.html",cat:"Science",g:"research",d:"2025-07-11",t:"\"Coding Is Dead\" — A Response to UW's CS Enrollment Drop"},
+  {f:"posts/post59.html",cat:"Career",g:"career",d:"2025-07-09",t:"Work Smart with AI Tools — A Growth Mindset for Bioinformaticians"},
+  {f:"posts/post58.html",cat:"Career",g:"career",d:"2025-07-07",t:"Don't Just Learn Bioinformatics — Build Things"},
+  {f:"posts/post57.html",cat:"Career",g:"career",d:"2025-07-05",t:"Your Biology Background Helps You Steer Bioinformatics Better"},
+  {f:"posts/post56.html",cat:"Career",g:"career",d:"2025-07-03",t:"You Become What You Do"},
+  {f:"posts/post55.html",cat:"Tool",g:"tool",d:"2025-07-01",t:"Share Your R Library Across Computers with .libPaths() + OneDrive + robocopy"},
+  {f:"posts/post54.html",cat:"Tool",g:"tool",d:"2025-06-28",t:"RPCA Integration: Faster, Memory-Efficient Batch Correction in Seurat"},
+  {f:"posts/post53.html",cat:"Reflection",g:"other",d:"2025-06-25",t:"The Fishing Analogy for Seurat Workflow"},
+  {f:"posts/post52.html",cat:"Tool",g:"tool",d:"2025-06-20",t:"detach() vs unloadNamespace() — Free Memory from R Packages"},
+  {f:"posts/post51.html",cat:"Tool",g:"tool",d:"2025-06-18",t:"Use table(useNA=) to Catch Hidden NAs in Seurat Metadata"},
+  {f:"posts/post50.html",cat:"Tool",g:"tool",d:"2025-06-15",t:"rm() vs rm(list=) in R — Memory Management"},
+  {f:"posts/post49.html",cat:"Tutorial",g:"tutorial",d:"2025-06-12",t:"Converting Seurat to Scanpy / AnnData Format"},
+  {f:"posts/post48.html",cat:"HPC",g:"hpc",d:"2025-06-10",t:"Interactive SLURM Jobs with salloc — Debug on the Cluster"},
+  {f:"posts/post47.html",cat:"Tool",g:"tool",d:"2025-06-05",t:"Clean orig.ident Labels with substr() in Seurat"},
+  {f:"posts/post46.html",cat:"Career",g:"career",d:"2025-06-03",t:"From Wet Lab to Bioinformatics — My Transition Story"},
+  {f:"posts/post45.html",cat:"Tool",g:"tool",d:"2025-06-01",t:"Use (?i)mt- to Catch Mitochondrial Genes Across Species"},
+  {f:"posts/post44.html",cat:"Tool",g:"tool",d:"2025-05-30",t:"Name Your Matrices Properly with sprintf() in R"},
+  {f:"posts/post43.html",cat:"Tool",g:"tool",d:"2025-05-28",t:"R Markdown Chunk Options — The Ones I Use Most"},
+  {f:"posts/post42.html",cat:"Single-Cell",g:"other",d:"2025-05-24",t:"Single-Cell Lung Bias: Why Epithelial Cells Are Underrepresented"},
+  {f:"posts/post41.html",cat:"Reflection",g:"other",d:"2025-05-22",t:"ATS 2025 Wrap-Up — What an Experience!"},
+  {f:"posts/post40.html",cat:"Tool",g:"tool",d:"2025-05-16",t:"paste() vs paste0() in R — Know the Difference"},
+  {f:"posts/post39.html",cat:"Publication",g:"research",d:"2025-05-15",t:"Our 5 Abstracts at ATS 2025"},
+  {f:"posts/post32.html",cat:"Networking",g:"other",d:"2025-05-10",t:"ATS 2025 — Connect with Me in San Francisco!"},
+  {f:"posts/post38.html",cat:"Tutorial",g:"tutorial",d:"2024-12-02",t:"SNN Graph and Jaccard Similarity in Seurat Clustering"},
+  {f:"posts/post37.html",cat:"Tool",g:"tool",d:"2024-11-28",t:"Verbose Levels in R: 0, 1, 2, 3 — What Do They Mean?"},
+  {f:"posts/post36.html",cat:"Tool",g:"tool",d:"2024-11-25",t:"Understanding FindNeighbors() in Seurat"},
+  {f:"posts/post35.html",cat:"Tutorial",g:"tutorial",d:"2024-11-22",t:"Should You Use GAPDH for Normalization in scRNA-seq? No!"},
+  {f:"posts/post34.html",cat:"Tutorial",g:"tutorial",d:"2024-11-20",t:"Reactome vs GO vs KEGG — Which Pathway Database?"},
+  {f:"posts/post33.html",cat:"Tutorial",g:"tutorial",d:"2024-11-17",t:"PCA Alternatives in scRNA-seq: NMF, ICA, LDA, VAE, FA"},
+  {f:"posts/post31.html",cat:"Tutorial",g:"tutorial",d:"2024-11-14",t:"What Are Eigenvalues in PCA?"},
+  {f:"posts/post30.html",cat:"Tutorial",g:"tutorial",d:"2024-11-12",t:"Matrix Factorization in scRNA-seq — Parts 1 & 2"},
+  {f:"posts/post29.html",cat:"Tool",g:"tool",d:"2024-11-10",t:"Customize Your R Startup with .Rprofile"},
+  {f:"posts/post28.html",cat:"Tool",g:"tool",d:"2024-11-09",t:"Can't Remember an R Function Name? Use apropos()"},
+  {f:"posts/post27.html",cat:"Tool",g:"tool",d:"2024-11-08",t:"AUCell vs UCell for Gene Set Scoring in scRNA-seq"},
+  {f:"posts/post26.html",cat:"Tutorial",g:"tutorial",d:"2024-11-05",t:"Sparse vs Dense Matrices in Single-Cell RNA-seq"},
+  {f:"posts/post25.html",cat:"Tool",g:"tool",d:"2024-11-04",t:"BPCells + Seurat v5: Process 10 Million Cells Without Crashing R"},
+  {f:"posts/post24.html",cat:"Single-Cell",g:"other",d:"2024-11-03",t:"Is R Too Slow for Single-Cell Analysis? Seurat vs Scanpy"},
+  {f:"posts/post23.html",cat:"Tool",g:"tool",d:"2024-11-02",t:"List All Seurat Objects in R with Filter()"},
+  {f:"posts/post22.html",cat:"Single-Cell",g:"other",d:"2024-11-02",t:"Amazing News for R Single-Cell Users!"},
+  {f:"posts/post21.html",cat:"Tool",g:"tool",d:"2024-11-01",t:"inherits() vs is() in R — Why It Matters in Seurat"},
+  {f:"posts/post20.html",cat:"Tool",g:"tool",d:"2024-10-31",t:"Avoid Plotting Errors in Seurat with tryCatch()"},
+  {f:"posts/post19.html",cat:"Single-Cell",g:"other",d:"2023-10-26",t:"Spatial Transcriptomics & Multi-Omics Integration"},
+  {f:"posts/post18.html",cat:"Tool",g:"tool",d:"2023-10-27",t:"Combining Annotation Columns: Using coalesce()"},
+  {f:"posts/post17.html",cat:"Networking",g:"other",d:"2023-11-03",t:"Following Leaders in Bioinformatics"},
+  {f:"posts/post16.html",cat:"Tool",g:"tool",d:"2023-10-28",t:"Why Use identical() Instead of == in R?"},
+  {f:"posts/post15.html",cat:"Comparison",g:"other",d:"2023-10-31",t:"Linux Shell vs RStudio: Two Different Worlds"},
+  {f:"posts/post14.html",cat:"Tool",g:"tool",d:"2023-11-06",t:"cat(), print(), and message() in R"},
+  {f:"posts/post13.html",cat:"Tool",g:"tool",d:"2023-11-07",t:"Single vs Double Brackets in R"},
+  {f:"posts/post12.html",cat:"Tool",g:"tool",d:"2023-11-08",t:"Error Handling: Use tryCatch()"},
+  {f:"posts/post11.html",cat:"Reflection",g:"other",d:"2023-11-10",t:"Endothelial Cells: More Than Just Tubes"},
+  {f:"posts/post10.html",cat:"Tool",g:"tool",d:"2023-11-14",t:"FeaturePlot Color Scales: Interpreting Zero Expression"},
+  {f:"posts/post9.html",cat:"Tutorial",g:"tutorial",d:"2023-11-20",t:"Understanding Algorithms: Go Beyond Tools"},
+  {f:"posts/post8.html",cat:"Tool",g:"tool",d:"2023-11-28",t:"Excel Auto-Corrects Gene Names into Dates"},
+  {f:"posts/post7.html",cat:"Tool",g:"tool",d:"2023-12-05",t:"Choosing the Right Number of PCs in Seurat"},
+  {f:"posts/post6.html",cat:"Tool",g:"tool",d:"2023-12-12",t:"LinkedDimPlot: Interactive Spatial Visualization"},
+  {f:"posts/post5.html",cat:"Tool",g:"tool",d:"2023-12-20",t:"FindSubCluster: Targeted Subclustering in Seurat"},
+  {f:"posts/post4.html",cat:"Tool",g:"tool",d:"2023-12-28",t:"SingleCorPlot: Visualizing Gene Correlations"},
+  {f:"posts/post3.html",cat:"Single-Cell",g:"other",d:"2024-01-05",t:"Rat Lung Atlas: 140K Cells at Unprecedented Resolution"},
+  {f:"posts/post2.html",cat:"Science",g:"research",d:"2024-05-20",t:"Science Ethics & Integrity: Quality Over Quantity"},
+  {f:"posts/post1.html",cat:"Career",g:"career",d:"2024-07-18",t:"Don't Rush to Secure an Industry Job"}
+];
+
+// Sort newest first
+posts.sort((a, b) => b.d.localeCompare(a.d));
+
+const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function fmtDate(s) {
+  const [y, m, d] = s.split('-');
+  return `${months[+m-1]} ${+d}, ${y}`;
+}
+
+// Compute counts per group
+const counts = {all: posts.length, tutorial:0, tool:0, career:0, hpc:0, research:0, other:0};
+posts.forEach(p => { if (counts[p.g] !== undefined) counts[p.g]++; });
+Object.keys(counts).forEach(k => {
+  const el = document.getElementById('cnt-' + k);
+  if (el) el.textContent = counts[k];
+});
+
+let activeFilter = 'all';
+let searchQuery = '';
+
+function render() {
+  const list = document.getElementById('posts-list');
+  const noResults = document.getElementById('no-results');
+  const showingCount = document.getElementById('showing-count');
+  const q = searchQuery.toLowerCase();
+
+  const filtered = posts.filter(p => {
+    const matchFilter = activeFilter === 'all' || p.g === activeFilter;
+    const matchSearch = !q || p.t.toLowerCase().includes(q);
+    return matchFilter && matchSearch;
+  });
+
+  showingCount.textContent = filtered.length;
+
+  if (filtered.length === 0) {
+    list.innerHTML = '';
+    noResults.style.display = 'block';
+    return;
+  }
+  noResults.style.display = 'none';
+
+  list.innerHTML = filtered.map(p => `
+    <a href="${p.f}" target="_blank" class="post-list-item">
+      <span class="pli-date">${fmtDate(p.d)}</span>
+      <span class="pli-title">${p.t}</span>
+      <span class="pli-badge ${p.g}">${p.cat}</span>
+    </a>`).join('');
+}
+
+// Category buttons
+document.querySelectorAll('.cat-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    render();
+  });
+});
+
+// Search
+document.getElementById('posts-search').addEventListener('input', e => {
+  searchQuery = e.target.value;
+  render();
+});
+
+render();
+</script>
 
 </body>
 </html>
