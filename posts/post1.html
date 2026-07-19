@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dry Run Mode | Nutfah Single-cell Omics LLC</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo">
+      <img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/>
+      <span class="nav-company-name">Nutfah Single-cell Omics LLC</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../posts.html">Posts</a></li>
+      <li><a href="../tools.html">Tools</a></li>
+      <li><a href="../contact.html" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="post-page-meta">
+      <span class="post-category">Tutorial</span>
+      <span class="post-date">2026-06-10</span>
+    </div>
+    <h1>You'll thank me when you learn about "dry run" mode</h1>
+  </div>
+</section>
+
+<section class="post-page-section">
+  <div class="container">
+    <div class="post-page-body">
+
+      <img src="images/post.jpg" alt="Dry run mode in bioinformatics" class="post-image"/>
+
+      <p>I used to submit a SLURM job, wait in the queue ⏳, finally get resources allocated... only to discover that my pipeline failed in the first few seconds.</p>
+      <p><strong>Why?</strong></p>
+      <ul>
+        <li>Wrong file path ❌</li>
+        <li>Missing reference directory ❌</li>
+        <li>Typo in a filename ❌</li>
+        <li>Missing input file ❌</li>
+        <li>Incorrect configuration ❌</li>
+      </ul>
+      <p>Then I had to fix the mistake, submit another job, wait for resources again, and hope I didn't miss another typo. It was a frustrating cycle.</p>
+      <p><strong>Then I discovered dry run mode.</strong></p>
+      <p>A dry run validates your command and configuration without actually running the analysis. It checks whether the required files, directories, and parameters are available before consuming hours of compute time.</p>
+      <p>Think of it as pressing "Preview" before printing a 500-page document.</p>
+      <p>Many bioinformatics tools and workflow managers support a dry run option:</p>
+      <ul>
+        <li>✅ Cell Ranger (<code>--dry</code>)</li>
+        <li>✅ Nextflow (<code>-preview</code> or validation features)</li>
+        <li>✅ Snakemake (<code>-n</code> / <code>--dry-run</code>)</li>
+        <li>✅ Many HPC pipelines and workflow frameworks</li>
+      </ul>
+      <p>Instead of learning about an error after waiting in the queue, you find out in seconds.</p>
+      <p>This small habit has saved me countless hours of waiting, resubmitting jobs, and debugging.</p>
+      <p>💡 Before launching your next long-running analysis, ask yourself: <strong>"Can I do a dry run first?"</strong></p>
+      <p>Your future self — and your HPC cluster — will thank you.</p>
+
+      <a href="https://linkedin.com/in/sedat-kacar-6863b812b/" target="_blank" class="post-linkedin-link">View original on LinkedIn →</a>
+
+      <div class="post-back">
+        <a href="../posts.html">← Back to Posts</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
