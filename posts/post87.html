@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>droplevels() to Remove Unused Factor Levels in Seurat | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-07-08</span></div><h1>droplevels() to Remove Unused Factor Levels in Seurat</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>Did you see in your newly subset single cell data table that "a group with no value" at all EXIST?</p>
+<pre><code>table(seurat_obj$group)
+Control  Hypoxia  Treatment
+   7000     7500          0</code></pre>
+<p>Ok. Do not panic. Everything is fine... just do this..</p>
+<pre><code>seurat_obj$group &lt;- droplevels(seurat_obj$group)
+table(seurat_obj$group)
+Control  Hypoxia
+   7000     7500</code></pre>
+<p>Droplevels function helps you to discard unused factor levels! "0" value group gone! Easy peasy</p>
+<p>#rnAseq #singLecellrna #R #-table #seurAtobject #seUrat #Functiondroplevels</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rnaseq-singlecellrna-r-activity-7369413992995291139-70mG" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

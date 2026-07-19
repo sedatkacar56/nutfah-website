@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shell Tip — Stop Repeating Yourself with Variables ($VAR vs ${VAR}) | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">HPC</span><span class="post-date">2025-07-14</span></div><h1>Shell Tip — Stop Repeating Yourself with Variables ($VAR vs ${VAR})</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>💻 Shell Tip – Stop Repeating Yourself! One of the best habits in bash (or Linux shell) is to store things in variables instead of typing them again and again. For example, instead of copying this long DOI ID each time:</p>
+<pre><code>DOI_ID="45.678/DVN/SHELLTIP"</code></pre>
+<p>You can just call it back with:</p>
+<pre><code>echo $DOI_ID</code></pre>
+<p>But here's the trick:</p>
+<p>$VAR → quick and common<br>
+${VAR} → safer when your variable sits next to other text</p>
+<p>Example:</p>
+<pre><code>FILENAME="${DOI_ID}_results.txt"</code></pre>
+<p>Without {}, the shell might think the variable name is DOI_ID_results (which doesn't exist). With {}, there's no confusion.</p>
+<p>#Research #Automation #HPC #Macros #AutomationTips #Networking</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_research-automation-hpc-activity-7376677906745532417-s8YC" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

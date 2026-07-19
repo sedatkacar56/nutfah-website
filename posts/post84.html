@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Regex in R and Single-Cell Analysis | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-07-06</span></div><h1>Regex in R and Single-Cell Analysis</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🚀 Regex in R and Single-Cell Analysis</p>
+<p>🔹 What is Regex? Regex stands for regular expression. It's a language of pattern; a set of rules we can use to find, extract, replace, or split text. Think of it as a Swiss-army knife for text data. Why is the Regex, a pattern language, important for a single cell guy? Because we use it indirectly in our analysis, search, algorithms, functions etc. Let me remind you a little bit:</p>
+<p>a-Percentage of specific gene group:</p>
+<pre><code>seurat_obj[["percent.mt"]] &lt;- PercentageFeatureSet(
+  seurat_obj,
+  pattern = "^MT-"
+)
+seurat_obj[["percent.ribo"]] &lt;- PercentageFeatureSet(
+  seurat_obj,
+  pattern = "^RP[SL]"
+)</code></pre>
+<p>b-Metadata search:</p>
+<pre><code>grep("^percent", colnames(seurat_obj@meta.data), value = TRUE)
+# "percent.mt" "percent.ribo"</code></pre>
+<p>c-Feature Name Cleanup</p>
+<pre><code>gsub("-[0-9]+$", "", rownames(seurat_obj))
+# removes trailing -1, -2, etc.</code></pre>
+<p>✅ Takeaway: Regex in single-cell is everywhere: from gene QC (mito/ribo/hemo), to metadata wrangling, to barcode filtering and gene family analysis.</p>
+<p>Deep Note: You do not need to memorize every regex command. When the right time comes, and that as you use over and over , you will get the hang of it. However, this post is for raising awareness and building mindfulness how we use regex in single cell RNA.</p>
+<p>#Regex #RStats #Seurat #SingleCell #Bioinformatics #DataScience #Detailsmatter #SingleCellRNA #Whenyoulikeyousuccess #Loverurwork #Elhamdulillah #Passioncomesfirst #Mindfuldetails #Sucessatthecorner</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_regex-rstats-seurat-activity-7367897097016123393-fci8" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

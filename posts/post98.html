@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Every FASTQ Needs an MD5 Checksum | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-07-18</span></div><h1>Why Every FASTQ Needs an MD5 Checksum</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 Why Every FASTQ Needs an MD5 Checksum</p>
+<p>When you submit FASTQs to databases (like GEO, SRA, ENA) 🧾 they always ask for an MD5 — that tiny fingerprint proves your big files arrived intact.</p>
+<p>💡 MD5 = file integrity check, not encryption. It just ensures no byte changed during upload, copy, or transfer.</p>
+<p>If you skip it, your upload can fail or your data may be silently corrupted ⚠️</p>
+<p>🖥️ Generate MD5</p>
+<p>🔹 Windows (Command Prompt):</p>
+<pre><code>certutil -hashfile "*.fastq.gz" MD5</code></pre>
+<p>🔹 Linux / macOS:</p>
+<pre><code>md5sum *.fastq.gz</code></pre>
+<p>You'll get a long string — that's your MD5 ✅</p>
+<p>Upload it with your FASTQ submission or keep it in a file:</p>
+<pre><code>md5sum *.fastq.gz &gt; checksums.md5</code></pre>
+<p>💬 Tip: If one MD5 doesn't match after transfer, re-copy or re-download the file. Small habit, huge time-saver 🕒</p>
+<p>#Bioinformatics #NGS #DataIntegrity #SingleCellRNAseq #HPC #FASTAQ #ResearchTips</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_bioinformatics-ngs-dataintegrity-activity-7382497927350579200-P6hV" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

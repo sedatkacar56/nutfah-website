@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Factor vs Level in Seurat — The Chess Analogy | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-06-20</span></div><h1>Factor vs Level in Seurat — The Chess Analogy</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>SINGLE CELL RNA TIPS💡 Single cell users with chess skills are here! Factor versus Level in Seurat Object 😮 🎭</p>
+<p>Factor = the whole chess set<br>
+In R, a factor is the categorical variable. In chess, think of the set of all pieces on the board. The collection of pawns, rooks, knights, bishops, queens, and kings all together represent the factor. ALLLLLL together!!!</p>
+<p>♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜ ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ♙ ♙ ♙ ♙ ♙ ♙ ♙ ♙ ♖ ♘ ♗ ♕ ♔ ♗ ♘ ♖ ♟️</p>
+<p>Levels = the piece types<br>
+Levels are the distinct categories inside the factor. In chess, the piece types (pawn, rook, knight, bishop, queen, king) are the levels. Each piece on the board (say, the white queen or a black pawn) is an observation that belongs to one of these levels.</p>
+<p>📑 Example In R:</p>
+<pre><code>pieces &lt;- factor(c("Pawn", "Pawn", "Rook", "Bishop", "Pawn", "Queen"))
+levels(pieces)# [1] "Bishop" "Pawn" "Queen" "Rook"</code></pre>
+<p>The factor is pieces — the column that records all the pieces. The levels are "Bishop", "Pawn", "Queen", "Rook" — the categories of pieces.</p>
+<p>🔀 Reordering levels = changing piece hierarchy<br>
+By default, R puts the levels in alphabetical order. But you can reorder them. That's like saying: "For this game, I want the hierarchy to be: King &gt; Queen &gt; Rook &gt; Bishop &gt; Knight &gt; Pawn".</p>
+<p>In R:</p>
+<pre><code>pieces &lt;- factor(pieces, levels = c("King","Queen","Rook","Bishop","Knight","Pawn"))</code></pre>
+<p>Now, any analysis/plotting will respect this new order of levels.</p>
+<p>🧩 Back to Seurat<br>
+A Seurat metadata column (e.g., orig.ident, seurat_clusters) is like the chess set = a factor. The cluster names or sample IDs inside it are like the piece types = levels. Changing the level order is like changing how you rank the pieces → in Seurat this changes legend order, color assignment, axis order, etc.</p>
+<p>✅ Summary in chess terms:<br>
+Factor = the whole collection of chess pieces (all categories + instances).<br>
+Levels = the piece types (Pawn, Rook, Bishop, …).<br>
+Reordering levels = deciding which piece types you want to rank/arrange first.</p>
+<p>#singlecellRNAseq #seurat #R #factor #levels #YaMucib #metadata #colums</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrnaseq-seurat-r-activity-7362847128022388736-0DfB" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

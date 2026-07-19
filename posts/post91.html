@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Understanding PCA Eigenvalues in Single-Cell RNA-seq — Q&A | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-07-12</span></div><h1>Understanding PCA Eigenvalues in Single-Cell RNA-seq — Q&amp;A</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🚀 Understanding PCA means understanding variance — and that means understanding eigenvalues in Single-Cell RNA-seq! Q&amp;A Session Hey single cellers:) Let's break down together key concepts that often confuse in simple way:</p>
+<p>1️⃣ What are eigenvalues in single-cell RNA-seq analysis?<br>
+🔹 Eigenvalues represent how much variation each principal component (PC) captures from the high-dimensional gene expression data.<br>
+✔️ A higher eigenvalue = a PC capturing more important biological differences (e.g., cell types, states).</p>
+<p>2️⃣ Is an Elbow Plot the same as a Scree Plot?<br>
+🔹 Yes! Both plot eigenvalues (or related metrics) against PCs to find the "elbow point" where variance explained levels off.<br>
+✔️ In Seurat (R package), ElbowPlot() creates this visualization.</p>
+<p>3️⃣ In an Elbow Plot, does the Y-axis (standard deviation) represent eigenvalues?<br>
+🔹 Not directly — but they are closely related! Standard deviation is the square root of eigenvalue.<br>
+✔️ Higher standard deviation → higher eigenvalue → more variance explained.</p>
+<p>4️⃣ Is DimHeatmap in Seurat a heatmap of eigenvalues? What about bar plots?<br>
+🔹 DimHeatmap shows genes × PCs — not eigenvalues.<br>
+✔️ X-axis: Cells (ordered by PC score) | Y-axis: Genes (loading heavily on the PC).<br>
+🔹 Bar plots are great for variance explained:<br>
+✔️ X-axis: Principal Components | Y-axis: Variance Explained (%).<br>
+🔹 Cumulative Variance Plot:<br>
+✔️ X-axis: PCs | Y-axis: Cumulative Variance Explained (%).<br>
+🔹 Elbow/Scree Plot (Seurat):<br>
+✔️ X-axis: PCs | Y-axis: Standard Deviation (sqrt of eigenvalues).</p>
+<p>5️⃣ Is Variance Explained (%) the same as Eigenvalues?<br>
+🔹 Almost — they are connected:<br>
+✔️ Eigenvalue = raw variance captured by a PC.<br>
+✔️ Variance Explained (%) = (Eigenvalue ÷ Sum of all Eigenvalues) × 100.</p>
+<p>🔍 In short: Eigenvalues show raw variance. Variance Explained (%) shows normalized variance. Elbow and Scree plots help decide how many PCs to use.</p>
+<p>#SingleCellRNASeq #PCA #Eigenvalues #DataVisualization #Seurat #Bioinformatics #ComputationalBiology #Varianceexplained #SingleCellAnalysis #RStats #Omics #Genomics #DimensionalityReduction #AlMuqeet</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrnaseq-pca-eigenvalues-activity-7374849025663102976-i_7Z" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>
