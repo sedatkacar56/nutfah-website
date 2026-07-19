@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FeaturePlot Color Scales: Interpreting Zero Expression | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2023-11-14</span></div><h1>FeaturePlot Color Scales: Interpreting Zero Expression</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body"><h2>The Question</h2><p>What's the difference between two FeaturePlots in terms of gene expression? At first glance, they look quite different — but here's the twist: there's almost no real difference in the data itself.</p><h2>What's Happening?</h2><p><strong>Graph 1:</strong> Just one single cell expressing the gene. Only that cell appears purple, rest are gray. Perfectly intuitive.</p><p><strong>Graph 2:</strong> NONE of the cells express the gene—all values are zero. But oddly, the plot still shows cells in purple.</p><h2>Why?</h2><p><code>FeaturePlot()</code> applies a default color scale regardless of whether there's any true expression signal. While the "all-zero" case is more common, both can mislead interpretation.</p><h2>⚠️ Key Takeaway</h2><p><strong>Always check the underlying values or adjust the color scale—especially when creating plots for collaborators or publications.</strong> This is especially tricky with <code>split.by</code>, where color scales may be hidden or inconsistent.</p><a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrnaseq-seurat-bioinformatics-activity-7310764290255253504-EJFM" target="_blank" class="post-linkedin-link">View on LinkedIn →</a><div class="post-back"><a href="../posts.html">← Back to Posts</a></div></div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

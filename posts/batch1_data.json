@@ -1,0 +1,182 @@
+[
+  {
+    "post_num": 1,
+    "date": "2024-07-18",
+    "category": "Career",
+    "title": "Don't Rush to Secure an Industry Job",
+    "summary": "As a PhD, take your time choosing the right industry role based on your vision, not just skills.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_dont-rush-insistently-to-secure-an-industry-activity-7134184205378359296-5E6E",
+    "text": "Don't rush insistently to secure an industry job as a Ph.D. You are not merely seeking any industrial position where you showcase yourself or earn a decent salary, are you? You have great skills and have only one life to live. And each passing day is precious. Once you find your job it will consume a significant amount of your time. You would not want to spend your time on something that you are not genuinely into, are you? Take your time - Don't rush! Be discerning, not based on your skills, but on the vision you have for your future, where you want to see improvement in yourself. Lack of expertise in a specific area shouldn't deter you; you have the capability. You are invaluable. Upon securing a job, you may become one of the millions of employees in the company, but this job will play a significant role in shaping your future steps. Do not worry about none of your hundreds of applications that have been accepted. Value yourself. Improve yourself. Savor the freshness of each new day. There are millions of opportunities to take! Countless opportunities await—millions of areas where you can enhance yourself and become the person you aspire to be."
+  },
+  {
+    "post_num": 2,
+    "date": "2024-05-20",
+    "category": "Science",
+    "title": "Science is for Humanity, Not Just Prestige",
+    "summary": "Science should focus on discovery and relieving suffering, not on accumulating papers or securing funding.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_science-research-engineering-activity-7201992477963165696-udPZ",
+    "text": "We immediately find ways to prevent this direction of science. It helps nobody! Science is not just making money or promoting yourself or getting grants but an important factor for the future of the world, new treatments, cures, relieving the pain of suffering people! We should not be cheap. And papers are accumulating knowledge that future scientist bases their hypothesis! Quality over quantity matters. The real goal should be discovery, not publication metrics."
+  },
+  {
+    "post_num": 3,
+    "date": "2024-01-10",
+    "category": "Science",
+    "title": "Science Should Serve Humanity First",
+    "summary": "True science prioritizes truth and ethics over career advancement, grants, and reputation.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_science-for-humanity-not-just-prestige-activity-7289968760596111362-TcRO",
+    "text": "Science should serve humanity—it should aim to relieve suffering, improve quality of life, and address diseases worldwide. It's disheartening to see science increasingly driven by reputation and funding rather than the pursuit of truth. As focus shifts toward securing tenure, maintaining grants, and building personal status, the sincerity, ethics, and quality of research risk being compromised. Instead of advancing knowledge and solving critical questions, scientists may become distracted by ego, politics, and career stability. Science isn't about aligning data to fit grant expectations or simply producing results that look good on paper. Grants are supposed to guide possible directions and hypotheses—not dictate outcomes. Trying to force data to fit a narrative isn't science; it's misleading. True science is about discovery—whether the results align with expectations or not. Negative data is as valuable as positive data, yet we rarely see it supported in publications or grants. Science is a collaborative effort. Value your colleagues—they're the ones who inspire you, challenge you, and help keep your work on track. By fostering teamwork and mutual respect, we can achieve so much more. While scientists deserve fair compensation and recognition for their hard work, we must prioritize ethics. The ultimate goal should always be to contribute to humanity's progress. Science isn't about perfection; it's about truth. Let's hold ourselves accountable to that standard."
+  },
+  {
+    "post_num": 4,
+    "date": "2024-01-05",
+    "category": "Single-Cell",
+    "title": "Rat Lung Atlas: 140K Cells at Unprecedented Resolution",
+    "summary": "Introducing the most detailed single-cell RNA atlas of the rat lung with comprehensive mapping and cross-species annotation capability.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecell-scrnaseq-ratlungatlas-activity-7296348348343558144-I5bv",
+    "text": "We are proud to present the first and most detailed and robust single-cell RNA atlas of the rat lung at an unprecedented resolution of ~140k cells. This dataset represents a major step forward in respiratory research, providing an invaluable reference for the rat lung, which has been largely absent in the literature. What makes this atlas unique? ✅ Comprehensive mapping of five major cell groups: Epithelial cells, Endothelial cells, Mesenchymal cells & Immune Cells. ✅ Detailed annotation of T cell subclusters, categorized by activation status and functional roles, offering a deeper look into adaptive immunity. ✅ Identification of transitional cell states, shedding light on dynamic changes in lung biology. ✅ Potential for cross-species annotation: This rat lung reference can also aid in annotating mouse and human single-cell datasets using orthologous genes via Ensembl. Current Status: This dataset is actively being used in our ongoing research projects for cell annotation and is proving to be a powerful tool for studying lung biology."
+  },
+  {
+    "post_num": 5,
+    "date": "2024-01-05",
+    "category": "Single-Cell",
+    "title": "Spatial & Multi-omics Transcriptomics",
+    "summary": "Advanced techniques for spatial transcriptomics, stereo-seq, and multi-modal integration in single-cell analysis.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_bioinformatics-transcriptomics-singlecell-activity-7296367359982714880-agR2",
+    "text": "Exploring spatial transcriptomics and multi-omics integration for comprehensive tissue-level analysis. Stereo-seq and spatial omics are transforming how we understand tissue architecture and cell-cell interactions."
+  },
+  {
+    "post_num": 6,
+    "date": "2023-12-28",
+    "category": "Tool",
+    "title": "SingleCorPlot: Visualizing Gene Correlations in Seurat",
+    "summary": "Explore gene-gene correlations in single-cell data using Seurat's SingleCorPlot function.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrna-seurat-dimplot-activity-7297095026226929664-RLse",
+    "text": "🔬 Beyond the Basics of #SingleCellRNA: Exploring Gene Correlations with SingleCorPlot in #Seurat We're all familiar with Seurat's core visualization functions like #DimPlot, #FeaturePlot, #DotPlot, and #ViolinPlot—but what about #SingleCorPlot? SingleCorPlot is a powerful tool for visualizing gene-gene correlations in single-cell data, helping us uncover relationships between genes across different conditions. 📊 Correlation Analysis of Acta2 & Myh11: Let's compare the correlations internally—hypoxia, normoxia, and overall correlation—rather than focusing on absolute strength. ✅ Normoxia: 0.68 (the highest among the three) ✅ Hypoxia: 0.60 (the lowest among the three) ✅ Overall: 0.62 (falls in between hypoxia and normoxia) Although all three correlations fall within the strong correlation range (0.50 – 0.70), hypoxia shows a slightly weaker correlation than normoxia, suggesting potential differences in gene regulation under low oxygen conditions."
+  },
+  {
+    "post_num": 7,
+    "date": "2023-12-20",
+    "category": "Tool",
+    "title": "FindSubCluster: Targeted Subclustering in Seurat",
+    "summary": "Deep-dive into specific cell clusters with FindSubCluster() for granular cell-type resolution without global over-fragmentation.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_findclusters-findsubcluster-singlecellrnaseq-activity-7298533413584609280-a574",
+    "text": "The post introduces `FindSubCluster()`, a Seurat function for targeted subclustering. While `FindClusters()` identifies broad cell populations, `FindSubCluster()` enables deeper analysis of specific clusters without globally increasing resolution. Applies subclustering only to clusters of interest, creates meaningful subdivisions while preserving other data, and provides advantages including granular analysis without over-fragmentation and improved cell-type annotation."
+  },
+  {
+    "post_num": 8,
+    "date": "2023-12-12",
+    "category": "Tool",
+    "title": "LinkedDimPlot: Interactive Spatial & UMAP Visualization",
+    "summary": "Explore spatial transcriptomics data interactively using LinkedDimPlot to compare spatial locations with clustering plots.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_hiddengemsinseurat-linkeddimplot-linkedfeatureplot-activity-7299478833504624642-A2lE",
+    "text": "🔬 #HiddenGemsInSeurat #3: Exploring #LinkedDimPlot() – Interactive Spatial & UMAP Visualization! When analyzing spatial transcriptomics, we often need to compare Seurat's unsupervised clusters with their spatial locations. Seeing where the same clusters appear in both UMAP/tSNE and spatial coordinates can provide crucial biological insights. 💡 LinkedDimPlot() is just for you! With LinkedDimPlot(), you can: ✔️ Interactively explore spatial & clustering plots side by side. ✔️ Locate specific cells on the spatial image and see their cluster in DimPlot(). ✔️ Identify spatial regions where the same clusters appear. ✔️ Click on points to instantly highlight corresponding cells in both views. 📊 Graph Explanation: The image below shows: Left: A spatial plot with bins representing spatially captured transcriptomics data. Right: The same clusters from DimPlot(), colored identically to match the spatial view. ✨ Want to explore gene expression instead? Try #LinkedFeaturePlot(), which lets you visualize specific gene expression in both spatial and UMAP plots!"
+  },
+  {
+    "post_num": 9,
+    "date": "2023-12-05",
+    "category": "Tool",
+    "title": "How to Choose the Right Number of PCs in Seurat",
+    "summary": "Use ElbowPlot to select the optimal number of principal components for robust single-cell analysis.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_pca-seurat-hiddengemsinseurat-activity-7302177871119167507-tU52",
+    "text": "The post discusses Principal Component Analysis (PCA) selection in Seurat for single-cell RNA-seq data analysis. PCA reduces high-dimensional transcriptomic data by capturing variation patterns across genes, with each PC representing an axis of variation. Selection Method uses ElbowPlot visualization where X-axis = number of PCs; Y-axis = variance explained. Visual examples show UMAP clustering results at different PC levels: 2 PCs (minimal structure), 5 PCs (more definition but unstable), 10 PCs (captures major variance), 15 PCs (refined clusters), 20+ PCs (minimal changes). Too few PCs → Lose biological signal. Too many PCs → Add noise without major improvements. The best PC number is where variance capture stabilizes."
+  },
+  {
+    "post_num": 10,
+    "date": "2023-11-28",
+    "category": "Tool",
+    "title": "Auto-Correction of CSV Files: Gene Names or Dates?",
+    "summary": "Beware of Excel auto-correcting gene names like MARCH2 and MARCH3 into dates (2-Mar, 3-Mar).",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_seurat-singlecellrnaseq-bioinformatics-activity-7304703922747621376-jMHm",
+    "text": "🔥 AUTOINCORRECTION OF .CSV FILE—GENE NAMES OR DATES? ⚠️ Another normal #Seurat single-cell day. 🔬 FindMarkers() ran. dplyr filtered. DEGs selected. 📌 Top markers ready! Then came the big meeting. My boss printed the results I prepared, ready to present. Everything seemed perfect. Until… 🔴 He pointed at the list: 💬 'What are these? 2-Mar and 3-Mar?' At first, I was confident—everything was automatically generated. No room for errors. ⚠️ But then I noticed something… Unlike other left-aligned gene names, these were right-aligned—just like dates! 💡 'They must be gene names,' I assured him. 'Maybe just a CSV formatting issue.' 🔎 Quick Google search: 2-Mar and 3-Mar. 🧩 The genes symbols MARCH2 and MARCH3 popped up. For a second, I thought they were aliases. But GeneCards showed no such names. 🔵 That's when it hit me… 'Excel had silently auto-corrected my gene names into dates!' How to avoid: ✅ Sort alphabetically to catch auto-formatted gene names ✅ Use .tsv or flat text files instead of .csv/.xlsx ✅ Format columns as text before importing data into Excel"
+  },
+  {
+    "post_num": 11,
+    "date": "2023-11-20",
+    "category": "Tutorial",
+    "title": "Understanding PCA: Beyond Just Using It",
+    "summary": "Wet lab scientists should understand the algorithms behind computational methods like PCA, UMAP, and clustering.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_exploring-principal-component-analysis-pca-activity-7305186884199100416-it2B",
+    "text": "Hey! #WetLabScientists with #ComputationalBiology #skills!!! This is the way of #DISCOVERY!!! For those of us coming from a wet lab background, it's time to go beyond just using bioinformatics tools—we need to understand the algorithms behind them! Techniques like PCA (Principal Component Analysis), UMAP, t-SNE, K-Nearest Neighbors (KNN), clustering algorithms, and machine learning models are widely used in modern biology, from single-cell transcriptomics to structural biology. But blindly trusting these methods in every analysis without questioning their assumptions might limit our ability to uncover something truly novel."
+  },
+  {
+    "post_num": 12,
+    "date": "2023-11-14",
+    "category": "Tool",
+    "title": "FeaturePlot Color Scales: Interpreting Zero Expression",
+    "summary": "Be cautious with Seurat's FeaturePlot default color scaling—it may color cells even when expression is zero.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrnaseq-seurat-bioinformatics-activity-7310764290255253504-EJFM",
+    "text": "🧠 Question: What's the difference between these two FeaturePlots (Graph 1 and Graph 2) in terms of gene expression? At first glance, they look quite different — but here's the twist: there's almost no real difference in the data itself. Both plots were generated using Seurat's FeaturePlot() on single-cell RNA-seq data, showing the expression of the same gene across two conditions. 🔍 So what's actually happening? In Graph 1, there's just one single cell in the WT group expressing the gene. In Graph 2, none of the cells express the gene — all expression values are zero. But oddly, the plot still shows cells in purple. 💡 Key takeaway: Seurat's FeaturePlot() may still color cells even when expression is zero — or when all values are identical. Always check the underlying values or adjust the color scale — especially when creating plots for collaborators or publications."
+  },
+  {
+    "post_num": 13,
+    "date": "2023-11-10",
+    "category": "Reflection",
+    "title": "Endothelial Cells: More Than Just Hollow Tubes",
+    "summary": "Deep exploration reveals that endothelial cells are complex, dynamic actors involved in nearly every disease.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_endothelial-cells-come-on-just-empty-activity-7311389433449066497-6feh",
+    "text": "Endothelial cells? Come on... Just empty space with the same tiny lines? No difference! — What I used to think! 🔍 How deep you go determines how much you discover. With today's tools, we can reach materials and insights faster than ever — no time wasted digging through endless books or browsing outdated sites. 🚀 AI-powered search tools and open-access data are game changers. But here's the thing: 🔸 There are millions of things waiting to be explored. 🔸 It's not about speed — it's about depth. 🔸 The deeper you dream, the further you go. Once I truly started working with endothelial cells... 💥 It was like stepping into a whole new world. Endothelial cells are deeply involved in almost every disease. They're the connective bridges between all organs — critical, dynamic, and anything but simple."
+  },
+  {
+    "post_num": 14,
+    "date": "2023-11-08",
+    "category": "Tool",
+    "title": "Error Handling in R: Use tryCatch() to Keep Scripts Running",
+    "summary": "Don't let one missing gene stop your entire analysis—use tryCatch() to catch errors and continue processing.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-seurat-bioinformatics-activity-7313383593248968704-gHu-",
+    "text": "🚫 You loop through genes to plot with Seurat::FeaturePlot()... Everything works — until one gene is missing. Boom 💥 Error. Your whole script stops. But why stop the show for one gene? Here's how I catch the error and keep moving: tryCatch({ FeaturePlot(seurat_obj, features = 'Trouble_maker') |> print() }, error = function(e) { message('⚠️ Skipped: ', e$message) } ) 💡 Don't stop on the first error. Catch it. Report it. Move on."
+  },
+  {
+    "post_num": 15,
+    "date": "2023-11-07",
+    "category": "Tool",
+    "title": "Single vs Double Brackets in R: A Critical Difference",
+    "summary": "Learn when to use [[ ]] vs [ ] in R to avoid hours of debugging in single-cell pipelines.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-seurat-bioinformatics-activity-7313567007398862848-2biU",
+    "text": "The post explains critical differences between single and double bracket notation in R, particularly for single-cell RNA-seq workflows. Scenario 1: `Read10X_h5(h5_files[1])` returns a list (error); `Read10X_h5(h5_files[[1]])` returns the actual file path string (correct). Scenario 2: `seurat_list['sample1'] <- obj` stores inside a sublist (incorrect); `seurat_list[['sample1']] <- obj` stores as proper named element (correct). Scenario 3: `seurat_list[[1]]@meta.data` works correctly; `seurat_list[1]@meta.data` produces an error. Key Takeaway: Use `[[ ]]` when you want the actual object, and `[ ]` when you want a list of objects."
+  },
+  {
+    "post_num": 16,
+    "date": "2023-11-06",
+    "category": "Tool",
+    "title": "cat(), print(), and message() in R: Choose the Right Output Function",
+    "summary": "Understand the differences between output functions in R for better logging and error handling in pipelines.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-seurat-singlecell-activity-7314035168296480770-oakS",
+    "text": "The post explains three output functions in R for Seurat/scRNA-seq workflows. cat() — Raw text output without formatting. print() — Structured output with quotes and metadata. Recommended for displaying values with sprintf() formatting. message() — Quiet logging that can be suppressed with suppressMessages(). Ideal for long pipelines. cat() has no soul; print() understands objects; message() is the quiet one that respects user preferences. Use cat() for status updates, print() for values/objects, and message() for non-intrusive info in long pipelines."
+  },
+  {
+    "post_num": 17,
+    "date": "2023-11-03",
+    "category": "Networking",
+    "title": "Following Leaders in Bioinformatics",
+    "summary": "Acknowledging influential voices in the bioinformatics community—from tutorials to career advice.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_hi-everyone-so-far-i-follow-and-read-mostly-activity-7317904657689780224-vf0T",
+    "text": "Hi everyone! So far, I follow and read mostly the posts from 🎯 Ming 'Tommy' Tang (everything for bioinformatics), Joachim Schork (R visualization), Cristina Guijarro-Clarke (bioinformatics career), Ilya Captain PhD (data humor), Denver Ncube PhD (ongoing discussion and hot topics), Alfonso Saera Vila (updates of new tools and packages), Sebastian Rauschert (data reproducibility). This is my recent portfolio."
+  },
+  {
+    "post_num": 18,
+    "date": "2023-10-31",
+    "category": "Comparison",
+    "title": "Linux Shell vs RStudio: Two Different Worlds",
+    "summary": "Comparing the philosophies of command-line computing versus visual data science development.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_programming-rstudio-analysis-activity-7318289585837391876-Tixz",
+    "text": "Kacar compares two development environments through a vehicle metaphor. Linux shell work is like 'driving a truck—powerful, but no rear window. You trust the engine, not visuals,' while RStudio is like 'driving a car with big rear windows—everything's visual: plots, tables, observable objects, and global items.'"
+  },
+  {
+    "post_num": 19,
+    "date": "2023-10-28",
+    "category": "Tool",
+    "title": "Why Use identical() Instead of == in R?",
+    "summary": "Avoid silent bugs by using identical() for strict comparisons instead of the vectorized == operator.",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rlanguage-rcommunity-codetips-activity-7318666760923029505-Or06",
+    "text": "I just learned this difference. I hope it helps somebody out there. All familiar with using == in conditional checks, right? But what about identical()? The catch? == is vectorized — it returns a vector of TRUE/FALSE values. This can lead to warnings or even silent bugs when used inside if(). identical() always returns a single TRUE or FALSE — no ambiguity, no surprises. Use == for comparisons. Use identical() for conditions."
+  },
+  {
+    "post_num": 20,
+    "date": "2023-10-27",
+    "category": "Tool",
+    "title": "Combining Annotation Columns: Using coalesce() in R",
+    "summary": "Merge pre-annotated metadata columns from separate Seurat objects without NA values using coalesce().",
+    "linkedin_url": "https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_question-singlecellseq-seurat-activity-7318683378394746880-Vr-0",
+    "text": "After merging two Seurat objects with individual annotation columns, those columns contain NA values for cells from the other sample, making unified visualization difficult. The solution: use dplyr::coalesce() to merge annotation columns while eliminating NA values—an elegant approach for combining non-overlapping categorical data in R."
+  }
+]

@@ -137,7 +137,7 @@ Card shows: category tag, date, title, summary (visible on hover)
 
 | Batch | Posts | Status | Notes |
 |-------|-------|--------|-------|
-| Batch 1 | post1–post20 | ⏳ Not started | Lines 1–20 in linkedinposts.md |
+| Batch 1 | post1–post20 | ⏳ Data fetched, HTML files pending | Lines 1–20 in linkedinposts.md. Data: batch1_data.json |
 | Batch 2 | post21–post40 | ⏳ Not started | Lines 21–40 |
 | Batch 3 | post41–post60 | ⏳ Not started | Lines 41–60 |
 | Batch 4 | post61–post80 | ⏳ Not started | Lines 61–80 |

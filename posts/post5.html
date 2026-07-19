@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FindSubCluster: Targeted Subclustering | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo">
+      <img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/>
+      <span class="nav-company-name">Nutfah Single-cell Omics LLC</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../posts.html">Posts</a></li>
+      <li><a href="../tools.html">Tools</a></li>
+      <li><a href="../contact.html" class="nav-cta">Get a Quote</a></li>
+    </ul>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <div class="post-page-meta">
+      <span class="post-category">Tool</span>
+      <span class="post-date">2023-12-20</span>
+    </div>
+    <h1>FindSubCluster: Targeted Subclustering in Seurat</h1>
+  </div>
+</section>
+<section class="post-page-section">
+  <div class="container">
+    <div class="post-page-body">
+      <p>Deep-dive into specific cell clusters with <code>FindSubCluster()</code> for granular cell-type resolution without global over-fragmentation.</p>
+      <h2>The Challenge</h2>
+      <p>While <code>FindClusters()</code> identifies broad cell populations, sometimes you need deeper analysis of specific clusters. But increasing global resolution can fragment unrelated populations.</p>
+      <h2>The Solution: FindSubCluster()</h2>
+      <p><code>FindSubCluster()</code> applies subclustering only to clusters of interest (e.g., Cluster 0), creating meaningful subdivisions (0_0, 0_1, 0_2) while preserving other data.</p>
+      <h2>Key Advantages</h2>
+      <ul>
+        <li>Granular analysis without over-fragmentation</li>
+        <li>Improved cell-type annotation for specific populations</li>
+        <li>Preserved cluster identity for unrelated populations</li>
+      </ul>
+      <h2>Usage</h2>
+      <p>Applies subclustering only to clusters of interest, creating meaningful subdivisions while preserving the rest of your data—the perfect middle ground between global clustering and fine resolution.</p>
+      <a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_findclusters-findsubcluster-singlecellrnaseq-activity-7298533413584609280-a574" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+      <div class="post-back">
+        <a href="../posts.html">← Back to Posts</a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p>
+  </div>
+</footer>
+</body>
+</html>
