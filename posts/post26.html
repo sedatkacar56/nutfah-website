@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sparse vs Dense Matrices in Single-Cell | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2024-11-05</span></div><h1>Sparse vs Dense Matrices in Single-Cell RNA-seq</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 Sparse vs. Dense Matrices in Single-Cell RNA-seq — What You Need to Know</p>
+<p>Single-cell RNA-seq data is extremely sparse. In a typical dataset, 90–95% of gene-cell combinations have zero counts. Storing those zeros wastes enormous memory.</p>
+<p>🗜️ Sparse Matrix (dgCMatrix in R):<br/>
+- Only stores non-zero values + their positions<br/>
+- Uses Compressed Sparse Column (CSC) format<br/>
+- 10x more memory-efficient for scRNA-seq<br/>
+- Seurat uses this by default</p>
+<pre><code>library(Matrix)
+
+# Check if your matrix is sparse
+class(seurat_obj@assays$RNA@counts)
+# [1] "dgCMatrix"
+
+# Convert dense to sparse
+sparse_mat &lt;- as(dense_mat, "dgCMatrix")
+
+# Check sparsity
+sparsity &lt;- 1 - (nnzero(mat) / length(mat))
+cat("Sparsity:", round(sparsity * 100, 2), "%\n")</code></pre>
+<p>📊 Dense Matrix:<br/>
+- Stores every value including zeros<br/>
+- Much faster for operations when data IS dense<br/>
+- Used after scaling (ScaleData() output is dense)</p>
+<p>⚠️ Common pitfall: Converting to dense matrix accidentally (e.g., subsetting with []) can crash R with large datasets.</p>
+<p>Always check your matrix type when troubleshooting memory issues!</p>
+<p>#RStats #SingleCell #Bioinformatics #dgCMatrix #SparseMatrix #Seurat #MemoryManagement #scRNAseq</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-singlecell-bioinformatics-activity-7319835025901367296-XKm1" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

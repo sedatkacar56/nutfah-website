@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>rm() vs rm(list=) in R | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-06-15</span></div><h1>rm() vs rm(list=) in R — Memory Management for Large Datasets</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🗑️ rm() vs. rm(list=) in R — Memory Management for Large scRNA-seq Datasets</p>
+<p>When working with large Seurat objects, cleaning up unused variables is essential. But rm() and rm(list=) work differently:</p>
+<pre><code># rm() — removes named objects directly
+rm(temp_matrix, old_seurat, raw_counts)
+
+# rm(list=) — removes a CHARACTER VECTOR of names
+# This is what you need for programmatic removal!
+
+# Remove multiple objects matching a pattern
+to_remove &lt;- ls(pattern = "^temp_")
+rm(list = to_remove)
+
+# Remove everything except what you need
+keep &lt;- c("seurat_final", "metadata", "color_palette")
+rm(list = setdiff(ls(), keep))
+
+# Remove all objects (nuclear option)
+rm(list = ls())
+
+# Always follow with garbage collection
+gc()  # Returns memory to the OS</code></pre>
+<p>⚠️ Common mistake: trying to do rm(ls(pattern="temp")) — this doesn't work because rm() expects names, not a character vector. Use rm(list=ls(pattern="temp")) instead.</p>
+<p>💡 After removing large objects, always call gc() to actually free the RAM. R's garbage collector doesn't run automatically at the right time for large objects.</p>
+<p>#RStats #MemoryManagement #Seurat #scRNAseq #RProgramming #Bioinformatics #Productivity</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-memorymanagement-seurat-activity-7337787218988634112-5FYZ" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

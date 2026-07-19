@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Converting Seurat to Scanpy / AnnData | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-06-12</span></div><h1>Converting Seurat to Scanpy / AnnData Format</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🔄 Converting Seurat to Scanpy / AnnData — A Practical Guide</p>
+<p>Need to move your single-cell analysis from R to Python? Here's how to convert between Seurat and AnnData objects:</p>
+<p>📦 Method 1: Using SeuratDisk (R → h5ad)</p>
+<pre><code>library(SeuratDisk)
+
+# Save as h5Seurat first, then convert to h5ad
+SaveH5Seurat(seurat_obj, filename = "my_data.h5Seurat")
+Convert("my_data.h5Seurat", dest = "h5ad")
+
+# In Python (Scanpy)
+import scanpy as sc
+adata = sc.read_h5ad("my_data.h5ad")</code></pre>
+<p>📦 Method 2: Using sceasy (more reliable)</p>
+<pre><code>library(sceasy)
+library(reticulate)
+
+sceasy::convertFormat(seurat_obj,
+                      from = "seurat",
+                      to = "anndata",
+                      outFile = "my_data.h5ad")</code></pre>
+<p>🗂️ Understanding AnnData structure:<br/>
+- adata.X → count matrix (cells × genes)<br/>
+- adata.obs → cell metadata (like seurat@meta.data)<br/>
+- adata.var → gene metadata<br/>
+- adata.obsm → reductions (PCA, UMAP embeddings)<br/>
+- adata.uns → unstructured data (like seurat@misc)</p>
+<p>💡 Common issues:<br/>
+- Assay names: Seurat uses "RNA", AnnData defaults to no assay name<br/>
+- Sparse matrices: both use sparse; should transfer cleanly<br/>
+- Reductions: may need to re-run UMAP in Scanpy for consistency</p>
+<p>#Seurat #Scanpy #AnnData #scRNAseq #Python #RStats #Bioinformatics #SingleCell #DataConversion</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_seurat-scanpy-anndata-activity-7336347461898932224-0MOu" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

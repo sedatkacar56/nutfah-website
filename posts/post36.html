@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Understanding FindNeighbors() in Seurat | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2024-11-25</span></div><h1>Understanding FindNeighbors() in Seurat</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🏘️ Understanding FindNeighbors() in Seurat — A Neighborhood Metaphor</p>
+<p>Imagine each cell in your dataset is a house in a city. FindNeighbors() figures out which cells live "next door" to each other based on their gene expression profiles.</p>
+<p>Here's what it does:<br/>
+1️⃣ Takes your PCA embeddings (the "address" of each cell in reduced space)<br/>
+2️⃣ Finds the k nearest neighbors for each cell (default k=20)<br/>
+3️⃣ Builds two graphs: KNN graph + SNN graph (Shared Nearest Neighbor)</p>
+<pre><code># Basic usage
+seurat_obj &lt;- FindNeighbors(seurat_obj,
+                              dims = 1:20,    # which PCs to use
+                              k.param = 20)   # number of neighbors
+
+# The result: two graphs stored in the object
+# seurat_obj@graphs$RNA_nn   # KNN graph
+# seurat_obj@graphs$RNA_snn  # SNN graph</code></pre>
+<p>🔑 Why it matters:<br/>
+- More neighbors (higher k) → smoother clusters, better for large datasets<br/>
+- Fewer neighbors (lower k) → finer resolution, better for rare populations<br/>
+- This step MUST come before FindClusters()</p>
+<p>The SNN graph is what clustering algorithms actually use — cells sharing many neighbors are likely the same cell type.</p>
+<p>#Seurat #scRNAseq #FindNeighbors #SingleCell #Clustering #Bioinformatics #KNN #SNN</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_seurat-scrna-findneighbors-activity-7324836605309943808-iK9r" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

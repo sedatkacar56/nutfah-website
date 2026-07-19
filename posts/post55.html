@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Share R Library with .libPaths() + OneDrive + robocopy | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-07-01</span></div><h1>Share Your R Library Across Computers with .libPaths() + OneDrive + robocopy</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>📚 Share Your R Library Across Computers with .libPaths() + OneDrive + robocopy</p>
+<p>Tired of reinstalling 50+ R packages every time you switch computers or get a new machine? Here's how to set up a shared R library:</p>
+<p>Part 1: Point R to a shared library location using .libPaths()</p>
+<pre><code># In your .Rprofile (runs every R session)
+# Add a shared library path at the TOP of the list
+.libPaths(c(
+  "C:/Users/username/OneDrive/R_Library/4.3",  # Shared library
+  .libPaths()  # Keep default paths as fallback
+))
+
+# Verify the paths
+.libPaths()
+
+# Install packages to the shared library
+install.packages("Seurat", lib = "C:/Users/username/OneDrive/R_Library/4.3")</code></pre>
+<p>Why OneDrive? It syncs automatically across all your Windows machines. Once set up, your entire R library travels with you.</p>
+<p>---</p>
+<p>Part 2: Keep the library synced with robocopy (for larger libraries or HPC)</p>
+<pre><code># Windows CMD / PowerShell — sync R library to a network drive
+robocopy "C:\Users\username\OneDrive\R_Library\4.3" `
+         "\\server\shared\R_Library\4.3" `
+         /MIR /Z /W:5 /R:3
+
+# Options explained:
+# /MIR = Mirror: sync additions AND deletions
+# /Z = Restartable mode (handles network interruptions)
+# /W:5 = Wait 5 seconds between retries
+# /R:3 = Retry 3 times on failure
+
+# To sync only new/changed files (safer)
+robocopy "C:\Users\username\OneDrive\R_Library\4.3" `
+         "\\server\shared\R_Library\4.3" `
+         /E /Z /XO</code></pre>
+<p>✅ Benefits:<br/>
+- Install once, use everywhere<br/>
+- No more "package not found" on a new machine<br/>
+- Works with OneDrive, Dropbox, or any network share<br/>
+- robocopy handles large libraries (Seurat + dependencies = 2GB+) reliably</p>
+<p>⚠️ Match R versions: keep separate library folders per R version (4.2, 4.3, etc.)</p>
+<p>#RStats #RProgramming #OneDrive #robocopy #Bioinformatics #Productivity #Workflow #WindowsTips</p>
+<div class="post-links">
+  <p><strong>View on LinkedIn:</strong></p>
+  <ul>
+    <li><a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-rprogramming-onedrive-activity-7342539048380989440-VGfn" target="_blank">Part 1: .libPaths() + OneDrive →</a></li>
+    <li><a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-rprogramming-onedrive-activity-7342906037088788480-FJOC" target="_blank">Part 2: robocopy to sync updates →</a></li>
+  </ul>
+</div>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

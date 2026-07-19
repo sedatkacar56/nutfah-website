@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matrix Factorization in scRNA-seq | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2024-11-12</span></div><h1>Matrix Factorization in scRNA-seq — Parts 1 &amp; 2</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧮 Matrix Factorization in scRNA-seq — Part 1: What Is It and Why Do We Use It?</p>
+<p>Single-cell RNA-seq gives us massive matrices: thousands of genes × thousands of cells. Matrix factorization helps us compress, denoise, and interpret these high-dimensional datasets.</p>
+<p>The core idea: decompose a matrix X (genes × cells) into two smaller matrices:</p>
+<p>X ≈ W × H</p>
+<p>Where:<br/>
+- W = basis matrix (genes × components)<br/>
+- H = coefficient matrix (components × cells)</p>
+<p>This reduces dimensionality while preserving biological signal.</p>
+<p>🔹 Why it matters in scRNA-seq:<br/>
+- PCA: The most common factorization — linear, fast, used in Seurat's RunPCA()<br/>
+- NMF: Non-negative Matrix Factorization — biologically interpretable, no negative values<br/>
+- ICA: Independent Component Analysis — finds statistically independent sources<br/>
+- VAEs: Variational Autoencoders — deep learning approach, captures non-linear structure</p>
+<pre><code># PCA in Seurat (matrix factorization under the hood)
+seurat_obj &lt;- RunPCA(seurat_obj, npcs = 50)
+
+# Access the factorization
+W &lt;- seurat_obj@reductions$pca@feature.loadings  # Gene matrix
+H &lt;- seurat_obj@reductions$pca@cell.embeddings   # Cell matrix</code></pre>
+<p>Each principal component = one "axis of variation" in your data.</p>
+<p>---</p>
+<p>🧮 Matrix Factorization in scRNA-seq — Part 2: Choosing the Right Method</p>
+<p>Continuing from Part 1, let's compare the main matrix factorization methods and when to use each.</p>
+<p>📊 PCA (Principal Component Analysis):<br/>
+✅ Best for: general dimensionality reduction, preprocessing<br/>
+⚠️ Limitation: linear only, assumes Gaussian noise<br/>
+🔧 In R: RunPCA() in Seurat</p>
+<p>📊 NMF (Non-negative Matrix Factorization):<br/>
+✅ Best for: discovering gene programs, cell type signatures<br/>
+⚠️ Limitation: computationally expensive, solution not unique<br/>
+🔧 In R: RcppML::nmf() or NMF package</p>
+<pre><code>library(RcppML)
+model &lt;- nmf(count_matrix, k = 20)
+W &lt;- model$w  # Gene programs
+H &lt;- model$h  # Cell scores</code></pre>
+<p>📊 ICA (Independent Component Analysis):<br/>
+✅ Best for: separating mixed signals (batch effects, technical noise)<br/>
+⚠️ Limitation: assumes statistical independence<br/>
+🔧 In R: fastICA package</p>
+<p>📊 VAE (Variational Autoencoder):<br/>
+✅ Best for: non-linear structure, large datasets, integration<br/>
+⚠️ Limitation: requires deep learning setup (Python/scVI)<br/>
+🔧 In Python: scvi-tools</p>
+<p>💡 My recommendation for scRNA-seq:<br/>
+1. Start with PCA (Seurat default)<br/>
+2. Try NMF for interpretable gene programs<br/>
+3. Use scVI/VAE for integration across batches</p>
+<p>The right choice depends on your biological question!</p>
+<p>#scRNAseq #MatrixFactorization #PCA #NMF #Bioinformatics #SingleCell #MachineLearning #RStats</p>
+<div class="post-links">
+  <p><strong>View on LinkedIn:</strong></p>
+  <ul>
+    <li><a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_scrna-matrixfactorization-pca-activity-7322266574720507905-WIBl" target="_blank">Part 1: What Is Matrix Factorization →</a></li>
+    <li><a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_scrna-matrixfactorization-pca-activity-7322633561090469889-XOXB" target="_blank">Part 2: Choosing the Right Method →</a></li>
+  </ul>
+</div>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

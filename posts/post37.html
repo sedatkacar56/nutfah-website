@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verbose Levels in R (0, 1, 2, 3) | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2024-11-28</span></div><h1>Verbose Levels in R: 0, 1, 2, 3 — What Do They Mean?</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🔊 Verbose Levels in R (0, 1, 2, 3) — What Do They Mean?</p>
+<p>Many R functions and packages (including Seurat) use a verbose parameter to control how much output they print. Here's the breakdown:</p>
+<p>🔕 verbose = 0 (Silent):<br/>
+No output at all. Use in production scripts or when running batch jobs.</p>
+<p>📢 verbose = 1 (Basic):<br/>
+Shows progress messages and key steps. This is usually the default.</p>
+<p>📣 verbose = 2 (Detailed):<br/>
+Shows additional diagnostic information. Good for debugging.</p>
+<p>📯 verbose = 3 (Maximum):<br/>
+Shows everything including internal computations. Use only when troubleshooting.</p>
+<pre><code># In Seurat
+seurat_obj &lt;- NormalizeData(seurat_obj, verbose = FALSE)  # Silent
+seurat_obj &lt;- FindClusters(seurat_obj, verbose = TRUE)    # Default output
+
+# In general R functions
+options(verbose = FALSE)  # Global setting
+
+# In loops — suppress all output
+for (i in 1:100) {
+  suppressMessages(
+    suppressWarnings(
+      some_function(data[[i]], verbose = 0)
+    )
+  )
+}</code></pre>
+<p>💡 Pro tip: Set verbose = FALSE when running Seurat in loops or batch processing — it makes output much cleaner and faster to read.</p>
+<p>#RStats #Seurat #Verbose #RProgramming #Bioinformatics #Productivity #scRNAseq</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-seurat-verbose-activity-7325872479052984321-B7EK" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

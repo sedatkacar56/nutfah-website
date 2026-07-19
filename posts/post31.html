@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PCA Eigenvalues Explained | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2024-11-14</span></div><h1>What Are Eigenvalues in PCA? A scRNA-seq Explanation</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>📐 What Are Eigenvalues in PCA? A scRNA-seq Explanation</p>
+<p>When you run PCA on your single-cell data, you get eigenvalues. But what do they actually mean?</p>
+<p>🔑 Eigenvalue = the amount of variance explained by each principal component</p>
+<p>In scRNA-seq:<br/>
+- PC1 has the largest eigenvalue → explains the most variation (often cell cycle, batch effects, or major cell type differences)<br/>
+- PC2 explains the second most variation<br/>
+- And so on...</p>
+<pre><code># Access eigenvalues (standard deviations) in Seurat
+pca_stdev &lt;- seurat_obj@reductions$pca@stdev
+eigenvalues &lt;- pca_stdev^2  # Eigenvalue = variance = stdev²
+
+# Plot elbow plot to decide how many PCs to use
+ElbowPlot(seurat_obj, ndims = 50)
+
+# Percent variance explained
+pct_var &lt;- eigenvalues / sum(eigenvalues) * 100
+cumsum(pct_var)[1:20]  # Cumulative variance for first 20 PCs</code></pre>
+<p>💡 The elbow plot shows where eigenvalues stop dropping steeply — that's usually where you should cut off your PC selection.</p>
+<p>Q: Why not just use all PCs?<br/>
+A: Later PCs mostly capture noise, not biology. Using too many PCs makes clustering unstable and adds computational overhead.</p>
+<p>Rule of thumb: 10-30 PCs for most scRNA-seq datasets, but always check your elbow plot!</p>
+<p>#PCA #scRNAseq #Bioinformatics #Seurat #Eigenvalues #DimensionalityReduction #Statistics #SingleCell</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_pca-scrna-bioinformatics-activity-7322956660024553472-RQLB" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

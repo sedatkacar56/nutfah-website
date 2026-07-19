@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>table() with useNA in Seurat Metadata | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-06-18</span></div><h1>Use table(useNA=) to Catch Missing Values in Seurat Metadata</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>📊 Don't Miss Hidden NAs! Use table(useNA=) in Seurat Metadata QC</p>
+<p>When exploring cell metadata in Seurat, a silent NA can corrupt your entire downstream analysis. The useNA parameter in table() makes them visible:</p>
+<pre><code># Standard table() — hides NAs!
+table(seurat_obj$cell_type)
+# AT2    Club   Ciliated
+#  1200   800     600
+
+# With useNA = "ifany" — shows NAs only if present
+table(seurat_obj$cell_type, useNA = "ifany")
+# AT2    Club   Ciliated  &lt;NA&gt;
+#  1200   800     600      45
+
+# With useNA = "always" — always shows NA row
+table(seurat_obj$cell_type, useNA = "always")
+
+# For two-way tables (cross-tabulation)
+table(seurat_obj$cell_type,
+      seurat_obj$condition,
+      useNA = "ifany")</code></pre>
+<p>✅ Three useNA options:<br/>
+- "no" (default): ignores NAs silently<br/>
+- "ifany": shows &lt;NA&gt; column only if NAs exist<br/>
+- "always": always shows &lt;NA&gt; column</p>
+<p>⚠️ Why this matters: If you have 45 unassigned cells (NA in cell_type) and use them in differential expression without knowing, your results will be confounded.</p>
+<p>Always run table(useNA="ifany") on new metadata columns before analysis!</p>
+<p>#RStats #Seurat #QualityControl #scRNAseq #Bioinformatics #Metadata #DataQuality</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-seurat-qualitycontrol-activity-7339201620199563264-d1RJ" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

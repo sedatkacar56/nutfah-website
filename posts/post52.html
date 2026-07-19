@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>detach() vs unloadNamespace() in R | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-06-20</span></div><h1>detach() vs unloadNamespace() — Free Memory from R Packages</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🔌 detach() vs. unloadNamespace() — How to Actually Free Memory from R Packages</p>
+<p>Loading many large bioinformatics packages can eat all your RAM. Here's how to unload them when you're done:</p>
+<pre><code># detach() — removes from search path (but keeps namespace in memory)
+detach("package:ggplot2", unload = TRUE)
+
+# unloadNamespace() — fully removes namespace from memory
+unloadNamespace("ggplot2")
+
+# The RIGHT way to fully unload a package:
+detach("package:Seurat", unload = TRUE)
+unloadNamespace("Seurat")
+gc()  # Garbage collect after unloading
+
+# Check what's currently loaded
+search()           # Search path
+loadedNamespaces() # All loaded namespaces
+
+# Unload all non-base packages (nuclear option)
+pkgs &lt;- names(sessionInfo()$otherPkgs)
+if (!is.null(pkgs)) {
+  invisible(lapply(paste0("package:", pkgs),
+                   detach, character.only = TRUE, unload = TRUE))
+}</code></pre>
+<p>⚠️ Key differences:<br/>
+- detach() removes the package from the search path (you can't use its functions directly) but may keep the namespace loaded<br/>
+- unloadNamespace() goes deeper — removes the namespace from memory<br/>
+- Some packages can't be fully unloaded due to C-level bindings</p>
+<p>💡 For Seurat specifically: it's often easier to restart R than to unload it cleanly. Use RStudio's "Restart R" or .rs.restartR().</p>
+<p>#RStats #MemoryManagement #RProgramming #Seurat #Bioinformatics #Productivity #Packages</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-memorymanagement-rprogramming-activity-7339937779447894016-3S4Y" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

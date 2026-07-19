@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BPCells + Seurat v5 for 10M+ Cells | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2024-11-04</span></div><h1>BPCells + Seurat v5: Process 10 Million Cells Without Crashing R</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🚀 BPCells + Seurat v5: Process 10 Million Cells Without Crashing R</p>
+<p>If you're dealing with large single-cell datasets, you've probably hit the RAM wall. Here's how I handle it now:</p>
+<pre><code>library(BPCells)
+library(Seurat)
+
+# Convert on-disk to BPCells format
+counts_bp &lt;- open_matrix_dir("path/to/counts")
+
+# Create Seurat object with BPCells-backed matrix
+seurat_obj &lt;- CreateSeuratObject(counts = counts_bp)</code></pre>
+<p>✅ Why BPCells?</p>
+<p>- Keeps data on disk, not in RAM<br/>
+- Works natively with Seurat v5<br/>
+- Enables processing of 10M+ cells on standard laptops<br/>
+- Compatible with NormalizeData(), ScaleData(), FindVariableFeatures()</p>
+<p>This is one of the biggest updates in Seurat v5 — and it changes everything for large-scale single-cell analysis.</p>
+<p>💡 Tip: Convert your matrices to BPCells format early in your pipeline to save memory throughout.</p>
+<p>Have you tried BPCells yet? What's your experience with large datasets? 👇</p>
+<p>#Seurat #SingleCell #BPCells #Bioinformatics #RStats #MemoryOptimization #ScRNA #ComputationalBiology</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_seurat-singlecell-bpcells-activity-7319476688278179840-hY-M" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

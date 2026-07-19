@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>inherits() vs is() in R | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2024-11-01</span></div><h1>inherits() vs is() in R — Why It Matters in Seurat</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🔍 inherits() vs. is() in R — Why It Matters in Seurat &amp; Bioinformatics</p>
+<p>A Seurat object has multiple classes: "Seurat" and "list". Using <code>class(pbmc) == "Seurat"</code> can return FALSE or a vector, making it unreliable.</p>
+<p>Use <code>inherits(x, "Seurat")</code> instead — it safely checks if an object is of a specific class or inherits from it, working with S3, S4, and RC objects.</p>
+<p>Examples:<br/>
+Seurat objects: <code>inherits(x, "Seurat")</code><br/>
+Data frames: <code>inherits(x, "data.frame")</code><br/>
+Matrices: <code>inherits(x, "matrix")</code><br/>
+ggplot objects: <code>inherits(x, "gg")</code><br/>
+Bioconductor S4: <code>inherits(x, "ExpressionSet")</code></p>
+<p>The <code>is()</code> function is S4-specific and unreliable for S3 objects like Seurat. Use it only for "SummarizedExperiment" and similar S4 classes.</p>
+<p>Use <code>inherits()</code> for general checking, <code>is()</code> for S4 objects, and avoid <code>class(x) == "name"</code> patterns.</p>
+<p>#rstats #bioinformatics #Seurat #SingleCell #RProgramming</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-bioinformatics-seurat-activity-7319106804414590976-lQCK" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

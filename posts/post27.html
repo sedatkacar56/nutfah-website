@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AUCell vs UCell for Gene Set Scoring | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2024-11-08</span></div><h1>AUCell vs UCell for Gene Set Scoring in scRNA-seq</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 AUCell vs. UCell for Gene Set Scoring in Single-Cell RNA-seq</p>
+<p>Both AUCell and UCell score gene set activity per cell, but they differ in approach and integration.</p>
+<p>🔹 AUCell (Bioconductor):<br/>
+- Based on Area Under the Curve (AUC) of ranked gene expression<br/>
+- Good for large gene sets<br/>
+- Works well with SCENIC for regulon activity</p>
+<pre><code>library(AUCell)
+rankings &lt;- AUCell_buildRankings(exprMatrix)
+geneSets &lt;- list(MyGeneSet = c("Gene1", "Gene2", "Gene3"))
+cells_AUC &lt;- AUCell_calcAUC(geneSets, rankings)</code></pre>
+<p>🔹 UCell (part of escape R package):<br/>
+- Uses Mann-Whitney U statistic (similar to AUC but more robust)<br/>
+- Seamlessly integrates with Seurat<br/>
+- Better for smaller gene sets and exploratory analysis</p>
+<pre><code>library(UCell)
+seurat_obj &lt;- AddModuleScore_UCell(
+  seurat_obj,
+  features = list(MySignature = c("Gene1", "Gene2", "Gene3"))
+)</code></pre>
+<p>✅ When to use which:<br/>
+- AUCell: SCENIC workflows, large regulons, Bioconductor pipelines<br/>
+- UCell: Quick Seurat integration, flexible signatures, exploratory work</p>
+<p>Both are rank-based and therefore robust to technical variation. Which do you prefer? 👇</p>
+<p>#SingleCell #Bioinformatics #AUCell #UCell #GeneSetScoring #scRNAseq #RStats #escape</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecell-bioinformatics-aucell-activity-7321194568048492544-rJJP" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

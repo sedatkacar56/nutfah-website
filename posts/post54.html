@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RPCA Integration for Memory-Efficient Batch Correction | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-06-28</span></div><h1>RPCA Integration: Faster, More Memory-Efficient Batch Correction in Seurat</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>⚡ RPCA Integration: Faster, More Memory-Efficient Batch Correction in Seurat</p>
+<p>Working with large multi-sample scRNA-seq datasets? RPCA (Reciprocal PCA) is often better than CCA for large-scale integration.</p>
+<pre><code>library(Seurat)
+
+# List of Seurat objects to integrate
+seurat_list &lt;- list(sample1, sample2, sample3, sample4)
+
+# Normalize and find variable features for each
+seurat_list &lt;- lapply(seurat_list, function(x) {
+  x &lt;- NormalizeData(x)
+  x &lt;- FindVariableFeatures(x, selection.method = "vst", nfeatures = 2000)
+})
+
+# Find integration anchors using RPCA
+features &lt;- SelectIntegrationFeatures(object.list = seurat_list)
+seurat_list &lt;- lapply(seurat_list, function(x) {
+  x &lt;- ScaleData(x, features = features)
+  x &lt;- RunPCA(x, features = features)
+})
+
+anchors &lt;- FindIntegrationAnchors(
+  object.list = seurat_list,
+  anchor.features = features,
+  reduction = "rpca"   # KEY: use RPCA not CCA
+)
+
+# Integrate
+integrated &lt;- IntegrateData(anchorset = anchors)</code></pre>
+<p>✅ RPCA vs CCA:<br/>
+- RPCA: 5-10x faster, uses less RAM, better for large datasets (&gt;50k cells)<br/>
+- CCA: better for datasets with very different cell type compositions<br/>
+- RPCA assumes more similar datasets; CCA handles more divergent ones</p>
+<p>💡 For most multi-patient lung studies: RPCA works great and won't crash your server.</p>
+<p>#Seurat #RPCA #Integration #BatchCorrection #scRNAseq #Bioinformatics #SingleCell #RStats</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_seurat-rpca-integration-activity-7342177578264907776-J7qT" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

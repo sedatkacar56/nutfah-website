@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clean orig.ident Labels with substr() | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-06-05</span></div><h1>Clean orig.ident Labels with substr() in Seurat</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>✂️ Clean orig.ident Labels with substr() in Seurat</p>
+<p>When loading multiple 10x samples, the orig.ident often gets messy sample names like "patient_001_GEX_filtered_matrix" instead of just "patient_001".</p>
+<p>substr() is perfect for extracting just the part you need:</p>
+<pre><code># Example: orig.ident = "SAMPLE_001_GEX"
+# Want just: "SAMPLE_001"
+
+# substr(x, start, stop)
+seurat_obj$sample_id &lt;- substr(seurat_obj$orig.ident, 1, 10)
+
+# Or use gsub() for pattern-based cleaning
+seurat_obj$sample_id &lt;- gsub("_GEX.*$", "", seurat_obj$orig.ident)
+
+# Using sub() to remove a prefix
+seurat_obj$sample_id &lt;- sub("^PATIENT_", "", seurat_obj$orig.ident)
+
+# Practical example: extract first 8 characters
+seurat_obj$patient_id &lt;- substr(seurat_obj$orig.ident, 1, 8)
+
+# Verify the result
+table(seurat_obj$patient_id)</code></pre>
+<p>💡 When to use each:<br/>
+- substr(): when you know the exact position<br/>
+- gsub(): when you have a pattern to remove (regex)<br/>
+- sub(): when you only want to remove the first match</p>
+<p>Clean metadata labels make downstream analysis and visualization much easier!</p>
+<p>#RStats #Seurat #DataCleaning #scRNAseq #RProgramming #Bioinformatics #Metadata</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-seurat-datacleaning-activity-7332484416867639296-r5_H" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

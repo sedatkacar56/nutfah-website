@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mitochondrial Gene Regex (?i)mt- in R | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-06-01</span></div><h1>Use (?i)mt- to Catch Mitochondrial Genes Across Species</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 Use (?i)mt- to Catch Mitochondrial Genes Across Species in R</p>
+<p>When calculating percent mitochondrial content for QC in Seurat, species-specific gene naming can trip you up:</p>
+<p>- Human: MT-CO1, MT-ND1 (uppercase)<br/>
+- Mouse: mt-Co1, mt-Nd1 (lowercase mt-)<br/>
+- Other species: varies!</p>
+<p>The solution: use a case-insensitive regex pattern.</p>
+<pre><code># The universal approach — works for human AND mouse
+seurat_obj[["percent.mt"]] &lt;- PercentageFeatureSet(
+  seurat_obj,
+  pattern = "(?i)^mt-"  # (?i) makes it case-insensitive
+)
+
+# Verify it caught the right genes
+mt_genes &lt;- rownames(seurat_obj)[grepl("(?i)^mt-", rownames(seurat_obj), perl = TRUE)]
+head(mt_genes)
+
+# Species-specific alternatives:
+# Human: pattern = "^MT-"
+# Mouse: pattern = "^mt-"
+# Universal: pattern = "(?i)^mt-"</code></pre>
+<p>✅ The (?i) modifier at the start makes the entire pattern case-insensitive. The perl = TRUE argument is needed in base R grepl() for this to work, but Seurat's PercentageFeatureSet() handles it internally.</p>
+<p>Never hardcode the pattern if your pipeline runs on multiple species!</p>
+<p>#scRNAseq #Seurat #QualityControl #Mitochondrial #Regex #RStats #Bioinformatics #SingleCell</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_scrna-seurat-qualitycontrol-activity-7332432562688004096-jLim" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

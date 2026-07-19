@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>R Markdown Chunk Options Cheat Sheet | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-05-28</span></div><h1>R Markdown Chunk Options — The Ones I Use Most</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>📄 R Markdown Chunk Options — The Ones I Use Most in scRNA-seq Reports</p>
+<p>After years of writing R Markdown reports for single-cell analysis, these chunk options save me the most time:</p>
+<pre><code># Global defaults at the top of your .Rmd
+knitr::opts_chunk$set(
+  echo = TRUE,       # Show code
+  eval = TRUE,       # Run code
+  message = FALSE,   # Hide messages (great for package loading)
+  warning = FALSE,   # Hide warnings
+  cache = TRUE,      # Cache slow chunks (huge time saver!)
+  fig.width = 10,    # Figure width in inches
+  fig.height = 8,    # Figure height
+  dpi = 150          # Resolution
+)
+
+# Per-chunk: override for specific chunks
+# ```{r umap-plot, cache=FALSE, fig.width=12}
+# DimPlot(seurat_obj)
+# ```
+
+# Useful individual options:
+# include = FALSE   → run code but hide everything
+# results = 'hide'  → hide text output but show plots
+# out.width = "100%" → full width figures
+# fig.cap = "UMAP"  → figure caption</code></pre>
+<p>💡 My top 3 tips:<br/>
+1. Set cache=TRUE globally — RunPCA and RunUMAP take forever. Cache them.<br/>
+2. Set message=FALSE and warning=FALSE globally — package messages are noisy<br/>
+3. Use fig.width/fig.height per chunk for complex multi-panel plots</p>
+<p>Do you use R Markdown for your bioinformatics reports? 📊</p>
+<p>#RMarkdown #RStats #knitr #Bioinformatics #scRNAseq #ReproducibleResearch #DataScience</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rmarkdown-rstats-knitr-activity-7331755534714216448-NQWH" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

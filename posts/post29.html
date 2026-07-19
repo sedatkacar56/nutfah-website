@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customize R with .Rprofile | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2024-11-10</span></div><h1>Customize Your R Startup with .Rprofile</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>⚙️ Customize Your R Startup with .Rprofile — Run Code Every Time R Starts</p>
+<p>Did you know R automatically runs .Rprofile at startup? Use it to pre-load packages, set options, create shortcuts, and save time every session.</p>
+<pre><code># Open or create your .Rprofile
+file.edit("~/.Rprofile")
+
+# Example .Rprofile contents:
+
+# Auto-load common packages
+if (interactive()) {
+  suppressMessages({
+    library(dplyr)
+    library(ggplot2)
+  })
+}
+
+# Set CRAN mirror
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+
+# Custom shortcuts
+options(scipen = 999)         # Disable scientific notation
+options(stringsAsFactors = FALSE)  # Modern default
+
+# Useful custom functions
+qplot &lt;- function(x) head(x, 10)  # Quick preview</code></pre>
+<p>✅ Key tips:<br/>
+- Use interactive() check to avoid running code in scripts<br/>
+- Keep it lightweight — heavy packages slow startup<br/>
+- Use suppressMessages() to keep the console clean<br/>
+- Project-specific .Rprofile in project directory overrides global</p>
+<p>💡 For bioinformatics: add your most-used packages (Seurat, dplyr, ggplot2) and set options(future.globals.maxSize) for large parallel operations.</p>
+<p>#RStats #RProgramming #RProfile #Bioinformatics #Productivity #RTips</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-rprogramming-rprofile-activity-7321935479892619265-y4F0" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

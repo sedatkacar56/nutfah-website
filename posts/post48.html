@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive SLURM Jobs with salloc | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">HPC</span><span class="post-date">2025-06-10</span></div><h1>Interactive SLURM Jobs with salloc — Debug on the Cluster</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🖥️ Interactive SLURM Jobs with salloc — Debug Large Analyses on the Cluster</p>
+<p>Tired of submitting sbatch jobs just to find they fail 30 minutes in? Use salloc for interactive sessions with full cluster resources:</p>
+<pre><code># Basic interactive job — 4 CPUs, 32GB RAM, 2 hours
+salloc --ntasks=1 --cpus-per-task=4 --mem=32G --time=02:00:00
+
+# More resources for large scRNA-seq datasets
+salloc --ntasks=1 \
+       --cpus-per-task=16 \
+       --mem=128G \
+       --time=04:00:00 \
+       --partition=bigmem
+
+# Once allocated, load your modules and run R interactively
+module load R/4.3.0
+R
+
+# Or run a script interactively
+Rscript my_analysis.R
+
+# Exit when done
+exit</code></pre>
+<p>✅ Why salloc beats sbatch for development:<br/>
+- Immediate feedback — see errors as they happen<br/>
+- Interactive debugging — drop into R's browser() or debug()<br/>
+- No queue wait for small test runs<br/>
+- Same resources as production — no more "works on login node" surprises</p>
+<p>💡 Pro tip: Combine with screen or tmux so the session survives if you lose connection:</p>
+<pre><code>screen -S my_analysis
+salloc --mem=64G --time=08:00:00
+# If disconnected: screen -r my_analysis</code></pre>
+<p>#HPC #SLURM #Bioinformatics #ClusterComputing #scRNAseq #salloc #Linux #ComputationalBiology</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_hpc-slurm-bioinformatics-activity-7335622855049170944-pXQu" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

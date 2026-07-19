@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Name Your Matrices with sprintf() in R | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-05-30</span></div><h1>Name Your Matrices Properly with sprintf() in R</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🏷️ Name Your Matrices Properly with sprintf() in R</p>
+<p>When working with multiple samples or conditions, naming matrices systematically saves hours of debugging. sprintf() is perfect for this:</p>
+<pre><code># Create named list of matrices using sprintf
+samples &lt;- c("Control", "Treatment", "Recovery")
+timepoints &lt;- c(1, 3, 7)
+
+matrix_list &lt;- list()
+for (s in samples) {
+  for (t in timepoints) {
+    key &lt;- sprintf("%s_Day%02d", s, t)
+    matrix_list[[key]] &lt;- create_matrix(s, t)  # your function
+  }
+}
+
+# Names will be: "Control_Day01", "Control_Day03", etc.
+names(matrix_list)
+
+# sprintf formatting reference:
+sprintf("%s", "text")      # String
+sprintf("%d", 42)          # Integer
+sprintf("%02d", 5)         # Zero-padded: "05"
+sprintf("%05.2f", 3.14)    # Float: "03.14"
+sprintf("%s_%d_%s", "Sample", 1, "rep")  # Combined</code></pre>
+<p>✅ Why zero-padding matters: "Sample_01" sorts correctly; "Sample_1" doesn't (10 comes before 2 alphabetically).</p>
+<p>In scRNA-seq: use sprintf() to name assays, reductions, or output files when running loops over conditions.</p>
+<p>#RStats #sprintf #Bioinformatics #RProgramming #scRNAseq #DataOrganization #RTips</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-sprintf-bioinformatics-activity-7332408226614534144-Ah3m" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

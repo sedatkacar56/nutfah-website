@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>List All Seurat Objects with Filter() | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2024-11-02</span></div><h1>List All Seurat Objects in R with Filter()</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🚀 Quick R Tip for Seurat Users Want to get all Seurat objects currently in your R environment — instantly? Here's the shortest clean solution:</p>
+<pre><code>Filter(\(x) inherits(get(x), "Seurat"), ls())</code></pre>
+<p>✅ This gives you a vector of object names that are Seurat objects. Perfect when you're working across multiple datasets and want to:</p>
+<p>🔍 Check metadata for all at once<br/>
+🧬 Compare UMAPs or gene expression side-by-side<br/>
+📦 Bulk process with custom functions</p>
+<p>Whether you're debugging, visualizing, or analyzing — this one-liner makes life easier. Got more R hacks like this? Let's share and learn together! 🧠💡</p>
+<p>I use this shortcut every time when i deal with several seurat object in separate projects:). I came back and check my linkedin profile to remember:)</p>
+<pre><code>Filter(\(x) inherits(get(x), "Seurat"), ls())</code></pre>
+<p>#RStats #SingleCellSeq #Seurat #Bioinformatics #DataScience #RTricks #AlAziz</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-singlecellseq-seurat-activity-7319164633515204608-4zBA" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

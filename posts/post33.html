@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PCA Alternatives in scRNA-seq | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2024-11-17</span></div><h1>PCA Alternatives in scRNA-seq: NMF, ICA, LDA, VAE, FA</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🔬 Beyond PCA: Dimensionality Reduction Alternatives in scRNA-seq</p>
+<p>PCA is the default, but it's not always the best choice. Here's a practical guide to alternatives:</p>
+<p>🔹 NMF (Non-negative Matrix Factorization)<br/>
+- Produces biologically interpretable components (no negative values)<br/>
+- Great for discovering gene programs and cell states<br/>
+- Use case: identifying cell type signatures</p>
+<p>🔹 ICA (Independent Component Analysis)<br/>
+- Finds statistically independent components<br/>
+- Better than PCA for separating mixed biological signals<br/>
+- Use case: disentangling batch effects from biology</p>
+<p>🔹 LDA (Latent Dirichlet Allocation)<br/>
+- Originally for text mining, adapted for single-cell<br/>
+- Each cell is a mixture of "topics" (gene programs)<br/>
+- Use case: cisTopic for scATAC-seq, gene topic modeling</p>
+<p>🔹 VAE (Variational Autoencoder)<br/>
+- Deep learning, captures non-linear structure<br/>
+- Best for large datasets and integration across batches<br/>
+- Use case: scVI, totalVI, scANVI</p>
+<p>🔹 FA (Factor Analysis)<br/>
+- Similar to PCA but assumes observed variables are linear combinations of latent factors + noise<br/>
+- More flexible noise model<br/>
+- Use case: MOFA for multi-omics integration</p>
+<pre><code># Quick NMF example in R
+library(RcppML)
+mat &lt;- GetAssayData(seurat_obj, slot = "data")
+model &lt;- nmf(mat, k = 20)
+
+# Quick VAE in Python (scVI)
+# import scvi
+# scvi.model.SCVI.setup_anndata(adata)
+# model = scvi.model.SCVI(adata)
+# model.train()</code></pre>
+<p>Start with PCA, then explore NMF or VAE based on your biological question. The right choice matters!</p>
+<p>#PCA #NMF #ICA #VAE #scRNAseq #Bioinformatics #DimensionalityReduction #SingleCell #MachineLearning</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_pca-nmf-ica-activity-7323671295427788800-apJU" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

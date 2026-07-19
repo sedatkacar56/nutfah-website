@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shared Nearest Neighbor and Jaccard Similarity | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2024-12-02</span></div><h1>SNN Graph and Jaccard Similarity in Seurat Clustering</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🔗 SNN Graph and Jaccard Similarity — The Math Behind Seurat Clustering</p>
+<p>When Seurat builds the Shared Nearest Neighbor (SNN) graph, it uses Jaccard similarity to weight connections between cells. Here's what that means:</p>
+<p>📐 Jaccard Similarity = |A ∩ B| / |A ∪ B|</p>
+<p>Where A and B are the sets of nearest neighbors for two cells.</p>
+<p>Example:<br/>
+- Cell 1's 20 neighbors: {c3, c7, c12, c15, c20, ...}<br/>
+- Cell 2's 20 neighbors: {c7, c12, c15, c18, c22, ...}<br/>
+- Shared neighbors (intersection): {c7, c12, c15} = 3<br/>
+- All unique neighbors (union): 37<br/>
+- Jaccard similarity = 3/37 ≈ 0.081</p>
+<pre><code># Seurat uses Jaccard similarity automatically
+seurat_obj &lt;- FindNeighbors(seurat_obj, dims = 1:20)
+# RNA_snn graph contains Jaccard-weighted edges
+
+# Inspect the SNN graph
+snn_mat &lt;- seurat_obj@graphs$RNA_snn
+# Values range from 0 (no shared neighbors) to 1 (identical neighborhoods)</code></pre>
+<p>🔑 Why Jaccard matters:<br/>
+- Higher Jaccard score = cells are more similar<br/>
+- Pruning low Jaccard edges removes noise (controlled by prune.SNN parameter)<br/>
+- This is the foundation of Louvain/Leiden clustering</p>
+<p>Default prune.SNN = 1/15: edges with Jaccard &lt; 0.067 are removed.</p>
+<p>#Seurat #SNN #Jaccard #Clustering #scRNAseq #Bioinformatics #GraphTheory #SingleCell</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_seurat-snn-jaccard-activity-7327291451745787904-uBHE" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>
