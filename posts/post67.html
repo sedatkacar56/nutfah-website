@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AWS S3 and EC2 for Bioinformatics | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">HPC</span><span class="post-date">2025-05-22</span></div><h1>AWS S3 and EC2 for Bioinformatics</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>- / Have you ever heard of AWS S3 bucket and AWS EC2? AWS = Amazon Web Services. It is the platform that supports data storage into buckets (S3) and cloud computing (EC2). 3 in front of S refers to 3 S's: Simple Storage Service 2 in front of EC refers to 2 C's: Elastic Compute Cloud</p>
+<p>- / First time I came across this system was when downloading FASTQ, mask, and matrix files of spatial transcriptomics — almost 2 TB of data. At that time, the company had provided a manual on how to download the data step-by-step from their S3 bucket. They also let us know we had one shot to download the files.</p>
+<p>A/ ☁️ AWS for Bioinformatics If you're wrangling .bam, .rds, or FASTQ files, this is your cloud backbone. Think of it as a global, pay-as-you-go HPC cluster — built for scale.</p>
+<p>B/ 🔹 S3 (Simple Storage Service) Your terabyte-sized Dropbox — but programmable. You can simply copy by:</p>
+<pre><code>aws s3 cp results.rds s3://my-bucket/</code></pre>
+<p>That's it. One command. Done.</p>
+<p>🔹 EC2 (Elastic Compute Cloud) Your lab's virtual HPC node. Boot up RStudio in 2 minutes. Run. Shut it down. No idle charges.</p>
+<p>🔹 CLI (Command Line Interface) No clicking. Just Linux terminal power. Shell folks — you're already home.</p>
+<p>C/ 📦 How Much Can You Store in Amazon S3?<br>
+🔹 Total Storage: Unlimited<br>
+🔹 Max File Size: 5 TB (use multipart upload if &gt;5 GB)<br>
+🔹 Buckets per Account: 100 (soft limit)<br>
+🔹 Objects per Bucket: Unlimited<br>
+💡 S3 scales effortlessly — whether it's a few .txt files or terabytes of genomics data.</p>
+<p>D/ There are 2 user types in the AWS system: IAM vs. Root Root can do everything — it's the administrator. IAM is a guest account — only allowed to do what the root user permits.<br>
+✅ Use IAM users<br>
+✅ Limit access (S3-only, EC2-only, etc.)<br>
+✅ Share access without sharing your whole kingdom</p>
+<p>Why it matters:<br>
+• Safer collaboration<br>
+• Audit trails that make sense<br>
+• You stay in control, not in everyone's way</p>
+<p>💬 Want a walk-through of S3 setup or IAM roles? Hit me up.</p>
+<p>#AWS #CloudComputing #S3 #EC2 #IAM #Bioinformatics #ScientificComputing #Linux #HPC #Genomics #ResearchInfrastructure #DevOps #CloudForScience #DataSecurity #CloudStorage #DataHandling #BigData #EsSekur</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_aws-cloudcomputing-s3-activity-7353544174463303680-QE9d" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

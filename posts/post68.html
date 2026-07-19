@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Running Out of Storage? It Might Be FILES, Not SPACE | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">HPC</span><span class="post-date">2025-05-23</span></div><h1>Running Out of Storage? It Might Be FILES, Not SPACE</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🚨 Running Out of Storage? Not So Fast... It Might Be FILES, Not SPACE! 🧠💾 This week I learned something that made me scratch my head — and then nod in appreciation of system admins. I checked my storage usage on our HPC cluster:</p>
+<p>sda → 13% used (6.8T / 48.8T) ✅<br>
+sda files → 101% used (25,474 / 25,000) ❌</p>
+<p>Wait... I have tons of space left — but Im locked out because I hit the file (inode) limit? 🤯</p>
+<p>That led me down a rabbit hole of:<br>
+Why we have file count quotas (not just size)<br>
+Why sda has such a tiny limit compared to slate or scratch<br>
+And what sda even means (SCSI Disk A? Really?)</p>
+<p>Turns out:<br>
+✔ File quotas protect system performance<br>
+✔ sda is optimized for large files, not millions of logs or scripts<br>
+✔ And yes — you can run out of files before running out of bytes!</p>
+<p>So next time your cp fails mysteriously, check both disk space AND file count.</p>
+<p>📦 Pro tip: Compress, batch, or shift to scratch if you are hitting limits.</p>
+<p>Have you ever run into hidden quotas in your workflows? Lets trade war stories. 👇</p>
+<p>#HPC #Bioinformatics #Linux #DataManagement #ResearchLife #ClusterComputing #StorageTips #sda #slate #scratch #shellscripting #singlecellstorage #cloudcomputing #tarformat #archievescRNA #linuxshell #ArRahman</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_hpc-bioinformatics-linux-activity-7353835847726616578-prKv" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

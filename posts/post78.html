@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Extending Kerberos Ticket Lifetime for Long Data Transfers | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">HPC</span><span class="post-date">2025-06-17</span></div><h1>Extending Kerberos Ticket Lifetime for Long Data Transfers</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>Every day brings new learning opportunities in HPC! 🎫💻 Lost so many hours to failed transfers due to expired Kerberos tickets - never knew I could extend them! Having constant issues with authentication timeouts killing my large file transfers mid-process. Always restarting genomics data transfers when tickets expired after just 1 hour. So frustrating! 😤</p>
+<p>My breakthrough came with this simple command:</p>
+<pre><code>$kinit -l 24h -r 72h username</code></pre>
+<p>Data lifetimes can be set to 24 hours instead of that painful 1-hour default! Under this approach, tickets become renewable for up to 72 hours too. Looking back, if 24 hours still isn't enough, just run kinit -R to renew instantly!</p>
+<p>Instead of assuming defaults were requirements, I should have checked what was actually allowed. Lesson learned: I wrongly assumed the 1-hour limit was an unchangeable institutional policy. Learning that my institution allows much longer ticket lifetimes - I just never asked! Actually discovered the solution was simpler than I thought!</p>
+<p>Here are the key insights from this experience:<br>
+✅ Always check what your system actually allows vs. what it defaults to<br>
+✅ For large data transfers, request appropriate ticket lifetimes upfront<br>
+✅ Use klist to monitor your ticket status<br>
+✅ Don't assume defaults are requirements!</p>
+<p>Now my genomics data transfers run smoothly without authentication timeouts. Do not forget check existed tickets or ticket history by $klist and convert your files tar.gz format not to get trouble later!!!</p>
+<p>#HPC #Kerberos #DataTransfer #TechTips #Bioinformatics #LessonsLearned #SecureSingleCellRNAfiles</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_hpc-kerberos-datatransfer-activity-7361808379360501760-PLCv" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

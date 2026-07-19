@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>du -sh vs du -sh --apparent-size on HPC Scratch Filesystems | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">HPC</span><span class="post-date">2025-06-19</span></div><h1>du -sh vs du -sh --apparent-size on HPC Scratch Filesystems</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>Are you surprised when the same file shows up bigger after copying on HPC? Like in my case: 'du -sh' said 26 GB vs 15 GB, which is almost twofold.</p>
+<p>- Hidden files, sparse formats, or temporary blocks can cause this jump. Actually, you heard me right. The size increased even though the content didn't. Don't worry: the data is intact, it's just the way scratch filesystems work.</p>
+<p>If you want the true logical size, use du -sh --apparent-size . Easy peasy!</p>
+<p>#HPC #LinuxTips #ResearchComputing #DataScience #Bioinformatics #Supercomputing</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_hpc-linuxtips-researchcomputing-activity-7362651531805945856-7MQH" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

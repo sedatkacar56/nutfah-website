@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>tar.gz Is a Data Survival Strategy in Computational Biology | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">HPC</span><span class="post-date">2025-05-20</span></div><h1>tar.gz Is a Data Survival Strategy in Computational Biology</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>A/ 🧬 Single-cell RNA-seq isn't independent from large data storage and handling, right? You gotta know HPC, R, Python — all together. It's not just about analyzing data, giving your best insights, and generating figures. In the background, you've got to archive your outputs, transfer large files, manage storage, and keep your outcomes secure and reproducible. This technical backbone matters just as much as the analysis itself.</p>
+<p>B/ 💾 Why tar.gz matters in your workflow Before transferring anything big to storage systems like SDA or HPSS, compress it. Not just to save space — but to save your workflow from chaos. You're not "just zipping files." You're reducing overhead, minimizing transfer errors, and keeping things clean.</p>
+<p>C/ 📦 Quick history, big relevance TAR = Tape Archive (1970s). Made for bundling files for tape backups. Still works great. GZ = Gzip compression (1992). Lightweight, open, fast. Together: tar.gz = stable, compressible, widely compatible.</p>
+<p>D/ 📉 Why I had to use it recently I was transferring over 5TB of single-cell data to SDA. What happened? Constant HPSS_EBUSY errors. Tried again — still failed. Way too many files. So I paused, bundled it all using tar.gz, and tried again. ✅ The result? Still transferring — but much more stable, less noisy, and no timeout panic (so far). I'll update once it's complete — but lesson learned: compress first, transfer second.</p>
+<p>E/ 🛠️ Command to live by:</p>
+<pre><code>tar -czf my_archive.tar.gz /path/to/your/huge_dataset/</code></pre>
+<p>Then move it:</p>
+<pre><code>hsi "put my_archive.tar.gz"</code></pre>
+<p>F/ 🔑 Compression gains (by file type):<br>
+FASTQ: 70–80% smaller<br>
+Text/CSV: 80–90% smaller<br>
+BAM: ~15% (already compressed)<br>
+Images/PDFs: Small gains, but still worth bundling</p>
+<p>Bottom line: 📦 tar.gz isn't just an archiving format — it's a data survival strategy in computational biology. It means:<br>
+✅ Faster transfers<br>
+✅ Less frustration<br>
+✅ Cleaner pipelines<br>
+✅ Safer archives</p>
+<p>If you're serious about large-scale genomics, this skill matters just as much as clustering and plotting.</p>
+<p>💬 Curious to hear: how do you handle huge datasets in your work?</p>
+<p>#SingleCellRNAseq #Bioinformatics #HPC #DataManagement #RStats #Python #ComputationalBiology #tar #gzip #Storage #ReproducibleResearch #BigData #Omics #SystemsBiology #ScientificComputing #LifeSciences #BenchToBioinformatics #ResearchInfrastructure #scRNAseq #DataTransfer #ArchivingTips #PostdocLife #WetLabToCode #LinuxTools #CommandLine #AlMusabbibalAsbab</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrnaseq-bioinformatics-hpc-activity-7352770670734299136-syv-" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Bundle Files into .tar.gz Before Storing Them | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">HPC</span><span class="post-date">2025-06-18</span></div><h1>Why Bundle Files into .tar.gz Before Storing Them</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>💾 Why I bundle files into .tar.gz before storing them</p>
+<p>Today I was checking my storage usage, thinking "As long as my files aren't huge, I'm fine." Turns out; nope. Storage space isn't just about the total size of your files; it's also about the number of files. Why? Because every file has its own metadata (name, permissions, timestamps, location info, etc.) stored in the filesystem. Thousands of tiny files can eat up space and slow things down more than you'd expect.</p>
+<p>So what's the fix? 📦 Bundle all those files into one big file; then compress it. That's where .tar.gz comes in.</p>
+<p>What is .tar.gz?</p>
+<p>TAR = Tape Archive. It doesn't compress; it just packs many files/folders into one single file (like putting them in a box).</p>
+<p>GZ = Gzip. This compresses that single TAR file (like shrinking the box with a vacuum).</p>
+<p>How to make one in Linux/Mac:</p>
+<pre><code>tar -czf myfiles.tar.gz myfolder/</code></pre>
+<p>c → create a new archive<br>
+z → compress with gzip<br>
+f → file name to write to (comes right before the output file name)</p>
+<p>✅ Benefits:<br>
+Reduces storage use (especially for text/log files)<br>
+Cuts down metadata overhead (1 file instead of thousands)<br>
+Faster to move/transfer between systems<br>
+Keeps directory structure intact when unpacked</p>
+<p>To unpack:</p>
+<pre><code>tar -xvzf myfiles.tar.gz</code></pre>
+<p>x → extract<br>
+v → verbose (show file names as it unpacks)<br>
+z → decompress gzip<br>
+f → file to read from</p>
+<p>Sometimes, a little squeeze goes a long way, both for space and sanity.</p>
+<p>#SingleCellRNASeq #DataManagement #Bioinformatics #DataCompression #GenomicsData #StorageOptimization</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrnaseq-datamanagement-bioinformatics-activity-7362064667134881793-hb--" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>
