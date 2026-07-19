@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quick R Tip — Locate Your Installed Packages Easily | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-11-01</span></div><h1>Quick R Tip — Locate Your Installed Packages Easily</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>💡 Quick R Tip — Locate Your Installed Packages Easily! If you use R regularly, you've probably noticed that we usually have multiple library paths on our computers. And sometimes, it's easy to get confused about where exactly our packages are installed.</p>
+<p>Knowing this matters because:<br>
+✅ It helps you manage different R versions or shared library paths.<br>
+✅ You can troubleshoot missing or conflicting packages more easily.<br>
+✅ It prevents issues when switching between RStudio, HPC, or command-line R sessions.</p>
+<p>Before checking a specific package, start with this command:</p>
+<pre><code>.libPaths()</code></pre>
+<p>🧭 Example output:</p>
+<pre><code>[1] "C:/Users/username/Documents/R_shared_library/library"
+[2] "C:/Users/username/AppData/Local/R/win-library/4.3"
+[3] "C:/Program Files/R/R-4.3.2/library"</code></pre>
+<p>Then, to locate a specific package, run:</p>
+<pre><code>find.package("Seurat")</code></pre>
+<p>📍 Example output:</p>
+<pre><code>[1] "C:/Users/username/AppData/Local/R/win-library/4.3/Seurat"</code></pre>
+<p>Small details like this can make a big difference when debugging or managing multiple R setups!</p>
+<p>#DataScience #Informatics #HPC #SingleCellRNAseq #Analytics #RStats #RProgramming #Automation</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_datascience-informatics-hpc-activity-7387536794722029569-enky?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

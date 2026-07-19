@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Understanding defer in JavaScript | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-10-01</span></div><h1>Understanding defer in JavaScript</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🚀 Understanding the Power of defer in JavaScript</p>
+<p>Ever wondered why your JavaScript sometimes fails to find a button or element on the page? 🤔</p>
+<p>Here's the deal — when the browser loads an HTML page, it reads it from top to bottom. It adds each element (&lt;div&gt;, &lt;button&gt;, etc.) to the DOM. But when it reaches a &lt;script&gt; tag, it pauses everything.</p>
+<p>So, if your script is above the button:</p>
+<pre><code>&lt;script&gt;
+document.getElementById("startBtn").onclick = startRace;
+&lt;/script&gt;
+&lt;button id="startBtn"&gt;Start&lt;/button&gt;</code></pre>
+<p>💥 It fails — because the button doesn't exist yet!</p>
+<p>✅ Fix? Place your script after the button or use the magical keyword defer:</p>
+<pre><code>&lt;script src="main.js" defer&gt;&lt;/script&gt;</code></pre>
+<p>defer tells the browser: "Download this script, but wait to execute it until after the whole page is loaded."</p>
+<p>It's cleaner, faster, and safer. A small attribute, but it makes a big difference in how your web pages behave. ⚡</p>
+<p>#Awareness #Logic #Accuracy #LoadOrder #Intelligence #Measure #Alignment #Latency #Mindfulness #Understanding #Knowledge #Action #Discipline #Design #Insight #Reflection</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_awareness-logic-accuracy-activity-7393488764687482881-Nk9g?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

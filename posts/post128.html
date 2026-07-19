@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Function Factories in R and JavaScript | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-09-01</span></div><h1>Function Factories in R and JavaScript</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>Function factories? What is that? Is there such a thing? With one function, can I really create many other functions? I didn't believe it either. Yes — it's real. That's exactly why function factories exist.</p>
+<p>A function factory is a function that returns another function. Each returned function keeps its own settings.</p>
+<p>One idea, two languages</p>
+<p>JavaScript</p>
+<pre><code>function makeMultiplier(n) {
+  return function(x) {
+    return x * n;
+  };
+}
+
+const double = makeMultiplier(2);
+const triple = makeMultiplier(3);
+
+double(4); // 8
+triple(4); // 12</code></pre>
+<p>R</p>
+<pre><code>make_multiplier &lt;- function(n) {
+  function(x) {
+    x * n
+  }
+}
+
+double &lt;- make_multiplier(2)
+triple &lt;- make_multiplier(3)
+
+double(4) # 8
+triple(4) # 12</code></pre>
+<p>➡️ Same concept, different syntax.<br>
+➡️ One factory → many specialized functions.</p>
+<p>Takeaway</p>
+<p>Sometimes programming isn't about learning something new — it's about realizing that what you've been using all along has a name.</p>
+<p>#functionFactories #R #javaScript #goonlearning</p>
+<p>39:6 "He created you from a single soul, then made from it its mate, and sent down for you eight pairs of livestock…"</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_functionfactories-r-javascript-activity-7407446356207992832--i_k?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

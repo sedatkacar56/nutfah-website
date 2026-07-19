@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CORS Error Fix — Run a Local Web Server with Python | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-10-01</span></div><h1>CORS Error Fix — Run a Local Web Server with Python</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🚫 The Error That Every Frontend Developer Meets Once</p>
+<p>I was just running a local HTML file when Chrome threw this at me:</p>
+<pre><code>ERROR X __ Access to script at 'file:///C:/...' from origin 'null' has been blocked by CORS policy:
+Cross origin requests are only supported for protocol schemes:
+chrome, chrome-extension, chrome-untrusted, data, http, https, isolated-app.</code></pre>
+<p>At first, it looked confusing — why would Chrome block my own files? 🤔</p>
+<p>The answer: CORS (Cross-Origin Resource Sharing). When you open an HTML file directly using file://, every local file is treated as a different "origin," and browsers block such access for security reasons.</p>
+<p>The easiest and most elegant fix? Run your own local web server with one simple Python command:</p>
+<pre><code>python -m http.server 8000</code></pre>
+<p>Here's what happens step by step 👇</p>
+<p>1️⃣ python → runs your Python interpreter<br>
+2️⃣ -m → tells it to use a built-in module<br>
+3️⃣ http.server → launches a mini web server right in your current folder<br>
+4️⃣ 8000 → the port number you'll open in your browser</p>
+<p>Then just visit 👉 http://localhost:8000</p>
+<p>✅ No more CORS errors<br>
+✅ Your HTML, CSS, and JS load like they would on a real site<br>
+✅ It works instantly — no installs, no config</p>
+<p>Sometimes, the simplest command hides the most powerful solution. ⚡</p>
+<p>#AI #LearningByDoing #HPC #Automation #Knowledge #Innovation #Motivation</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_ai-learningbydoing-hpc-activity-7393341964894736384-G154?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

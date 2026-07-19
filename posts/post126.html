@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Windows + R: Why Your File Paths Break | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-09-01</span></div><h1>Windows + R: Why Your File Paths Break</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🚨 Windows + R: Why Your File Paths Break</p>
+<p>Copy-pasting Windows paths into R? This happens:</p>
+<pre><code>data &lt;- read.csv("C:\\Users\\Documents\\data.csv")
+# Error: '\U' is an unrecognized escape sequence</code></pre>
+<p>The Problem: Windows uses \ but R treats it as a special character:<br>
+- \U → invalid Unicode<br>
+- \n → newline<br>
+- \t → tab</p>
+<p>Your path breaks! 💥</p>
+<p>The Fix (3 options):</p>
+<p>✅ Best: Use / instead</p>
+<pre><code>data &lt;- read.csv("C:/Users/Documents/data.csv")</code></pre>
+<p>Works on Windows despite what File Explorer shows!</p>
+<p>✅ Alternative: Double backslash</p>
+<pre><code>data &lt;- read.csv("C:\\\\Users\\\\Documents\\\\data.csv")</code></pre>
+<p>✅ Safe: Use file.path()</p>
+<pre><code>data &lt;- read.csv(file.path("C:", "Users", "Documents", "data.csv"))</code></pre>
+<p>Quick Rule:<br>
+- ❌ Don't use: C:\\Users\\...<br>
+- ✅ Always use: C:/Users/...</p>
+<p>Pro tip: After copying from File Explorer, replace all \ with / before running your code.</p>
+<p>Save this if you've wasted time on path errors! 🕐</p>
+<p>#RStats #DataScience #Windows #CodingTips</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-datascience-windows-activity-7404925162174713857-rOCB?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

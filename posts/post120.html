@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>onclick vs addEventListener — Know the Difference | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-09-15</span></div><h1>onclick vs addEventListener — Know the Difference</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🚀 Do you know the real secret behind JavaScript's "if clauses" of onclick and addEventListener?</p>
+<p>Let's keep it simple. In JavaScript, both onclick and addEventListener react to user actions — like pressing a button. But there is a hidden rule many beginners don't know:</p>
+<p>🔸 onclick — only ONE block survives</p>
+<p>If you assign two different actions to the same button using onclick, the second one deletes the first.</p>
+<p>❌ Example (only the last one runs)</p>
+<pre><code>const btn = document.getElementById("myBtn");
+btn.onclick = () => { console.log("Task A");};
+btn.onclick = () => { console.log("Task B"); };</code></pre>
+<p>➡️ Result: Only "Task B" prints.<br>
+➡️ "Task A" is overwritten and disappears.</p>
+<p>This is why onclick is considered limited.</p>
+<p>🔸 addEventListener — run ALL blocks safely</p>
+<p>With addEventListener, you can attach multiple if-clause-like blocks to the same button.</p>
+<p>✅ Example (both run)</p>
+<pre><code>const btn = document.getElementById("myBtn");
+btn.addEventListener("click", () => { console.log("Task A"); });
+btn.addEventListener("click", () => { console.log("Task B"); });</code></pre>
+<p>➡️ Result: Task A runs<br>
+➡️ Then Task B runs<br>
+➡️ Nothing overwrites anything.</p>
+<p>This is why modern JavaScript always prefers addEventListener.</p>
+<p>🎯 Simple summary<br>
+👉 onclick = only 1 action allowed<br>
+👉 addEventListener = unlimited actions (multiple blocks)</p>
+<p>#AlMukaddir #AsynchronousJavaScript #LogicalEventHandling #ModernWebDevelopment #UserInteractionDesign #KeyboardAndMouseEvents #AddEventListenerBestPractices #DOMEventDelegation #DynamicUIBehavior #InteractiveFrontendEngineering #ResponsiveJavaScriptPatterns</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_almukaddir-asynchronousjavascript-logicaleventhandling-activity-7398404246108332032-I63i?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

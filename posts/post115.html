@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern JavaScript: export vs window | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-10-01</span></div><h1>Modern JavaScript: export vs window</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🚀 Modern JavaScript: export vs window – What Developers Should Really Know</p>
+<p>In modern JavaScript, one of the biggest architectural shifts is the move away from global variables (window) toward modular, maintainable code using export and import. Both approaches work, but they solve very different problems. Understanding the difference is essential for anyone building scalable front-end systems, dashboards, or browser-based applications.</p>
+<p>🔹 window: The Classic Global Space</p>
+<p>When you attach something to window, it becomes globally visible across the entire page:</p>
+<pre><code>window.myFunction = ...</code></pre>
+<p>✔ Pros<br>
+Instantly accessible everywhere<br>
+Useful for quick prototypes or debugging<br>
+Helpful when mixing older and newer scripts</p>
+<p>❌ Cons<br>
+Global namespace pollution<br>
+Risk of name collisions<br>
+Hard to track where functions come from<br>
+Difficult to scale as the project grows</p>
+<p>It's the JavaScript equivalent of "leave it on the kitchen table — everyone can use it."</p>
+<p>🔹 export: The Modern, Modular Way</p>
+<p>With ES modules, you explicitly declare what can be used outside your file:</p>
+<pre><code>export function doSomething() { ... }</code></pre>
+<p>And then import it wherever you need:</p>
+<pre><code>import { doSomething } from './utils.js';</code></pre>
+<p>✔ Pros<br>
+Clear dependency structure<br>
+No accidental overwrites<br>
+Easier to maintain large codebases<br>
+Plays nicely with bundlers and build tools<br>
+More secure and predictable</p>
+<p>❌ Cons<br>
+Requires module-aware browsers or build steps<br>
+Functions are NOT global unless intentionally attached</p>
+<p>It's the engineering version of "give me exactly what I need, and nothing more."</p>
+<p>🧠 The Key Mindset Shift</p>
+<p>Global (window) code is convenient. Modular (export) code is sustainable. Modern JavaScript encourages us to build with intentional boundaries — cleaner APIs, more predictable behavior, and systems that grow gracefully instead of chaotically.</p>
+<p>🔺 Final Thought</p>
+<p>You don't have to eliminate window entirely — sometimes global access is genuinely useful. But if you're designing anything meant to evolve, integrate, or scale, choosing export/import is one of the biggest quality upgrades you can make in your engineering workflow. Explicit beats implicit. Modular beats global. Clarity beats convenience. #25</p>
+<p>#Architecture #LeadershipInTech #FrontendDevelopment #UserExperience #Refactoring #QualityEngineering #AutomationEngineering #NextGenWeb #25</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_architecture-leadershipintech-frontenddevelopment-activity-7396565455454441472--ZGL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stop Rerunning Your SLURM Jobs — Start Resuming Them with Nextflow | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">HPC</span><span class="post-date">2025-10-01</span></div><h1>Stop Rerunning Your SLURM Jobs — Start Resuming Them with Nextflow</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>Stop Rerunning Your SLURM Jobs—Start Resuming Them ⚙️🚀</p>
+<p>I used to submit SLURM jobs without Nextflow. Especially with single-cell (Flex) runs, my requested time and tasks per node often weren't enough to finish the job. Even when they were enough, sometimes — because of cluster busyness, system errors, or just too much occupation — the job still didn't finish within the expected time. 😩</p>
+<p>And you know what happened? I had to resubmit the same job again and again! Total waste of time.</p>
+<p>Then I discovered Nextflow (or any similar workflow engine). Absolute game-changer:</p>
+<p>👉 Even if your pipeline fails, you can resume it and continue exactly from where it stopped — no need to start over!</p>
+<p>Here's the simple structure:</p>
+<p>1-Master job → your SLURM .sh batch script that launches the pipeline</p>
+<p>2-Child processes → tasks defined in your .nf script, each becoming its own SLURM job</p>
+<p>3-Profiles/configs → define your environments, resources, and cluster settings</p>
+<p>That's all! Easy-peasy. Don't repeat my early mistake. I know it feels tough to start something unfamiliar, but once your pipeline clicks — Bob's your uncle! 😉</p>
+<p>#ZeroDowntime #Informatics #FlexPipeline #Automation #HPC #Linux #AIinScience #Reproducibility #Unix #Bioinformatics #SLURM #SingleCell #MachineLearning #UpstreamData #YieldResults #YourPipeline #QualityControl #LabLife #AutomationEverywhere</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_zerodowntime-informatics-flexpipeline-activity-7392583843792379905-nDVw?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

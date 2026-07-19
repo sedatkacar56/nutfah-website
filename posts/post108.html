@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>R's gl() Function — Generate Factor Levels for Grouping Data | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-10-15</span></div><h1>R's gl() Function — Generate Factor Levels for Grouping Data</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 R Tip: gl() — The Hidden Gem for Grouping Data Quickly</p>
+<p>Ever needed to split your dataset into equal parts, or label groups for experiments, without writing a long loop? Meet gl() — short for "generate levels" — one of R's simplest yet most underrated functions.</p>
+<pre><code># Example: Split 10 samples into 3 groups
+n &lt;- 10
+n_parts &lt;- 3
+groups &lt;- gl(n_parts, ceiling(n / n_parts), n)
+groups
+# [1] 1 1 1 1 2 2 2 2 3 3
+# Levels: 1 2 3</code></pre>
+<p>Here's what it does:<br>
+- n_parts → number of groups<br>
+- ceiling(n / n_parts) → how many samples per group<br>
+- n → total number of items</p>
+<p>Result? A quick, tidy factor vector you can use to split() data, label batches, or organize replicates — no for loop, no fuss.</p>
+<p>🔹 Need labels instead of numbers?</p>
+<pre><code>gl(3, 4, labels = c("Control", "TreatmentA", "TreatmentB"))</code></pre>
+<p>📊 Output: Control Control TreatmentA TreatmentA TreatmentB TreatmentB ...</p>
+<p>#NumbersInR #Informatics #TechTip #Analytics #Bioinformatics #LearningR #AlgorithmDesign</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_numbersinr-informatics-techtip-activity-7389928593809760256-VGLQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>
