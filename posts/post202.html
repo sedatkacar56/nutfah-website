@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Seurat Uses Sparse Matrices — dgCMatrix and Memory Efficiency | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-11-16</span></div><h1>Why Seurat Uses Sparse Matrices — dgCMatrix and Memory Efficiency</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 Single-cell datasets are extremely sparse. A typical dataset with 10,000 cells and 30,000 genes creates 300 million data points — but 90–95% of them are zero. Most genes are not expressed in most cells.</p>
+<p>Dense storage would consume gigabytes of memory and slow all computations to a crawl. Seurat instead uses sparse matrices — specifically dgCMatrix (Compressed Sparse Column format) — which only stores non-zero values and their positions, achieving dramatic memory efficiency.</p>
+<p>The dual approach: not all steps stay sparse.</p>
+<p>Raw counts and normalized data stay sparse — most values are still zero.
+Scaled data becomes dense — centering and scaling operations fill in values across the entire matrix.</p>
+<p>This conversion is necessary because algorithms like PCA, regression, and distance calculations require continuous values throughout the dataset. But it's also why ScaleData() uses the most memory of any step in the pipeline.</p>
+<p>🧠 Mental model:
+Sparse = store only signal
+Dense = store signal + all empty space</p>
+<p>Understanding this dual approach explains memory usage patterns, processing speeds, and why Seurat behaves differently across analytical layers. It's a data structure engineering decision as much as a biology one.</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrnaseq-seurat-bioinformatics-activity-7442885872594829314-dFaC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

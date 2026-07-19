@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Understanding Single-Cell RNA-seq Raw Data: Barcodes, Features, and Matrix Files | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-10-24</span></div><h1>Understanding Single-Cell RNA-seq Raw Data: Barcodes, Features, and Matrix Files</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 Understanding Single-Cell RNA-seq Raw Data
+Barcodes · Features · Matrix Files</p>
+<p>When you download a single-cell RNA-seq dataset from GEO, you'll usually see three files:</p>
+<p>📁 *_barcodes.tsv.gz
+📁 *_features.tsv.gz
+📁 *_matrix.mtx.gz</p>
+<p>Together, these three files define your entire experiment 👇</p>
+<p>🧬 Which genes were measured → features.tsv.gz
+🧫 Which cells were captured → barcodes.tsv.gz
+🔢 How many UMIs were detected per gene per cell → matrix.mtx.gz</p>
+<p>Think of it like this:
+Features = rows (genes)
+Barcodes = columns (cells)
+Matrix = counts (expression values)</p>
+<p>No magic. Just structured sparse data.</p>
+<p>📄 Why are genes and barcodes stored as .tsv?</p>
+<p>Because:
+.tsv = Tab-Separated Values
+.csv = Comma-Separated Values</p>
+<p>Tabs are preferred in bioinformatics because:
+Gene names sometimes contain commas
+It avoids parsing confusion
+It's cleaner for structured biological data</p>
+<p>And genes/barcodes are simple one-column lists — .tsv is perfect for that.</p>
+<p>🧮 Why .mtx for the matrix?</p>
+<p>Because single-cell data is sparse. Most gene–cell combinations are zero. If stored as .tsv, you'd save millions of unnecessary zeros.</p>
+<p>.mtx stores only non-zero values, making it:
+Space-efficient
+Faster to read
+Designed for large sparse matrices</p>
+<p>📦 Structure of .mtx (Matrix Market format)</p>
+<p>1️⃣ Header
+2️⃣ Matrix dimensions
+3️⃣ Rows of: row column value
+(Only non-zero counts are recorded.)</p>
+<p>📦 Why are all files .gz?</p>
+<p>Because they're compressed with gzip to drastically reduce file size and speed up downloads — especially important for large genomics datasets.</p>
+<p>Three simple files. One entire transcriptomic landscape. 🌍</p>
+<p>#SingleCell #scRNAseq #Bioinformatics #GEO #DataScience #ComputationalBiology #ArRaheem #TheBestoweroftheMercy</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecell-scrnaseq-bioinformatics-activity-7434923909205979136-oDkE?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

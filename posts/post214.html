@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>pip install Is Not a Python Command | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-12-04</span></div><h1>pip install Is Not a Python Command</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 A common misconception: pip install is not actually a Python command. When you run it, you're talking to your system's shell (Terminal, PowerShell, etc.) — not the Python interpreter.</p>
+<p>This explains why pip install pandas fails inside Python scripts but works in the terminal.</p>
+<pre><code># ✅ In the terminal/shell
+pip install pandas
+
+# ✅ Within Python environments (recommended)
+python -m pip install pandas
+
+# ❌ This won't work inside a .py script
+import subprocess
+pip install pandas  # SyntaxError</code></pre>
+<p>In tools like Jupyter and Quarto, each code chunk runs a specific language engine. Package installation is an environment setup step — not analysis code. Mixing them causes errors.</p>
+<p>Two distinct phases:
+1. pip install — environment setup phase (outside Python)
+2. import pandas — actual Python code (inside your script)</p>
+<p>🧠 Think of pip as the tool that stocks your pantry. import is the step where you cook. They happen in different places.</p>
+<p>#Python #DataScience #Programming #Bioinformatics #pip #Jupyter #Quarto</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_python-datascience-programming-activity-7450131580221685760-Lyye?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

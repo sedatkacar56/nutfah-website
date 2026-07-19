@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>STAR + featureCounts — Alignment and Quantification in RNA-seq | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-12-18</span></div><h1>STAR + featureCounts — Alignment and Quantification in RNA-seq</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 Two essential tools in any bulk RNA-seq pipeline: STAR for alignment, featureCounts (from the Subread package) for quantification. They work sequentially.</p>
+<p>STAR (Spliced Transcripts Alignment to a Reference):
+• Fast alignment of RNA-seq reads to the reference genome
+• Handles splice junctions — critical for RNA data
+• Input: FASTQ files
+• Output: BAM files (aligned reads)</p>
+<p>featureCounts / Subread:
+• Used after alignment
+• Quantifies reads mapping to each annotated gene
+• Input: BAM files + GTF annotation file
+• Output: Gene count matrix (genes × samples)</p>
+<p>The workflow:</p>
+<pre><code>FASTQ → (STAR) → BAM → (featureCounts) → count matrix → DE analysis</code></pre>
+<p>STAR handles the "where do these reads come from in the genome?" question. featureCounts handles "how many reads map to each gene?" question. The count matrix is the starting point for differential expression in DESeq2, edgeR, or limma.</p>
+<p>🧠 Understanding the full pipeline — from raw reads to counts — helps you interpret what your QC metrics actually mean at each step.</p>
+<p>#RNAseq #Bioinformatics #Genomics #STAR #featureCounts #Subread #ComputationalBiology #BulkRNAseq</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rnaseq-bioinformatics-genomics-activity-7455677171605438464-vUYM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

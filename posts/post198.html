@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Counts vs Data vs Scale.Data in Seurat — Three Layers, Three Purposes | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-11-12</span></div><h1>Counts vs Data vs Scale.Data in Seurat — Three Layers, Three Purposes</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 Your Seurat object doesn't store one matrix. It stores three. Same biology. Three representations. Each optimized for a different purpose.</p>
+<p>🔹 Raw Counts
+Original UMI counts from sequencing, unnormalized. Your ground truth. Best for differential expression, pseudobulk analyses, and methods that assume count distributions.</p>
+<p>🔹 Normalized Data (data layer)
+Log-normalized and adjusted for sequencing depth. Your biological signal — cleaned. Optimal for visualization (FeaturePlot, VlnPlot), marker exploration, and interpretation.</p>
+<p>🔹 Scaled Data (scale.data)
+Centered and variance-scaled, often with regression applied. Your machine-learning-ready matrix. Ideal for PCA, clustering, and dimensionality reduction.</p>
+<p>Use GetAssayData() with explicit layer specification:</p>
+<pre><code>GetAssayData(object, layer = "counts")
+GetAssayData(object, layer = "data")
+GetAssayData(object, layer = "scale.data")</code></pre>
+<p>Common mistakes: running differential expression on scaled data, or forgetting which normalization was applied. The wrong layer gives you the wrong answer — even if the code runs without errors.</p>
+<p>🧠 Your result is only as valid as the layer you used.</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrnaseq-seurat-bioinformatics-activity-7441436320939360256-GnTs?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

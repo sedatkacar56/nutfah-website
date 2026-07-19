@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FeaturePlot Rasterization — raster=TRUE vs raster=FALSE on Large Datasets | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-12-27</span></div><h1>FeaturePlot Rasterization — raster=TRUE vs raster=FALSE on Large Datasets</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 When analyzing large datasets with 100,000+ cells, FeaturePlot() automatically enables rasterization — converting cells to fixed pixels. This improves rendering performance but reduces visual clarity and can obscure important gene expression patterns.</p>
+<p>Same data. Same gene. Different visualization setting. Different interpretation.</p>
+<pre><code># Default for large datasets — rasterized, faster but lower resolution
+FeaturePlot(seurat_obj, features = "CD4", raster = TRUE)
+
+# Full resolution — slower but shows individual cell expression
+FeaturePlot(seurat_obj, features = "CD4", raster = FALSE)</code></pre>
+<p>The risk: small but biologically significant expression clusters can become nearly invisible when rasterization compresses them to a few pixels. You might conclude a gene is absent in a population when it's actually expressed — just hidden by the default rendering setting.</p>
+<p>🧠 Single-cell analysis requires understanding default settings. Parameters like raster = TRUE or FALSE significantly impact result interpretation. Knowing your tool's defaults is part of knowing your data.</p>
+<p>#SingleCellRNAseq #Seurat #Bioinformatics #FeaturePlot #scRNAseq #DataVisualization #ComputationalBiology</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrnaseq-bioinformatics-seurat-activity-7459225253945430016-H7ao?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

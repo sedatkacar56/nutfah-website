@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CellTypist: predicted_labels vs majority_voting — Which to Use? | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-10-21</span></div><h1>CellTypist: predicted_labels vs majority_voting — Which to Use?</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 Do you know that in CellTypist you get two annotation outputs? Before we dive in: CellTypist is a reference-based machine learning tool for automatic cell type annotation in single-cell RNA-seq data. It uses trained logistic regression models built from curated reference datasets to predict cell identities in your dataset. When you run CellTypist, you don't get just one answer — you get two: predictedlabels majorityvoting So what's the difference?</p>
+<p>🔹 predictedlabels
+Each cell is labeled completely alone
+The model looks at that one cell's gene expression and asks "what are you?"
+No context, no neighbors, no smoothing
+Raw, independent prediction</p>
+<p>🔹 majorityvoting
+Takes the predictedlabels
+Groups cells by over-clustering
+Votes within each group
+Corrects outliers using neighbors</p>
+<p>🎯 Which One to Use?
+Always use majorityvoting. It's the final cleaned answer. predictedlabels is just the intermediate step — useful only if you want to see where the model was uncertain. If predictedlabels and majorityvoting disagree on a cell (like FB5 vs FB4activated in your data), it means that cell was an outlier that got corrected by its neighbors.</p>
+<p>🧠 Simple Analogy
+predictedlabels = one doctor's diagnosis alone in a room
+majorityvoting = that same doctor's diagnosis reviewed by a committee of neighboring doctors who looked at similar patients</p>
+<p>🔥 Clean. 🧬 Accurate. 🎯 Practical.</p>
+<p>#SingleCell #scRNAseq #CellTypist #Bioinformatics #ComputationalBiology #MachineLearning #SingleCellAnalysis #Transcriptomics #DataScience #Rstats #Python #Scanpy #Seurat #CellAnnotation #SystemsBiology #ArRashid #TheGuidetotheRightPath</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecell-scrnaseq-celltypist-activity-7434201649881001984-4_O2?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

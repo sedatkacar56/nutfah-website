@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Correcting for Sequencing Depth in FindAllMarkers() — LR Test with latent.vars | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-12-25</span></div><h1>Correcting for Sequencing Depth in FindAllMarkers() — LR Test with latent.vars</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 The default Wilcoxon test in FindAllMarkers() doesn't account for sequencing depth differences between cells. In mixed cell populations like PBMCs, this creates false positives — genes appearing upregulated simply due to higher sequencing coverage rather than true biology.</p>
+<p>The solution: replace the default test with logistic regression and include nCount_RNA as a latent variable.</p>
+<pre><code>FindAllMarkers(
+  seu,
+  test.use = "LR",
+  latent.vars = "nCount_RNA",
+  min.pct = 0.25,
+  logfc.threshold = 0.5
+)</code></pre>
+<p>This ensures only true biological signal drives your marker calls — not technical variation in sequencing depth.</p>
+<p>When to use which:
+• Homogeneous datasets: Wilcoxon is acceptable
+• Mixed / multi-lineage data: use logistic regression + latent variable correction</p>
+<p>One line change. More honest biology.</p>
+<p>#SingleCellRNAseq #Seurat #Bioinformatics #scRNAseq #ComputationalBiology #DifferentialExpression</p>
+<a href="https://www.linkedin.com/posts/nutfah-single-cell-omics-llc_singlecellrnaseq-scrnaseq-bioinformatics-activity-7458365989726887936-OK4b?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CellCycleScoring() in Seurat — Estimating Cell Cycle Phase Per Cell | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-11-11</span></div><h1>CellCycleScoring() in Seurat — Estimating Cell Cycle Phase Per Cell</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>💡 Did you know Seurat can estimate the cell-cycle phase of every single cell? Using the built-in function CellCycleScoring() from Seurat, it scores cells based on known cell-cycle genes and assigns each cell to a phase.</p>
+<p>🔬 Three phases are predicted:
+🟢 G1 — cell growth
+🟡 S phase — DNA replication
+🔴 G2/M — preparation for mitosis</p>
+<p>Seurat calculates two scores: S.Score and G2M.Score, then assigns a predicted Phase to every cell in the metadata.</p>
+<p>⚙️ Example:</p>
+<pre><code>pbmc &lt;- CellCycleScoring(
+  object = pbmc,
+  s.features = cc.genes$s.genes,
+  g2m.features = cc.genes$g2m.genes)</code></pre>
+<p>Now every cell carries its predicted cell-cycle phase.</p>
+<p>⚠️ Important detail many researchers miss: The default Seurat cell-cycle gene lists were originally curated from human genes. So if your dataset is mouse, rat, or another organism, you usually need to adapt gene names.</p>
+<p>Example:
+Human: MKI67
+Mouse: Mki67</p>
+<p>Small difference. But ignoring it can affect your scoring.</p>
+<p>📊 Why this matters: Cell cycle is one of the strongest sources of variation in single-cell data. It can create artificial clusters, mask biological signals, or reveal proliferating populations. Many pipelines therefore visualize cell-cycle phases, regress out cell-cycle effects, or specifically study cycling cells.</p>
+<p>🧠 Single-cell RNA-seq reveals more than cell types. It reveals cell states. And the cell cycle is one of the most important hidden states inside your data.</p>
+<p>#SingleCellRNAseq #Seurat #Bioinformatics #ComputationalBiology #Genomics #Transcriptomics #RStats #DataScience #CellCycle #OpenScience #scRNAseq #SingleCellAnalysis #SystemsBiology #Bioconductor #ClusterAnalysis #UMAP #DataVisualization</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrnaseq-seurat-bioinformatics-activity-7441105857339305985-B4lq?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

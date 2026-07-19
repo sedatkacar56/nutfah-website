@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>R's || Short-Circuit Operator — Safer Pipeline Conditions | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-11-21</span></div><h1>R's || Short-Circuit Operator — Safer Pipeline Conditions</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 R's short-circuit OR operator (||) evaluates conditions left-to-right and stops at the first TRUE value. This protects your data pipelines in three critical ways:</p>
+<p>1. Prevents conditions that would throw errors if reached
+2. Skips unnecessary expensive computations
+3. Avoids operations on non-existent objects</p>
+<p>Example 1 — Seurat validation:</p>
+<pre><code># Safe: checks for NULL before calling ncol()
+if (is.null(seurat_obj) || ncol(seurat_obj) &lt; 100) {
+  stop("Object is empty or too small")
+}</code></pre>
+<p>If seurat_obj is NULL, R stops after the first condition. It never tries to call ncol() on a NULL object — which would crash.</p>
+<p>Example 2 — File safety:</p>
+<pre><code>if (!file.exists(path) || file.size(path) == 0) {
+  stop("File missing or empty")
+}</code></pre>
+<p>Testing file existence before checking file size avoids unnecessary disk reads and downstream errors.</p>
+<p>Core principle: place the cheapest or most critical condition first. || automatically skips remaining conditions when the first one is TRUE.</p>
+<p>🧠 Particularly valuable in single-cell pipelines where data integrity checks are essential for reliable analysis.</p>
+<p>#Rstats #Bioinformatics #SingleCellRNAseq #Seurat #ComputationalBiology #DataScience</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstats-bioinformatics-singlecellrnaseq-activity-7444729778064060416-qkjx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

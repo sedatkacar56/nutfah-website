@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HEY SINGLE-CELL USER! SAVE YOUR DATAFRAME AS RDS! | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tool</span><span class="post-date">2025-10-19</span></div><h1>HEY SINGLE-CELL USER! SAVE YOUR DATAFRAME AS RDS!</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>HEY SINGLE-CELL USER! SAVE YOUR DATAFRAME AS RDS!!!! YOU WILL THANK ME LATER 😄</p>
+<p>We all save our Seurat objects as .rds without thinking twice. But the moment we have a dataframe? Immediately reaching for .csv 🤦</p>
+<p>I was guilty of this too. Until I actually thought about what CSV is doing to my data. Here's what CSV silently destroys every time you save:</p>
+<p>❌ Factor levels — gone
+❌ Column data types — everything becomes character
+❌ NA vs empty string — indistinguishable
+❌ Integer vs double — flattened
+❌ Long messy column names — broken or truncated
+❌ List columns — impossible</p>
+<p>Then you reload the CSV and spend 20 minutes writing:</p>
+<pre><code>df$condition &lt;- as.factor(df$condition)
+df$pvalue &lt;- as.numeric(df$pvalue)
+df$group &lt;- factor(df$group, levels = c("PBS", "MCT"))</code></pre>
+<p>Sound familiar?</p>
+<p>RDS preserves EVERYTHING exactly as it was. Every column type. Every factor level. Every attribute. Load it back one line. Done.</p>
+<p>The only real advantage of CSV is:</p>
+<p>✅ Opens in Excel
+✅ Shareable outside R
+✅ Human readable</p>
+<p>And those matter — so save CSV too when you need to share or inspect. But for YOUR intermediate analysis files, results tables, normalized matrices, annotated dataframes? Save as RDS. Your future self will thank you. 💡</p>
+<p>Quick rule I now follow:</p>
+<p>→ Sharing with someone? → CSV
+→ Reloading in your own pipeline? → RDS
+→ Complex object (Seurat, DESeq2, list)? → RDS, always</p>
+<p>We already knew this for Seurat objects. Time to apply the same logic to dataframes.</p>
+<p>#Bioinformatics #Rstats #SingleCell #SpatialTranscriptomics #Proteomics #MultiOmics #scRNAseq #snRNAseq #ATACseq #MassSpectrometry #DataScience #Reproducibility #ComputationalBiology #OmicsData #SystemsBiology #ResearchComputing #OpenScience #Seurat #Transcriptomics #LifeSciences #AlJabbar #TheCompeller</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_bioinformatics-rstats-singlecell-activity-7433476874196008960-pl5N?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

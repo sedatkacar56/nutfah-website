@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>grep() vs grepl() in R — Positions vs Logical Vectors | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-11-30</span></div><h1>grep() vs grepl() in R — Positions vs Logical Vectors</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 Two similar names. Two different outputs. One core distinction:</p>
+<p>grep() returns the positions/indices of matching elements.
+grepl() returns TRUE/FALSE for each element tested.</p>
+<p>Example 1 — Finding cell types:</p>
+<pre><code>cell_types &lt;- c("CD4 T cell", "B cell", "CD8 T cell", "NK cell")
+
+grep("^CD", cell_types)
+# Returns: 1 3 (positions)
+
+grepl("^CD", cell_types)
+# Returns: TRUE FALSE TRUE FALSE (logical vector)</code></pre>
+<p>Example 2 — Filtering mitochondrial genes:</p>
+<pre><code>genes &lt;- rownames(seurat_obj)
+
+# Use grep() to subset by index
+mito_genes &lt;- genes[grep("^MT-", genes)]
+
+# Use grepl() to create a logical vector for conditional operations
+is_mito &lt;- grepl("^MT-", genes)
+high_mito_cells &lt;- seurat_obj$percent.mt &gt; 20</code></pre>
+<p>Practical rule:
+• Use grep() when you need to SUBSET or FILTER data
+• Use grepl() when you need to TEST or CREATE conditions</p>
+<p>🧠 Same pattern matching engine under the hood. Different output format. Match the function to what your next line of code expects.</p>
+<p>#Rstats #Bioinformatics #SingleCellRNAseq #scRNAseq #ComputationalBiology #DataScience</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_rstatstwitter-scrnaseq-bioinformatics-activity-7448130855811584000-1SXL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

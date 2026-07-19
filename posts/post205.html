@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>all.equal() — Detecting Differences Between Seurat Object Versions | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-11-19</span></div><h1>all.equal() — Detecting Differences Between Seurat Object Versions</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 You've saved multiple versions of the same Seurat object: lung_final.rds, lung_final_v2.rds. You can't remember what actually changed between them. The UMAPs look identical. How do you find what's different?</p>
+<p>The answer is all.equal():</p>
+<pre><code>all.equal(seurat_v1, seurat_v2)</code></pre>
+<p>Unlike the == operator which does simple element-wise comparison, all.equal() provides deep comparison of R objects — checking structure, attributes, metadata, everything that matters. It returns either TRUE (objects match) or detailed messages explaining specific differences.</p>
+<p>A real example: two Seurat objects can appear visually identical on UMAP visualizations while differing in metadata annotations. Running all.equal() detected that a metadata column had different data types — character in one version, numeric in the other. A mismatch that was visually invisible but would silently break downstream analysis.</p>
+<p>🧠 Before assuming two Seurat objects are the same, verify it. all.equal() gives you the receipt.</p>
+<p>#SingleCellRNAseq #Seurat #Bioinformatics #Rstats #DataScience #ComputationalBiology #Genomics #Transcriptomics #ResearchTips</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrnaseq-seurat-bioinformatics-activity-7443981592764506112-bpll?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

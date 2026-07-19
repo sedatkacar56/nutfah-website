@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transposing the Matrix — Inside vs Outside Seurat | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-11-14</span></div><h1>Transposing the Matrix — Inside vs Outside Seurat</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 Cell Ranger outputs a genes × cells matrix. Rows are genes. Columns are cell barcodes. Seurat maintains this orientation internally.</p>
+<p>But many statistical analysis tools expect cells × observations format — because cells are the observations (samples) and genes are the features (variables).</p>
+<p>Inside Seurat, you never need to think about this. Seurat handles it internally. But when you extract matrices using GetAssayData(), you receive genes × cells format and must transpose using t(mat) for external tools.</p>
+<p>Tools that require transposition:</p>
+<pre><code>mat &lt;- GetAssayData(seurat_obj, layer = "scale.data")
+
+# These tools expect cells × genes
+prcomp(t(mat))        # PCA
+dist(t(mat))          # Distance
+cor(t(mat))           # Correlation
+# Monocle3 trajectory analysis also expects cells as rows</code></pre>
+<p>This isn't data corruption — it's changing perspective. Biology-focused view: genes across cells. Statistics-focused view: cells defined by genes.</p>
+<p>Understanding dimensional consistency prevents workflow errors when passing matrices between Seurat and external packages.</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrnaseq-seurat-bioinformatics-activity-7442150778967945216-rYLt?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

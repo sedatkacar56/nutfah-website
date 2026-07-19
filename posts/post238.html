@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Goldilocks Problem of PCA Dimensions — Too Few vs Too Many | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2026-02-12</span></div><h1>The Goldilocks Problem of PCA Dimensions — Too Few vs Too Many</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 Selecting the number of principal components to use in single-cell analysis is a Goldilocks problem — too few compresses the biology, too many amplifies the noise.</p>
+<p>Too few dimensions: you risk missing subtle cell state differences. T cell activation states, NK/T cell transitions, and rare populations can disappear when compressed into too few PCs.</p>
+<p>Too many dimensions: you amplify technical noise including batch effects and ambient RNA signals. Clusters that look biologically meaningful may be driven by technical variation rather than biology.</p>
+<p>Framework:
+• Too few dimensions = compressed biology
+• Too many dimensions = amplified noise
+• Optimal selection = meaningful structure</p>
+<p>Better question to ask: instead of "How many PCs should I use?" ask "What biological and technical signals are captured in each dimension?"</p>
+<p>How to evaluate:
+• Examine PCA loadings — what genes drive each PC?
+• Look at elbow plots and variance explained
+• Check marker gene patterns in early vs late PCs
+• Validate cluster biological validity after changing dims</p>
+<p>🧠 Dimensionality reduction in single-cell RNA-seq is a biological decision, not just a mathematical one. The right number of dimensions is the number that captures biology without capturing noise.</p>
+<p>#SingleCellRNAseq #Bioinformatics #Seurat #PCA #scRNAseq #ComputationalBiology #Transcriptomics</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrnaseq-bioinformatics-seurat-activity-7477785081189691392--pC7?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>

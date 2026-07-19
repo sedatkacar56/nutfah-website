@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>npcs vs dims in Seurat — Capacity vs Decision | Nutfah</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../LOGO.png" alt="Nutfah Single-cell Omics" class="logo-img"/><span class="nav-company-name">Nutfah Single-cell Omics LLC</span></a><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li><li><a href="../posts.html">Posts</a></li><li><a href="../tools.html">Tools</a></li><li><a href="../contact.html" class="nav-cta">Get a Quote</a></li></ul></div></nav>
+<section class="page-hero"><div class="container"><div class="post-page-meta"><span class="post-category">Tutorial</span><span class="post-date">2025-10-27</span></div><h1>npcs vs dims in Seurat — Capacity vs Decision</h1></div></section>
+<section class="post-page-section"><div class="container"><div class="post-page-body">
+<p>🧬 Do you really know the difference between npcs and dims in Seurat? They both involve principal components. They both influence clustering. But they do very different jobs.</p>
+<p>🔹 First — What is a Principal Component?</p>
+<p>Imagine each cell is described by 20,000 genes. That's 20,000 dimensions. A principal component is a new axis — a weighted combination of genes — that captures a major pattern of variation.</p>
+<p>PC1 = biggest source of variation
+PC2 = second biggest (independent of PC1)
+PC3 = third</p>
+<p>Each PC might represent:
+• Cell type differences
+• Cell cycle
+• Stress response
+• Batch effect</p>
+<p>It's a compression of biology into cleaner axes. Instead of 20,000 noisy dimensions, you work with maybe 20 meaningful ones.</p>
+<p>🔹 npcs</p>
+<p>npcs answers one question: "How many principal components should we calculate?"</p>
+<p>If you set npcs = 30, Seurat computes 30 axes of variation and stores them. Think of it like building 30 microscopes. You're not using them yet. You're just creating them.</p>
+<p>Capacity.</p>
+<p>🔹 dims</p>
+<p>dims answers a different question: "Which of those microscopes should define similarity between cells?"</p>
+<p>If you use dims = 1:20, only the first 20 PCs influence:
+• Neighbor graph
+• Clustering
+• UMAP</p>
+<p>Even if you computed 50 PCs, only the selected ones shape your biology.</p>
+<p>Decision.</p>
+<p>🎯 The difference isn't technical. It's conceptual.</p>
+<p>npcs = how many dimensions you create.
+dims = which dimensions you trust.</p>
+<p>A simple analogy:</p>
+<p>Imagine PCA builds 30 lenses. npcs decides how many lenses exist. dims decides which lenses you actually look through.</p>
+<p>🧠 PCA defines geometry. Geometry defines neighbors. Neighbors define clusters. Small parameters. Big biological consequences.</p>
+<p>#SingleCellRNAseq #Seurat #Bioinformatics #PCA #RunPCA #FindNeighbors #FindClusters #RunUMAP #ComputationalBiology #Transcriptomics #DataScience #scRNAseq #AzZahir #TheManifest</p>
+<a href="https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_singlecellrnaseq-seurat-bioinformatics-activity-7435646168115609600-t8yh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAB_qyMYBvf9wlLXZHrscugRyA7339FTKI9U" target="_blank" class="post-linkedin-link">View on LinkedIn →</a>
+<div class="post-back"><a href="../posts.html">← Back to Posts</a></div>
+</div></div></section>
+<footer><div class="container"><p>© 2026 Nutfah Single-cell Omics LLC · Remote, Serving Clients Nationwide · <a href="mailto:sedat@nutfahsinglecellomics.com">sedat@nutfahsinglecellomics.com</a></p></div></footer>
+</body>
+</html>
