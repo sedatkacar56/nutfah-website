@@ -1,0 +1,3 @@
+Some think that if sb is very active on LinkedIn cannot find time to work and might have many connections to switch between jobs. Some others think he is good candidate for advertisement for lab or…
+
+[Full post content — please copy from LinkedIn: https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_some-think-that-if-sb-is-very-active-on-linkedin-activity-7367929404716417025-ExDR]

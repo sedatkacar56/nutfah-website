@@ -1,0 +1,3 @@
+I'm happy to share this Single-cell Transcriptomic Insights in Pulmonary Hypertension Progression and Therapeutic Response to Anaplerosis Inhibition project I worked on. Check it out here:…
+
+[Full post content — please copy from LinkedIn: https://www.linkedin.com/posts/sedat-kacar-phd-6863b812b_im-happy-to-share-this-single-cell-transcriptomic-activity-7357889458244907010-tm1c]
